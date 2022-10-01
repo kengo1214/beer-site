@@ -141,11 +141,11 @@ export default function Home() {
               value="7adf81ec-942f-4a70-b8d5-e01074e1b7d4"
             />
 
-            {/* <input
+            <input
               type="hidden"
               name="redirectTo"
-              value="/pages/contact-done"
-            /> */}
+              value="https://beer-site-pied.vercel.app/contact-done"
+            />
 
             <div className={styles.contactItem}>
               <label className={styles.label}>お名前</label>
