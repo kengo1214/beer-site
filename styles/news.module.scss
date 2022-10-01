@@ -1,0 +1,81 @@
+.main {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid black;
+}
+
+// .body {
+//   width: 100%;
+//   min-height: 100%;
+//   // border: 3px solid red;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
+
+// .title {
+//   text-align: center;
+//   // border: 3px solid blue;
+// }
+
+// .main {
+//   // border: 5px solid red;
+//   padding: 1rem;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .news {
+//   // border: 5px solid blue;
+//   width: 800px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
+
+// .border {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   border: 3px solid black;
+//   border-radius: 10px;
+//   margin: 1rem 1rem 2rem;
+//   padding: 2rem;
+//   width: 700px;
+
+//   > h1 {
+//     margin: 0 0 1rem;
+//   }
+
+//   > p {
+//     font-weight: bold;
+//   }
+// }
+
+// .box {
+//   width: 350px;
+//   height: 600px;
+//   margin: 1rem 0 0 3rem;
+//   border: 3px solid black;
+//   text-align: center;
+//   border-radius: 10px;
+
+//   .archive {
+//     padding: 0.5rem;
+//     // padding-bottom: 0.5rem;
+//     border-bottom: 1px solid black;
+//     opacity: 0.7;
+//     list-style: none;
+
+//     &:hover {
+//       opacity: 0.7;
+//       color: white;
+//       background-color: black;
+//     }
+//   }
+// }

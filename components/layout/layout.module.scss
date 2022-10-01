@@ -1,0 +1,150 @@
+.body {
+  // border: 5px solid red;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    "head" 100px
+    "nav" 80px
+    "main" 1fr
+    // "article" 1fr
+    "foot" 80px
+    / 1fr;
+}
+
+.header {
+  width: 100%;
+  grid-area: head;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(60, 60, 60);
+  color: white;
+  // position: fixed;
+  // top: 0;
+
+  h1 {
+    font-size: 3em;
+  }
+}
+
+.nav {
+  width: 100%;
+  grid-area: nav;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // position: fixed;
+  // top: 0;
+}
+
+.ul {
+  // border: 3px solid blue;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.li {
+  // border: 3px solid orange;
+  height: 80px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+
+  a {
+    width: 100px;
+    height: 80px;
+    // border: 3px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      color: white;
+      background-color: rgb(60, 60, 60);
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  grid-area: main;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  grid-area: foot;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(60, 60, 60);
+  color: white;
+}
+
+
+
+// .body {
+//   width: 100%;
+//   min-height: 100vh;
+//   // display: flex;
+//   // justify-content: center;
+//   display: grid;
+//   grid-template:
+//     "head" 120px
+//     "nav" 60px
+//     "main" 1fr
+//     "foot" 50px
+//     / 1fr;
+// }
+
+// .header {
+//   grid-area: head;
+//   color: #fff;
+//   background-color: rgb(38, 38, 38);
+//   padding: 1rem;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   h1 {
+//     font-size: 3rem;
+//   }
+// }
+
+// .nav {
+//   grid-area: nav;
+// }
+
+// .main {
+//   grid-area: main;
+// }
+
+// .footer {
+//   grid-area: foot;
+//   text-align: center;
+//   color: #fff;
+//   background-color: rgb(38, 38, 38);
+// }
+
+// @media screen and (max-width: 400px) {
+//   .header {
+//     h1 {
+//       font-size: 2rem;
+//     }
+//   }
+// }

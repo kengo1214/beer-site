@@ -1,0 +1,37 @@
+.body {
+  // border-top: 3px solid red;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.main {
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 3rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 1px 3px 5px black;
+}
+
+.a {
+  border: 1px solid black;
+  padding: 0.5rem 2.5rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px black;
+
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
