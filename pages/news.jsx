@@ -70,7 +70,7 @@ export default function News({ news, monthlyIndex }) {
         </div>
 
         <ul className={styles.ul}>
-          <li className={styles.li}>
+          {/* <li className={styles.li}>
             <Link href="/">
               <a className={styles.a}>20xx年xx月（xx件）</a>
             </Link>
@@ -79,7 +79,7 @@ export default function News({ news, monthlyIndex }) {
             <Link href="/">
               <a className={styles.a}>20xx年xx月（xx件）</a>
             </Link>
-          </li>
+          </li> */}
           {Object.keys(monthlyIndex).map((index) => (
             <li key={index} className={styles.li}>
               <Link href={`archive/${index}`} className={styles.link}>
