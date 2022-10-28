@@ -203,10 +203,6 @@
   .body .main .newsBox .news .sentence {
     font-size: 14px;
   }
-  .body .main .newsBox .imageBox .image {
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
   .body .archive .ul {
     width: 90%;
     padding: 0.5rem;
@@ -296,4 +292,4 @@
     width: 60%;
   }
 }
-/*# sourceMappingURL=news.module.css.map */
+/*# sourceMappingURL=archive.module.css.map */

@@ -7,7 +7,7 @@ import styles from "../../../styles/[id].module.scss";
 export async function getStaticProps(context) {
   const id = context.params.id;
   // console.log(id, "動的なidの取得に成功");
-  const data = await client.get({ endpoint: "bottled-beer", contentId: id });
+  const data = await client.get({ endpoint: "bottle-beer", contentId: id });
 
   return {
     props: {
@@ -18,7 +18,7 @@ export async function getStaticProps(context) {
 
 //getStaticPaths(パスの指定)
 export async function getStaticPaths() {
-  const data = await client.get({ endpoint: "bottled-beer" });
+  const data = await client.get({ endpoint: "bottle-beer" });
   const paths = data.contents.map(
     (content) => `/menu/bottlebeer/${content.id}`
   );

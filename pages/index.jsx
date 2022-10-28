@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-
+import Contact from "../components/contact/contact";
 import Link from "next/link";
 
 export default function Home() {
@@ -122,79 +122,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className={styles.contact}>
-        <div className={styles.contactMain}>
-          <div className={styles.contactTitle}>
-            <p>お問合せ</p>
-            <h1>Contact</h1>
-          </div>
-
-          <form
-            action="https://api.staticforms.xyz/submit"
-            method="post"
-            className={styles.form}
-          >
-            <input
-              type="hidden"
-              name="accessKey"
-              value="7adf81ec-942f-4a70-b8d5-e01074e1b7d4"
-            />
-
-            <input
-              type="hidden"
-              name="redirectTo"
-              value="https://beer-site-pied.vercel.app/contact-done"
-            />
-
-            <div className={styles.contactItem}>
-              <label className={styles.label}>お名前</label>
-              <input type="text" className={styles.input} name="name" />
-            </div>
-            <div className={styles.contactItem}>
-              <label className={styles.label}>メールアドレス</label>
-              <input
-                type="email"
-                className={styles.input}
-                name="email"
-                required
-              />
-            </div>
-            <div className={styles.contactItem}>
-              <label className={styles.label}>ご質問</label>
-              <textarea
-                name="message"
-                className={`${styles.input} ${styles.textarea}`}
-                placeholder="ご質問はこちら"
-              ></textarea>
-            </div>
-            <div className={styles.buttonArea}>
-              <input
-                id="modalOpen"
-                className={styles.button}
-                type="submit"
-                value="送信"
-              />
-              <input className={styles.button} type="reset" value="リセット" />
-
-              {/* <div id="modal" className={styles.modal}>
-                <div class="modal-content" className={styles.modalContent}>
-                  <div class="modal-header" className={styles.modalHeader}>
-                    <h1>モーダルウィンドウ🔥</h1>
-                    <span class="modalClose" className={styles.modalClose}>
-                      &times;
-                    </span>
-                  </div>
-                  <div class="modal-body">
-                    <p>あなたは素晴らしいエンジニアです。</p>
-                    <p>自分に自信を持って学習を続けてください。</p>
-                  </div>
-                </div>
-              </div> */}
-            </div>
-          </form>
-        </div>
-      </section>
+      <Contact />
     </div>
   );
 }

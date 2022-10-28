@@ -8,7 +8,7 @@ export async function getStaticProps(context) {
   const id = context.params.id;
   // console.log(id, "動的なidの取得に成功");
   const data = await client.get({
-    endpoint: "cocktail-and-hardliquor",
+    endpoint: "cocktail-and-hard-liquor",
     contentId: id,
   });
 
@@ -21,7 +21,7 @@ export async function getStaticProps(context) {
 
 //getStaticPaths(パスの指定)
 export async function getStaticPaths() {
-  const data = await client.get({ endpoint: "cocktail-and-hardliquor" });
+  const data = await client.get({ endpoint: "cocktail-and-hard-liquor" });
   const paths = data.contents.map(
     (content) => `/menu/cocktailhardliquor/${content.id}`
   );

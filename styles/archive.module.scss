@@ -4,12 +4,9 @@
   // border: 5px solid red;
   display: grid;
   grid-template:
-    // "  head head" 80px
-    // "  main archive " 1fr
-    // / 1fr 200px;
-  "  head head head head" 80px
-  " left main archive right" 1fr
-  / 60px 1fr 200px 60px;
+    "  head head head head" 80px
+    " left main archive right" 1fr
+    / 60px 1fr 200px 60px;
 
   .header {
     grid-area: head;
@@ -40,7 +37,6 @@
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
-    // margin-left: 60px;
 
     .mainTitle {
       // border: 5px dashed red;
@@ -118,7 +114,6 @@
     // border: 5px solid red;
     grid-area: archive;
     padding-top: 2rem;
-    // margin-right: 60px;
 
     .archiveTitle {
       // border: 5px solid blue;
@@ -181,18 +176,6 @@
     .left {
       display: none;
     }
-
-    // .left {
-    //   display: none;
-    //   border: 5px dashed black;
-    //   grid-area: left;
-    // }
-
-    // .right {
-    //   display: none;
-    //   border: 5px dashed black;
-    //   grid-area: right;
-    // }
 
     .main {
       padding: 1rem 2rem;
@@ -311,7 +294,6 @@
 
       .newsBox {
         border: 3px solid black;
-        // background-color:red;
         // border: 5px solid red;
         display: grid;
         width: 90%;
@@ -331,16 +313,10 @@
           }
         }
 
-        .imageBox {
-          // border: 5px solid green;
-          // padding: 0rem;
-          // padding: .5rem;
-
-          .image {
-            object-fit: cover;
-            // object-fit: contain;
-          }
-        }
+        // .imageBox {
+        //   // border: 5px solid green;
+        //   // padding: 1rem;
+        // }
       }
     }
 
@@ -381,7 +357,7 @@
         }
 
         // .imageBox {
-        //   // padding: 1rem;
+        //   padding: 1rem;
         // }
       }
     }
@@ -482,44 +458,3 @@
     }
   }
 }
-
-//🔥 エラー原因を調査しているので一時できに非表示🔥
-
-// @media screen and (max-width: 600px) {
-//   .body {
-//     .main {
-//       .newsBox {
-//         .news {
-//           > h1 {
-//             font-size: 20px;
-//           }
-//         }
-//       }
-//     }
-
-//     .archive {
-//       .ul {
-//         border: 1px solid black;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         // justify-content: start;
-//         height: 100px;
-//         padding: 1rem;
-//         overflow: scroll;
-//         flex-wrap: nowrap;
-
-//         .li {
-//           margin-bottom: 0;
-
-//           .a {
-//             width: 170px;
-//             margin: 0 0.5rem 0.5rem;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// 🌟🌟🌟🌟1440px以上の場合のレスポンシブデザイン 🌟🌟🌟🌟
