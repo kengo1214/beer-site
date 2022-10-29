@@ -4,35 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/[id].module.scss";
 
-//getStaticProps（情報取得）
-export async function getStaticProps(context) {
-  const id = context.params.id;
-  // console.log(id, "動的なidの取得に成功");
-  const data = await clientMenu.get({
-    endpoint: "cocktail-and-hard-liquor",
-    contentId: id,
-  });
-
-  return {
-    props: {
-      cocktailhardliquor: data,
-    },
-  };
-}
-
-//getStaticPaths(パスの指定)
-export async function getStaticPaths() {
-  const data = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
-  const paths = data.contents.map(
-    (content) => `/menu/cocktailhardliquor/${content.id}`
-  );
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
 export default function MoreInformation({ cocktailhardliquor }) {
   return (
     <div className={styles.body}>
@@ -60,4 +31,33 @@ export default function MoreInformation({ cocktailhardliquor }) {
       </div>
     </div>
   );
+}
+
+//getStaticPaths(パスの指定)
+export async function getStaticPaths() {
+  const data = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
+  const paths = data.contents.map(
+    (content) => `/menu/cocktailhardliquor/${content.id}`
+  );
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+//getStaticProps（情報取得）
+export async function getStaticProps(context) {
+  const id = context.params.id;
+  // console.log(id, "動的なidの取得に成功");
+  const data = await clientMenu.get({
+    endpoint: "cocktail-and-hard-liquor",
+    contentId: id,
+  });
+
+  return {
+    props: {
+      cocktailhardliquor: data,
+    },
+  };
 }
