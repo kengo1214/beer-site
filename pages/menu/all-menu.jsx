@@ -75,12 +75,11 @@ export default function AllMenu({
 
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
 
-      <section className={styles.bottle}>
+      {/* <section className={styles.bottle}>
         <div className={styles.titleSection}>
           <h1>Bottle Beer</h1>
         </div>
         <div className={styles.menuSection}>
-          {/* 🔥map関数 */}
           {bottlebeer.map((bottlebeer) => (
             <div key={bottlebeer.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
@@ -114,15 +113,14 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
-      <section className={styles.cocktail}>
+      {/* <section className={styles.cocktail}>
         <div className={styles.titleSection}>
           <h1>Barrel Beer</h1>
         </div>
         <div className={styles.menuSection}>
-          {/* 🔥map関数 */}
           {cocktailhardliquor.map((cocktailhardliquor) => (
             <div key={cocktailhardliquor.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
@@ -158,7 +156,7 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
