@@ -1,4 +1,5 @@
-import { client } from "../../../libs/client";
+import { clientMenu } from "../../../libs/client";
+// import { client } from "../../../libs/client";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/[id].module.scss";
@@ -7,7 +8,7 @@ import styles from "../../../styles/[id].module.scss";
 export async function getStaticProps(context) {
   const id = context.params.id;
   // console.log(id, "動的なidの取得に成功");
-  const data = await client.get({
+  const data = await clientMenu.get({
     endpoint: "cocktail-and-hard-liquor",
     contentId: id,
   });
@@ -21,7 +22,7 @@ export async function getStaticProps(context) {
 
 //getStaticPaths(パスの指定)
 export async function getStaticPaths() {
-  const data = await client.get({ endpoint: "cocktail-and-hard-liquor" });
+  const data = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
   const paths = data.contents.map(
     (content) => `/menu/cocktailhardliquor/${content.id}`
   );

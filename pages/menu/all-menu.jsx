@@ -1,13 +1,14 @@
 import styles from "../../styles/all-menu.module.scss";
-import { client } from "../../libs/client";
+import { clientMenu } from "../../libs/client";
+// import { client } from "../../libs/client";
 import Image from "next/image";
 import Link from "next/link";
 
 //SSG(getStaticProps)
 export async function getStaticProps() {
-  const data01 = await client.get({ endpoint: "barrel-beer" });
-  const data02 = await client.get({ endpoint: "bottle-beer" });
-  const data03 = await client.get({ endpoint: "cocktail-and-hard-liquor" });
+  const data01 = await clientMenu.get({ endpoint: "barrel-beer" });
+  const data02 = await clientMenu.get({ endpoint: "bottle-beer" });
+  const data03 = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
 
   return {
     props: {
@@ -75,11 +76,12 @@ export default function AllMenu({
 
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
 
-      {/* <section className={styles.bottle}>
+      <section className={styles.bottle}>
         <div className={styles.titleSection}>
           <h1>Bottle Beer</h1>
         </div>
         <div className={styles.menuSection}>
+          {/* 🔥map関数 */}
           {bottlebeer.map((bottlebeer) => (
             <div key={bottlebeer.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
@@ -113,14 +115,15 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
-      {/* <section className={styles.cocktail}>
+      <section className={styles.cocktail}>
         <div className={styles.titleSection}>
           <h1>Barrel Beer</h1>
         </div>
         <div className={styles.menuSection}>
+          {/* 🔥map関数 */}
           {cocktailhardliquor.map((cocktailhardliquor) => (
             <div key={cocktailhardliquor.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
@@ -156,7 +159,7 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }

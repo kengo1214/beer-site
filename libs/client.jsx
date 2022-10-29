@@ -1,7 +1,7 @@
 import { createClient } from "microcms-js-sdk";
 
 // メニュー（Menu）
-export const client = createClient({
+export const clientMenu = createClient({
   serviceDomain: "beer-menu",
   apiKey: process.env.API_KEY_MENU,
 });
