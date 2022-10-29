@@ -38,7 +38,7 @@ export default function Contact() {
                 type="text"
                 className={styles.input}
                 name="name"
-                placeholder="お名前" 
+                placeholder="お名前"
                 required
               />
             </div>
@@ -59,7 +59,7 @@ export default function Contact() {
                 className={`${styles.input} ${styles.textarea}`}
                 placeholder="ご質問はこちら"
                 required
-                maxlength="300"
+                maxLength="300"
               ></textarea>
             </div>
             <div className={styles.buttonArea}>

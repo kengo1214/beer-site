@@ -6,6 +6,7 @@ import styles from "../../../styles/[id].module.scss";
 
 //getStaticProps（情報取得）
 export async function getStaticProps(context) {
+  // console.log(context);
   const id = context.params.id;
   // console.log(id, "動的なidの取得に成功");
   const data = await clientMenu.get({ endpoint: "barrel-beer", contentId: id });
