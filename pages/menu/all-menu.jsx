@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function AllMenu({
   barrelbeer,
-  bottlebeer,
-  cocktailhardliquor,
+  // bottlebeer,
+  // cocktailhardliquor,
 }) {
   // console.log(barrelbeer);
   return (
@@ -61,12 +61,11 @@ export default function AllMenu({
 
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
 
-      <section className={styles.bottle}>
+      {/* <section className={styles.bottle}>
         <div className={styles.titleSection}>
           <h1>Bottle Beer</h1>
         </div>
         <div className={styles.menuSection}>
-          {/* 🔥map関数 */}
           {bottlebeer.map((bottlebeer) => (
             <div key={bottlebeer.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
@@ -100,15 +99,14 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
-      <section className={styles.cocktail}>
+      {/* <section className={styles.cocktail}>
         <div className={styles.titleSection}>
           <h1>Barrel Beer</h1>
         </div>
         <div className={styles.menuSection}>
-          {/* 🔥map関数 */}
           {cocktailhardliquor.map((cocktailhardliquor) => (
             <div key={cocktailhardliquor.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
@@ -144,7 +142,7 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
@@ -152,14 +150,14 @@ export default function AllMenu({
 //SSG(getStaticProps)
 export async function getStaticProps() {
   const data01 = await clientMenu.get({ endpoint: "barrel-beer" });
-  const data02 = await clientMenu.get({ endpoint: "bottle-beer" });
-  const data03 = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
+  // const data02 = await clientMenu.get({ endpoint: "bottle-beer" });
+  // const data03 = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
 
   return {
     props: {
       barrelbeer: data01.contents,
-      bottlebeer: data02.contents,
-      cocktailhardliquor: data03.contents,
+      // bottlebeer: data02.contents,
+      // cocktailhardliquor: data03.contents,
     },
   };
 }
