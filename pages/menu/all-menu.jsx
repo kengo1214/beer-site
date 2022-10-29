@@ -8,7 +8,6 @@ export async function getStaticProps() {
   const data01 = await client.get({ endpoint: "barrel-beer" });
   const data02 = await client.get({ endpoint: "bottle-beer" });
   const data03 = await client.get({ endpoint: "cocktail-and-hard-liquor" });
-  // console.log(data01.contents);
 
   return {
     props: {
