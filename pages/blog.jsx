@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { client00 } from "../libs/client";
 import { groupBy } from "../libs/util";
-import styles from "../styles/news.module.scss";
+import styles from "../styles/blog.module.scss";
 
 export const getStaticProps = async () => {
   //ニュース記事の取得

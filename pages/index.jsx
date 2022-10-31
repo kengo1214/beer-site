@@ -52,7 +52,7 @@ export default function Home() {
             {/* <p className={styles.imageTitle}>Menu</p> */}
           </div>
           <div className={styles.imageItem}>
-            <Link href="/news">
+            <Link href="/blog">
               <Image
                 className={styles.image}
                 src="/image/news.jpg"
@@ -61,7 +61,7 @@ export default function Home() {
                 alt="menu-image"
               />
             </Link>
-            <Link href="/news">
+            <Link href="/blog">
               <p className={styles.imageTitle}>News</p>
             </Link>
           </div>

@@ -3,35 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/[id].module.scss";
 
-export default function MoreInformation({ barrelbeer }) {
-  return (
-    <div className={styles.body}>
-      <div className={styles.main}>
-        <div>{barrelbeer.id}</div>
-        <h1>{barrelbeer.title}</h1>
-        <p>{barrelbeer.product}</p>
-        <p className={styles.detail}>{barrelbeer.detail}</p>
-
-        <Image
-          className={styles.image}
-          src={barrelbeer.image.url}
-          width="300px"
-          height="300px"
-          alt="beer"
-        />
-      </div>
-      <div className={styles.button}>
-        <Link href="/menu/all-menu">
-          <a className={styles.a}>戻る</a>
-        </Link>
-        <Link href="/">
-          <a className={styles.a}>ホームに戻る</a>
-        </Link>
-      </div>
-    </div>
-  );
-}
-
 //getStaticPaths(パスの指定)
 export async function getStaticPaths() {
   const data = await clientMenu.get({ endpoint: "barrel-beer" });
@@ -57,3 +28,49 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+export default function MoreInformation({ barrelbeer }) {
+  return (
+    <div>
+      {barrelbeer.id}
+      {barrelbeer.title}
+      {barrelbeer.price}
+      {barrelbeer.detail}
+    </div>
+  );
+}
+
+/* <div className={styles.body}>
+      <div className={styles.main}>
+        <h1>{barrelbeer.title}</h1>
+        <div>{barrelbeer.price}</div>
+        <div
+          className={styles.product}
+          dangerouslySetInnerHTML={{
+            __html: `${barrelbeer.product}`,
+          }}
+        />
+        <div
+          className={styles.detail}
+          dangerouslySetInnerHTML={{
+            __html: `${barrelbeer.detail}`,
+          }}
+        />
+        <Image
+          className={styles.image}
+          src={barrelbeer.image.url}
+          width="300px"
+          height="300px"
+          alt="beer"
+        />
+      </div>
+
+      <div className={styles.button}>
+        <Link href="/menu/all-menu">
+          <a className={styles.a}>戻る</a>
+        </Link>
+        <Link href="/">
+          <a className={styles.a}>ホームに戻る</a>
+        </Link>
+      </div>
+    </div> */

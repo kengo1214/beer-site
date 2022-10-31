@@ -1,15 +1,13 @@
-import styles from "../../styles/all-menu.module.scss";
-import { clientMenu } from "../../libs/client";
-// import { client } from "../../libs/client";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "../../styles/all-menu.module.scss";
+import { clientMenu } from "../../libs/client";
 
 export default function AllMenu({
   barrelbeer,
-  // bottlebeer,
-  // cocktailhardliquor,
+  bottlebeer,
+  cocktailhardliquor,
 }) {
-  // console.log(barrelbeer);
   return (
     <div className={styles.body}>
       <div className={styles.pageTitle}>
@@ -23,7 +21,6 @@ export default function AllMenu({
           <h1>Barrel Beer</h1>
         </div>
         <div className={styles.menuSection}>
-          {/* 🔥map関数 */}
           {barrelbeer.map((barrelbeer) => (
             <div key={barrelbeer.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
@@ -61,7 +58,7 @@ export default function AllMenu({
 
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
 
-      {/* <section className={styles.bottle}>
+      <section className={styles.bottle}>
         <div className={styles.titleSection}>
           <h1>Bottle Beer</h1>
         </div>
@@ -99,10 +96,10 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
-      {/* <section className={styles.cocktail}>
+      <section className={styles.cocktail}>
         <div className={styles.titleSection}>
           <h1>Barrel Beer</h1>
         </div>
@@ -142,7 +139,7 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }
@@ -150,14 +147,14 @@ export default function AllMenu({
 //SSG(getStaticProps)
 export async function getStaticProps() {
   const data01 = await clientMenu.get({ endpoint: "barrel-beer" });
-  // const data02 = await clientMenu.get({ endpoint: "bottle-beer" });
-  // const data03 = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
+  const data02 = await clientMenu.get({ endpoint: "bottle-beer" });
+  const data03 = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
 
   return {
     props: {
       barrelbeer: data01.contents,
-      // bottlebeer: data02.contents,
-      // cocktailhardliquor: data03.contents,
+      bottlebeer: data02.contents,
+      cocktailhardliquor: data03.contents,
     },
   };
 }

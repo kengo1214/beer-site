@@ -28,7 +28,7 @@ export default function Nav() {
               </Link>
             </li>
             <li>
-              <Link href="/news">
+              <Link href="/blog">
                 <a>Blog</a>
               </Link>
             </li>
@@ -71,7 +71,7 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/news">
+            <Link href="/blog">
               <a>
                 <h1 className={styles.mainTitle}>Blog</h1>
               </a>
