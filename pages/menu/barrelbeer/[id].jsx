@@ -31,46 +31,45 @@ export async function getStaticProps(context) {
 
 export default function MoreInformation({ barrelbeer }) {
   return (
-    <div>
-      {barrelbeer.id}
-      {barrelbeer.title}
-      {barrelbeer.price}
-      {barrelbeer.detail}
+    <div className={styles.body}>
+      <div className={styles.header}>
+        <h1>All Menu -Barre Beer- </h1>
+      </div>
+      <div className={styles.section}>
+        <div className={styles.main}>
+          <div className={styles.sentenceBox}>
+            <h1 className={styles.title}>{barrelbeer.title}</h1>
+            <div className={styles.price}>{barrelbeer.price}</div>
+            <div
+              className={styles.product}
+              dangerouslySetInnerHTML={{
+                __html: `${barrelbeer.product}`,
+              }}
+            />
+            <div
+              className={styles.detail}
+              dangerouslySetInnerHTML={{
+                __html: `${barrelbeer.detail}`,
+              }}
+            />
+          </div>
+          <div className={styles.imageBox}>
+            <div className={styles.image}>
+              <Image
+                src={barrelbeer.image.url}
+                alt="image"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
+          </div>
+          <div className={styles.buttonBox}>
+            <Link href="/menu/all-menu">
+              <a>Back</a>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-/* <div className={styles.body}>
-      <div className={styles.main}>
-        <h1>{barrelbeer.title}</h1>
-        <div>{barrelbeer.price}</div>
-        <div
-          className={styles.product}
-          dangerouslySetInnerHTML={{
-            __html: `${barrelbeer.product}`,
-          }}
-        />
-        <div
-          className={styles.detail}
-          dangerouslySetInnerHTML={{
-            __html: `${barrelbeer.detail}`,
-          }}
-        />
-        <Image
-          className={styles.image}
-          src={barrelbeer.image.url}
-          width="300px"
-          height="300px"
-          alt="beer"
-        />
-      </div>
-
-      <div className={styles.button}>
-        <Link href="/menu/all-menu">
-          <a className={styles.a}>戻る</a>
-        </Link>
-        <Link href="/">
-          <a className={styles.a}>ホームに戻る</a>
-        </Link>
-      </div>
-    </div> */

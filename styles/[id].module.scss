@@ -1,0 +1,224 @@
+.body {
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template:
+    "head" 80px
+    "section" 1fr
+    / 1fr;
+
+  .header {
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(178 178 178);
+  }
+
+  .section {
+    grid-area: section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main {
+      border: 3px solid black;
+      border-radius: 10px;
+      width: 60%;
+      height: 80%;
+      display: grid;
+      grid-template:
+        "sentence image" 80%
+        "button    image" 20%
+        / 70% 30%;
+
+      .sentenceBox {
+        grid-area: sentence;
+        padding: 0.5rem 0.5rem 0;
+        display: grid;
+        grid-template:
+          "title" 60px
+          "price" 30px
+          "product" 80px
+          "detail"
+          / 1fr;
+
+        .title {
+          grid-area: title;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 23px;
+        }
+
+        .price {
+          grid-area: price;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 15px;
+        }
+
+        .product {
+          grid-area: product;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 13px;
+        }
+
+        .detail {
+          grid-area: detail;
+          padding: 0 0.5rem;
+          overflow: scroll;
+          font-size: 14px;
+        }
+      }
+
+      .imageBox {
+        border-left: 3px solid black;
+        grid-area: image;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .image {
+          width: 80%;
+          height: 80%;
+          position: relative;
+        }
+      }
+
+      .buttonBox {
+        grid-area: button;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          border: 1px solid black;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+
+          &:hover {
+            color: white;
+            background: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .body {
+    .section {
+      .main {
+        grid-template:
+          "sentence image" 80%
+          "button    image" 20%
+          / 70% 30%;
+
+        .sentenceBox {
+          .title {
+            font-size: 20px;
+          }
+          .price {
+            font-size: 14px;
+          }
+
+          .product {
+            font-size: 12px;
+          }
+
+          .detail {
+            font-size: 13px;
+          }
+        }
+
+        .imageBox {
+          .image {
+            width: 70%;
+            height: 70%;
+            position: relative;
+          }
+        }
+
+        .buttonBox {
+          a {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .body {
+    width: 100%;
+    min-height: 100vh;
+
+    .section {
+      .main {
+        width: 600px;
+        height: 85%;
+        grid-template:
+          "sentence" 50%
+          "image" 35%
+          "button" 15%
+          / 100%;
+
+        .sentenceBox {
+          border-bottom: 1px solid black;
+          grid-template:
+            "title" 60px
+            "price" 30px
+            "product" 80px
+            "detail"
+            / 100%;
+        }
+
+        .imageBox {
+          border: none;
+          .image {
+            width: 100%;
+            min-height: 170px;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    .section {
+      .main {
+        width: 500px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .body {
+    .section {
+      .main {
+        width: 400px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .body {
+    .section {
+      .main {
+        width: 380px;
+      }
+    }
+  }
+}
