@@ -147,7 +147,54 @@
 }
 @media screen and (max-width: 480px) {
   .body .section .main {
-    width: 380px;
+    width: 80%;
+  }
+  .body .section .main .sentenceBox .title {
+    font-size: 18px;
+  }
+  .body .section .main .sentenceBox .price {
+    font-size: 13px;
+  }
+  .body .section .main .sentenceBox .product {
+    font-size: 12px;
+  }
+  .body .section .main .sentenceBox .detail {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .body {
+    width: 100%;
+    min-height: 100%;
+  }
+  .body .section .main {
+    width: 80%;
+    height: 85%;
+    grid-template: "sentence" 50% "image" 35% "button" 15%/100%;
+  }
+  .body .section .main .sentenceBox {
+    border-bottom: 1px solid black;
+    grid-template: "title" 60px "price" 30px "product" 80px "detail"/100%;
+  }
+  .body .section .main .sentenceBox .title {
+    font-size: 15px;
+  }
+  .body .section .main .sentenceBox .price {
+    font-size: 12px;
+  }
+  .body .section .main .sentenceBox .product {
+    font-size: 11px;
+  }
+  .body .section .main .sentenceBox .detail {
+    font-size: 12px;
+  }
+  .body .section .main .imageBox {
+    border: none;
+  }
+  .body .section .main .imageBox .image {
+    width: 100%;
+    min-height: 170px;
+    position: relative;
   }
 }
 /*# sourceMappingURL=[id].module.css.map */

@@ -4,35 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/[id].module.scss";
 
-export default function MoreInformation({ bottlebeer }) {
-  return (
-    <div className={styles.body}>
-      <div className={styles.main}>
-        <div>{bottlebeer.id}</div>
-        <h1>{bottlebeer.title}</h1>
-        <p>{bottlebeer.product}</p>
-        <p className={styles.detail}>{bottlebeer.detail}</p>
-
-        <Image
-          className={styles.image}
-          src={bottlebeer.image.url}
-          width="300px"
-          height="300px"
-          alt="beer"
-        />
-      </div>
-      <div className={styles.button}>
-        <Link href="/menu/all-menu">
-          <a className={styles.a}>戻る</a>
-        </Link>
-        <Link href="/">
-          <a className={styles.a}>ホームに戻る</a>
-        </Link>
-      </div>
-    </div>
-  );
-}
-
 //getStaticPaths(パスの指定)
 export async function getStaticPaths() {
   const data = await clientMenu.get({ endpoint: "bottle-beer" });
@@ -57,4 +28,49 @@ export async function getStaticProps(context) {
       bottlebeer: data,
     },
   };
+}
+
+export default function MoreInformation({ bottlebeer }) {
+  return (
+    <div className={styles.body}>
+      <div className={styles.header}>
+        <h1>All Menu -Bottle Beer- </h1>
+      </div>
+      <div className={styles.section}>
+        <div className={styles.main}>
+          <div className={styles.sentenceBox}>
+            <h1 className={styles.title}>{bottlebeer.title}</h1>
+            <div className={styles.price}>{bottlebeer.price}</div>
+            <div
+              className={styles.product}
+              dangerouslySetInnerHTML={{
+                __html: `${bottlebeer.product}`,
+              }}
+            />
+            <div
+              className={styles.detail}
+              dangerouslySetInnerHTML={{
+                __html: `${bottlebeer.detail}`,
+              }}
+            />
+          </div>
+          <div className={styles.imageBox}>
+            <div className={styles.image}>
+              <Image
+                src={bottlebeer.image.url}
+                alt="image"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
+          </div>
+          <div className={styles.buttonBox}>
+            <Link href="/menu/all-menu">
+              <a>Back</a>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

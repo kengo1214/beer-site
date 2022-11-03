@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template: "head" 150px "main" 1fr "foot" 80px/1fr;
+  grid-template: "head" 150px "main" 1fr "foot" 50px/1fr;
 }
 
 .header {

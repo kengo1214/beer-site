@@ -1,2 +1,2 @@
-.body{border:1px solid #000;width:100%;min-height:100vh;display:grid;grid-template:"head" 150px "main" 1fr "foot" 80px/1fr}.header{grid-area:head}.main{width:100%;grid-area:main;border:1px solid #000}.footer{width:100%;grid-area:foot;border:1px solid #000;display:flex;justify-content:center;align-items:center;background-color:#3c3c3c;color:#fff}
+.body{border:1px solid #000;width:100%;min-height:100vh;display:grid;grid-template:"head" 150px "main" 1fr "foot" 50px/1fr}.header{grid-area:head}.main{width:100%;grid-area:main;border:1px solid #000}.footer{width:100%;grid-area:foot;border:1px solid #000;display:flex;justify-content:center;align-items:center;background-color:#3c3c3c;color:#fff}
 /*# sourceMappingURL=layout.module.min.css.map */

@@ -217,7 +217,77 @@
   .body {
     .section {
       .main {
-        width: 380px;
+        width: 80%;
+        // width: 380px;
+        .sentenceBox {
+          .title {
+            font-size: 18px;
+          }
+          .price {
+            font-size: 13px;
+          }
+
+          .product {
+            font-size: 12px;
+          }
+
+          .detail {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .body {
+    width: 100%;
+    min-height: 100%;
+
+    .section {
+      .main {
+        width: 80%;
+        height: 85%;
+        grid-template:
+          "sentence" 50%
+          "image" 35%
+          "button" 15%
+          / 100%;
+
+        .sentenceBox {
+          border-bottom: 1px solid black;
+          grid-template:
+            "title" 60px
+            "price" 30px
+            "product" 80px
+            "detail"
+            / 100%;
+
+          .title {
+            font-size: 15px;
+          }
+          .price {
+            font-size: 12px;
+          }
+
+          .product {
+            font-size: 11px;
+          }
+
+          .detail {
+            font-size: 12px;
+          }
+        }
+
+        .imageBox {
+          border: none;
+          .image {
+            width: 100%;
+            min-height: 170px;
+            position: relative;
+          }
+        }
       }
     }
   }
