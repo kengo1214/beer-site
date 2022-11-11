@@ -160,6 +160,7 @@
 
 @media screen and (max-width: 1024px) {
   .body .sentenceSection {
+    border: 5px solid red;
     padding: 3rem;
   }
   .body .sentenceSection .sentence:nth-child(1) {
@@ -336,13 +337,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
   }
   .body .sentenceSection .sentence:nth-child(1) {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
   .body .sentenceSection .sentence {
-    width: 80%;
+    width: 100%;
   }
   .body .sentenceSection .sentence .titleBox h4 {
     font-size: 0.8rem;

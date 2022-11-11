@@ -183,6 +183,7 @@
 @media screen and (max-width: 1024px) {
   .body {
     .sentenceSection {
+      border: 5px solid red;
       padding: 3rem;
 
       .sentence:nth-child(1) {
@@ -253,11 +254,6 @@
 
     .sentenceSection {
       background-color: skyblue;
-      // padding: 3rem;
-
-      // .sentence:nth-child(1) {
-      //   margin-bottom: 3rem;
-      // }
 
       .sentence {
         .titleBox {
@@ -429,32 +425,25 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 1rem;
+      padding: 1.5rem;
+      // padding: 1.5rem 0rem;
+      // padding: 1.5rem 0.5rem;
+      // padding: 1rem;
 
       .sentence:nth-child(1) {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        // margin-bottom: 1rem;
       }
 
       .sentence {
-        width: 80%;
+        width: 100%;
+        // width: 80%;
 
         .titleBox {
           @include title;
         }
       }
     }
-
-    // .linkSection {
-    //   padding: 1.5rem;
-
-    //   .linkBox {
-    //     width: 100%;
-
-    //     .linkItem:nth-child(2) {
-    //       margin: 1.5rem 0;
-    //     }
-    //   }
-    // }
 
     .accessSection {
       background-color: white;
