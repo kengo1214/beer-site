@@ -1,197 +1,143 @@
-.header {
+.body {
   background-color: black;
   width: 100%;
-  display: grid;
-  grid-template: "logo nothing nav" 150px/480px 1fr 400px;
+  height: 130px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
 }
-
-.logo {
-  border: 10px solid red;
+.body .section {
+  height: 130px;
+  background-color: black;
+  max-width: 1240px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
-  grid-area: logo;
-  font-size: 20px;
   color: white;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-.logo h1 {
-  margin: 0;
+.body .section h1 {
+  font-size: 40px;
+  margin: 0 0 0 1rem;
+  cursor: pointer;
 }
-
-.nothing {
-  grid-area: nothing;
-  background-color: black;
-}
-
-.nav {
-  grid-area: nav;
-  color: white;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nav ul {
+.body .section li {
   list-style: none;
+}
+.body .section li .orangeButton {
+  background-color: orangered;
+}
+.body .normal {
+  display: none;
+}
+.body .button {
+  display: block;
+  z-index: 10;
+  margin-right: 1rem;
+}
+.body .menu {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  padding: 1rem;
-}
-.nav li {
-  padding: 0 1.5rem;
-}
-.nav a {
-  background-color: gray;
-  color: white;
-  border-radius: 8px;
-  padding: 1rem 1rem;
-  display: flex;
-}
-.nav a:hover {
-  opacity: 0.7;
-}
-
-.drawerMenu {
-  border: 3px solid rgb(35, 79, 255);
-  width: 0;
-  color: white;
-  background-color: rgb(34, 35, 36);
-  transition: 0.5s;
-  height: 0;
-  opacity: 0;
-  z-index: -100;
-}
-.drawerMenu.open {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100vh;
-  opacity: 1;
-  z-index: 100;
+  text-align: center;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+}
+.body .menu ul {
+  padding: 0;
+}
+.body .menu ul li {
+  padding: 1rem;
+  font-size: 32px;
+}
+.body .menu ul a {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  display: flex;
+  border: 3px solid black;
+}
+.body .menu ul a:hover {
+  border-bottom: 3px solid white;
+}
+.body .menu00 {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  text-align: center;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+}
+.body .menu00 ul {
+  padding: 0;
+}
+.body .menu00 ul li {
+  padding: 1rem;
+  font-size: 32px;
+}
+.body .menu00 ul li:hover {
+  color: gray;
 }
 
-@media screen and (max-width: 1024px) {
-  .header {
-    display: grid;
-    grid-template: "logo nothing button" 150px/480px 1fr 100px;
+@media screen and (min-width: 900px) {
+  .body .section .normal {
+    display: flex;
+    padding: 0;
   }
-  .logo {
-    border: 10px solid blue;
+  .body .section .normal li {
+    padding: 1rem 0.5rem;
     font-size: 20px;
   }
-  .nav {
+  .body .section .normal li a {
+    font-weight: bold;
+    padding: 1rem;
+    display: flex;
+    border-radius: 10px;
+  }
+  .body .section .normal li a:hover {
+    background-color: gray;
+    color: white;
+  }
+  .body .section .button {
+    display: none;
+  }
+  .body .section .menu {
+    display: none;
+  }
+  .body .section .menu00 {
     display: none;
   }
 }
-@media screen and (max-width: 1024px) and (max-width: 768px) {
-  .header {
-    display: grid;
-    grid-template: "logo nothing button" 150px/480px 1fr 100px;
-  }
-  .header .logo {
-    border: 10px solid orange;
-    font-size: 20px;
+@media screen and (max-width: 768px) {
+  .body .section h1 {
+    font-size: 35px;
   }
 }
-@media screen and (max-width: 1024px) and (max-width: 600px) {
-  .header {
-    display: grid;
-    grid-template: "logo nothing button" 150px/380px 1fr 100px;
+@media screen and (max-width: 480px) {
+  .body .section h1 {
+    font-size: 25px;
   }
-  .header .logo {
-    border: 10px solid aqua;
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 1024px) and (max-width: 480px) {
-  .header {
-    display: grid;
-    grid-template: "logo nothing button" 150px/300px 1fr 80px;
-  }
-  .header .logo {
-    border: 10px solid magenta;
-    padding: 0.5rem;
-    font-size: 13px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .container {
-    grid-area: button;
-    position: relative;
-    background-color: black;
-  }
-  .container .humburger {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .container span {
-    background-color: white;
-    width: 30px;
-    height: 3px;
-    display: block;
-    margin-bottom: 7px;
-  }
-}
-.drawerMenu {
-  width: 100%;
-  min-height: 100%;
-  position: fixed;
-  top: 0;
-}
-.drawerMenu ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.drawerMenu .close {
-  height: 150px;
-  display: flex;
-  justify-content: flex-end;
-}
-.drawerMenu .close .border {
-  width: 150px;
-  position: relative;
-}
-.drawerMenu .close .closeBox {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.drawerMenu .close span {
-  background-color: white;
-  width: 30px;
-  height: 3px;
-  display: block;
-  margin-bottom: 10px;
-  margin: 0 0 10px auto;
-}
-.drawerMenu .close span:first-child {
-  transform: translateY(6px) rotate(150deg);
-}
-.drawerMenu .close span:nth-child(2) {
-  transform: translateY(-6px) rotate(-150deg);
-  margin-bottom: 0;
-}
-.drawerMenu li {
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.drawerMenu a {
-  width: 200px;
-}
-.drawerMenu .mainTitle {
-  text-align: center;
-  padding: 1rem;
-  margin: 0;
-  border-bottom: 5px solid rgb(35, 79, 255);
-  cursor: pointer;
 }
 /*# sourceMappingURL=header.module.css.map */

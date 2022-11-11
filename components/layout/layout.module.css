@@ -1,9 +1,8 @@
 .body {
-  border: 1px solid black;
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template: "head" 150px "main" 1fr "foot" 50px/1fr;
+  grid-template: "head" 130px "main" 1fr "foot" 50px/1fr;
 }
 
 .header {
@@ -13,13 +12,11 @@
 .main {
   width: 100%;
   grid-area: main;
-  border: 1px solid black;
 }
 
 .footer {
   width: 100%;
   grid-area: foot;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;

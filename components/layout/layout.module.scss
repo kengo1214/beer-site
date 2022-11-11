@@ -1,11 +1,10 @@
 .body {
-  // border: 5px solid red;
-  border: 1px solid black;
+  // border: 3px dashed black;
   width: 100%;
   min-height: 100vh;
   display: grid;
   grid-template:
-    "head" 150px
+    "head" 130px
     "main" 1fr
     "foot" 50px
     / 1fr;
@@ -15,18 +14,14 @@
   grid-area: head;
 }
 
-// 🔥childrenの中央寄せの設定を消している🔥
-
 .main {
   width: 100%;
   grid-area: main;
-  border: 1px solid black;
 }
 
 .footer {
   width: 100%;
   grid-area: foot;
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;

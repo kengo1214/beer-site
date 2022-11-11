@@ -2,12 +2,7 @@ import styles from "./contact.module.scss";
 
 export default function Contact() {
   return (
-    // <div className={styles.body}>
-    //   <main className={styles.main}>
-    //     <h1>Contact</h1>
-    //   </main>
-    // </div>
-    <section className={styles.body}>
+    <section className={styles.body} id="contact">
       <div className={styles.background}>
         <div className={styles.contactMain}>
           <div className={styles.contactTitle}>

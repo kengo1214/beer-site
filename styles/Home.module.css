@@ -1,240 +1,388 @@
 .body {
   width: 100%;
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  min-height: 100vh;
 }
-
-.header {
+.body .headerSection {
   width: 100%;
   height: 400px;
-  display: flex;
-  justify-content: center;
+  background-image: url("/image/mainHeader.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.header .image {
-  -o-object-fit: cover;
-     object-fit: cover;
+.body .sentenceSection {
+  padding: 5rem;
 }
-
-.articleBox {
+.body .sentenceSection .sentence:nth-child(1) {
+  margin-bottom: 5rem;
+}
+.body .sentenceSection .sentence {
   width: 100%;
-  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
-.article {
-  width: 900px;
-  padding: 2rem;
+.body .sentenceSection .sentence .titleBox {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 80%;
 }
-.article h1 {
-  margin-top: 0;
+.body .sentenceSection .sentence .titleBox h4 {
+  margin: 0;
+}
+.body .sentenceSection .sentence .titleBox h1 {
   font-size: 2rem;
+  margin: 0 0 3rem;
 }
-.article p {
-  margin-bottom: 0;
+.body .sentenceSection .sentence p {
+  width: 80%;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1.8;
 }
-
-.section {
+.body .linkSection {
+  background-color: rgb(178, 178, 178);
   width: 100%;
-  height: 500px;
-  padding: 0 3rem;
+  padding: 5rem;
+}
+.body .linkSection .linkBox {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: rgb(60, 60, 60);
+  flex-direction: row;
 }
-
-.imageBox {
-  display: flex;
+.body .linkSection .linkBox .linkItem:nth-child(2) {
+  margin: 0 2rem;
 }
-.imageBox .image {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  opacity: 0.5;
-}
-.imageBox .image:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-.imageItem {
+.body .linkSection .linkBox .linkItem {
+  width: 33%;
+  height: 300px;
   position: relative;
 }
-
-.imageTitle {
-  padding: 0;
-  margin: 0;
+.body .linkSection .linkBox .linkItem .linkTitle {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-weight: bold;
-  font-size: 2rem;
 }
-
-.access {
-  padding: 3rem;
+.body .linkSection .linkBox .linkItem:hover {
+  background-color: black;
+  opacity: 0.7;
+}
+.body .accessSection {
+  background-color: white;
+  padding: 5rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.access h1 {
+.body .accessSection .titleBox {
+  border: 3px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+.body .accessSection .titleBox h4 {
   margin: 0;
-  margin-bottom: 2rem;
+}
+.body .accessSection .titleBox h1 {
   font-size: 2rem;
+  margin: 0 0 3rem;
 }
-.access p {
-  margin: 0;
-}
-.access > .main {
-  width: 100%;
-  padding: 1rem;
+.body .accessSection .accessBox {
+  border: 5px solid greenyellow;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.access .address {
-  margin-left: 5rem;
+.body .accessSection .accessBox .mapBox {
+  border: 5px solid orange;
+  width: 45%;
 }
-.access .address p {
-  margin: 1rem 0;
-}
-.access .addressItem {
-  border-bottom: 1px solid black;
-  display: flex;
-  align-items: center;
-}
-.access .addressTitle {
-  width: 100px;
-  margin-right: 1rem;
-  font-weight: bold;
-}
-
-.contact {
-  border-top: 1px solid black;
-  background-color: white;
+.body .accessSection .accessBox .mapBox .mapSize {
   width: 100%;
-  padding: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 400px;
 }
-
-.contactMain {
-  background-color: white;
-  border-radius: 10px;
-  padding: 1rem 2rem;
+.body .accessSection .accessBox .addressBox {
+  border: 3px solid blue;
+  width: 55%;
+  height: 100%;
+  padding: 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
-
-.contactTitle {
-  text-align: center;
-  margin-bottom: 2rem;
+.body .accessSection .accessBox .addressBox .address:nth-child(4) {
+  margin-bottom: 0;
 }
-.contactTitle h1,
-.contactTitle p {
-  margin: 0;
-}
-
-.form {
-  padding: 1rem;
-  width: 550px;
-}
-
-.contactItem {
-  margin-bottom: 2rem;
+.body .accessSection .accessBox .addressBox .address {
+  border-bottom: 1px solid black;
   display: flex;
+  flex-direction: row;
+  width: 85%;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
-
-.label {
-  border-left: 3px solid black;
-  padding-left: 1rem;
-  margin-right: 2rem;
-  width: 150px;
+.body .accessSection .accessBox .addressBox .address .title {
+  margin: 0;
+  width: 100px;
+  font-weight: bold;
   display: flex;
   align-items: center;
 }
-
-.input {
-  width: 300px;
-  border: 1px solid black;
+.body .accessSection .accessBox .addressBox .address .item {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.body .accessSection .accessBox .addressBox .address .itemBox {
+  width: 100%;
+}
+.body .accessSection .accessBox .addressBox .address .itemBox .item:nth-child(1) {
+  margin-bottom: 0.8rem;
 }
 
-.input[type=text],
-.input[type=email] {
-  font-size: 15px;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.textarea {
-  font-size: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  max-height: 150px;
-}
-
-.buttonArea {
-  text-align: center;
-}
-
-.button[type=submit] {
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  margin: 0 5px;
-  box-shadow: 1px 1px 3px black;
-  cursor: pointer;
-}
-.button[type=submit]:hover {
-  opacity: 0.6;
-}
-
-.button[type=reset] {
-  background-color: gray;
-  color: white;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  margin: 0 5px;
-  box-shadow: 1px 1px 3px black;
-  cursor: pointer;
-}
-.button[type=reset]:hover {
-  opacity: 0.6;
-}
-
-@media screen and (max-width: 950px) {
-  .article {
-    width: 600px;
+@media screen and (max-width: 1024px) {
+  .body .sentenceSection {
+    padding: 3rem;
+  }
+  .body .sentenceSection .sentence:nth-child(1) {
+    margin-bottom: 3rem;
+  }
+  .body .sentenceSection .sentence p {
+    font-size: 16px;
+  }
+  .body .linkSection {
+    padding: 3rem;
+  }
+  .body .accessSection {
+    background-color: pink;
+  }
+  .body .accessSection .accessBox {
+    flex-direction: column;
+  }
+  .body .accessSection .accessBox .mapBox {
+    width: 100%;
+  }
+  .body .accessSection .accessBox .mapBox .mapSize {
+    height: 300px;
+  }
+  .body .accessSection .accessBox .addressBox {
+    border: 3px solid blue;
+    width: 100%;
+  }
+  .body .accessSection .accessBox .addressBox .address {
+    width: 80%;
+    padding: 0 1.5rem 0.5rem;
   }
 }
-@media screen and (max-width: 650px) {
-  .article {
+@media screen and (max-width: 768px) {
+  .body .headerSection {
+    height: 300px;
+  }
+  .body .sentenceSection {
+    background-color: skyblue;
+  }
+  .body .sentenceSection .sentence .titleBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
+  }
+  .body .sentenceSection .sentence .titleBox h4 {
+    font-size: 0.8rem;
+  }
+  .body .sentenceSection .sentence .titleBox h1 {
+    font-size: 1.6rem;
+    margin: 0 0 2rem;
+  }
+  .body .sentenceSection .sentence p {
+    width: 100%;
+    font-size: 15px;
+  }
+  .body .linkSection {
+    display: flex;
+    justify-content: center;
+  }
+  .body .linkSection .linkBox {
+    width: 80%;
+    flex-direction: column;
+  }
+  .body .linkSection .linkBox .linkItem:nth-child(2) {
+    margin: 2rem 0;
+  }
+  .body .linkSection .linkBox .linkItem {
+    width: 100%;
+    height: 180px;
+  }
+  .body .accessSection {
+    background-color: white;
+    padding: 3rem;
+  }
+  .body .accessSection .titleBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .body .accessSection .titleBox h4 {
+    font-size: 0.8rem;
+  }
+  .body .accessSection .titleBox h1 {
+    font-size: 1.6rem;
+    margin: 0 0 2rem;
+  }
+  .body .accessSection .accessBox {
+    width: 100%;
+  }
+  .body .accessSection .accessBox .mapBox {
+    width: 100%;
+  }
+  .body .accessSection .accessBox .mapBox .mapSize {
+    height: 230px;
+  }
+  .body .accessSection .accessBox .addressBox {
+    border: 3px solid blue;
+    width: 100%;
+  }
+  .body .accessSection .accessBox .addressBox .address {
+    font-size: 15px;
+    width: 100%;
+    padding: 0 1.5rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .body .headerSection {
+    height: 250px;
+  }
+  .body .sentenceSection {
+    background-color: white;
+  }
+  .body .sentenceSection .sentence .titleBox h4 {
+    font-size: 0.8rem;
+  }
+  .body .sentenceSection .sentence .titleBox h1 {
+    font-size: 1.6rem;
+    margin: 0 0 2rem;
+  }
+  .body .linkSection {
+    padding: 1.5rem;
+  }
+  .body .linkSection .linkBox {
+    width: 100%;
+  }
+  .body .linkSection .linkBox .linkItem:nth-child(2) {
+    margin: 1.5rem 0;
+  }
+  .body .accessSection {
+    background-color: white;
+  }
+  .body .accessSection .titleBox {
+    border: none;
+  }
+  .body .accessSection .titleBox h4 {
+    font-size: 0.8rem;
+  }
+  .body .accessSection .titleBox h1 {
+    font-size: 1.6rem;
+    margin: 0 0 2rem;
+  }
+  .body .accessSection .accessBox {
+    border: none;
+    width: 100%;
+  }
+  .body .accessSection .accessBox .mapBox {
+    border: none;
+  }
+  .body .accessSection .accessBox .addressBox {
+    border: none;
+    padding: 1.5rem 0;
+  }
+  .body .accessSection .accessBox .addressBox .address {
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    padding: 0 0 0.5rem;
+  }
+  .body .accessSection .accessBox .addressBox .address .title {
+    width: 90px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .body .headerSection {
+    height: 250px;
+  }
+  .body .sentenceSection {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .body .sentenceSection .sentence:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+  .body .sentenceSection .sentence {
+    width: 80%;
+  }
+  .body .sentenceSection .sentence .titleBox h4 {
+    font-size: 0.8rem;
+  }
+  .body .sentenceSection .sentence .titleBox h1 {
+    font-size: 1.6rem;
+    margin: 0 0 1.5rem;
+  }
+  .body .accessSection {
+    background-color: white;
+    padding: 1.5rem;
+  }
+  .body .accessSection .titleBox {
+    border: none;
+  }
+  .body .accessSection .titleBox h4 {
+    font-size: 0.8rem;
+  }
+  .body .accessSection .titleBox h1 {
+    font-size: 1.6rem;
+    margin: 0 0 1.5rem;
+  }
+  .body .accessSection .accessBox {
+    border: none;
+    width: 100%;
+  }
+  .body .accessSection .accessBox .mapBox {
+    border: none;
+  }
+  .body .accessSection .accessBox .addressBox {
+    border: none;
+    padding: 1.5rem 0;
+  }
+  .body .accessSection .accessBox .addressBox .address {
+    border: none;
+    font-size: 14px;
+    padding: 0 0 0.5rem;
+  }
+  .body .accessSection .accessBox .addressBox .address .title {
+    width: 90px;
   }
 }
 /*# sourceMappingURL=Home.module.css.map */

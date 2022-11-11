@@ -1,83 +1,74 @@
 import styles from "./header.module.scss";
 import Link from "next/link";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 export default function Nav() {
-  const [openMenu, setOpenMenu] = useState(false);
-  const menuFunction = () => {
-    setOpenMenu(!openMenu);
+  const [nav, setNav] = useState(false);
+
+  const handleNav = () => {
+    setNav(!nav);
   };
   return (
-    <div>
-      <header className={styles.header}>
-        <div className={styles.logo}>
+    <div className={styles.body}>
+      <div className={styles.section}>
+        <Link href="/">
           <h1>No Beer No Life Tokyo</h1>
-        </div>
-        <div className={styles.nothing}></div>
-
-        <nav className={styles.nav}>
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/menu/all-menu">
-                <a>Menu</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <div className={styles.container}>
-          <div className={styles.humburger} onClick={() => menuFunction()}>
-            <span className={openMenu ? styles.open : undefined}></span>
-            <span className={openMenu ? styles.open : undefined}></span>
-            <span className={openMenu ? styles.open : undefined}></span>
-            {/* <p className={openMenu ? styles.open : undefined}>Menu</p> */}
-          </div>
-        </div>
-      </header>
-      <div
-        className={`${styles.drawerMenu} ${openMenu ? styles.open : undefined}`}
-      >
-        <ul>
-          <div className={styles.close} onClick={() => menuFunction()}>
-            <div className={styles.border}>
-              <div className={styles.closeBox}>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
+        </Link>
+        <ul className={styles.normal}>
           <li>
             <Link href="/">
-              <a>
-                <h1 className={styles.mainTitle}>Home</h1>
-              </a>
+              <a>Home</a>
             </Link>
           </li>
           <li>
             <Link href="/menu/all-menu">
-              <a>
-                <h1 className={styles.mainTitle}>Menu</h1>
-              </a>
+              <a>Menu</a>
             </Link>
           </li>
           <li>
             <Link href="/blog">
-              <a>
-                <h1 className={styles.mainTitle}>Blog</h1>
-              </a>
+              <a>Blog</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/#contact">
+              <a className={styles.orangeButton}>Contact</a>
             </Link>
           </li>
         </ul>
+        {/* モバイル用のボタン */}
+        <div className={styles.button} onClick={handleNav}>
+          {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
+          {/* <AiOutlineMenu size={30} /> */}
+        </div>
+
+        {/* モバイル用のメニュー */}
+        <div className={nav ? styles.menu : styles.menu00}>
+          {/* <div className={styles.menu}> */}
+          <ul>
+            <li onClick={handleNav}>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
+            <li onClick={handleNav}>
+              <Link href="/menu/all-menu">
+                <a>Menu</a>
+              </Link>
+            </li>
+            <li onClick={handleNav}>
+              <Link href="/blog">
+                <a>Blog</a>
+              </Link>
+            </li>
+            <li onClick={handleNav}>
+              <Link href="/#contact">
+                <a>Contact</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
