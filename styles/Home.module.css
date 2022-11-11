@@ -86,7 +86,6 @@
   flex-direction: column;
 }
 .body .accessSection .titleBox {
-  border: 3px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +100,6 @@
   margin: 0 0 3rem;
 }
 .body .accessSection .accessBox {
-  border: 5px solid greenyellow;
   width: 90%;
   display: flex;
   justify-content: center;
@@ -109,7 +107,6 @@
   flex-direction: row;
 }
 .body .accessSection .accessBox .mapBox {
-  border: 5px solid orange;
   width: 45%;
 }
 .body .accessSection .accessBox .mapBox .mapSize {
@@ -117,7 +114,6 @@
   height: 400px;
 }
 .body .accessSection .accessBox .addressBox {
-  border: 3px solid blue;
   width: 55%;
   height: 100%;
   padding: 1rem;
@@ -160,7 +156,6 @@
 
 @media screen and (max-width: 1024px) {
   .body .sentenceSection {
-    border: 5px solid red;
     padding: 3rem;
   }
   .body .sentenceSection .sentence:nth-child(1) {
@@ -172,9 +167,6 @@
   .body .linkSection {
     padding: 3rem;
   }
-  .body .accessSection {
-    background-color: pink;
-  }
   .body .accessSection .accessBox {
     flex-direction: column;
   }
@@ -185,7 +177,6 @@
     height: 300px;
   }
   .body .accessSection .accessBox .addressBox {
-    border: 3px solid blue;
     width: 100%;
   }
   .body .accessSection .accessBox .addressBox .address {
@@ -196,9 +187,6 @@
 @media screen and (max-width: 768px) {
   .body .headerSection {
     height: 300px;
-  }
-  .body .sentenceSection {
-    background-color: skyblue;
   }
   .body .sentenceSection .sentence .titleBox {
     display: flex;
@@ -261,7 +249,6 @@
     height: 230px;
   }
   .body .accessSection .accessBox .addressBox {
-    border: 3px solid blue;
     width: 100%;
   }
   .body .accessSection .accessBox .addressBox .address {

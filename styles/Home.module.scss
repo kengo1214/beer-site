@@ -103,13 +103,13 @@
     flex-direction: column;
 
     .titleBox {
-      border: 3px solid red;
+      // border: 3px solid red;
       @include title;
       width: 90%;
     }
 
     .accessBox {
-      border: 5px solid greenyellow;
+      // border: 5px solid greenyellow;
       width: 90%;
       display: flex;
       justify-content: center;
@@ -117,7 +117,7 @@
       flex-direction: row;
 
       .mapBox {
-        border: 5px solid orange;
+        // border: 5px solid orange;
         width: 45%;
 
         .mapSize {
@@ -127,7 +127,7 @@
       }
 
       .addressBox {
-        border: 3px solid blue;
+        // border: 3px solid blue;
         width: 55%;
         height: 100%;
         padding: 1rem;
@@ -183,7 +183,7 @@
 @media screen and (max-width: 1024px) {
   .body {
     .sentenceSection {
-      border: 5px solid red;
+      // border: 5px solid red;
       padding: 3rem;
 
       .sentence:nth-child(1) {
@@ -202,7 +202,7 @@
     }
 
     .accessSection {
-      background-color: pink;
+      // background-color: pink;
 
       .accessBox {
         flex-direction: column;
@@ -216,7 +216,7 @@
         }
 
         .addressBox {
-          border: 3px solid blue;
+          // border: 3px solid blue;
           width: 100%;
 
           .address {
@@ -253,7 +253,7 @@
     }
 
     .sentenceSection {
-      background-color: skyblue;
+      // background-color: skyblue;
 
       .sentence {
         .titleBox {
@@ -307,7 +307,7 @@
         }
 
         .addressBox {
-          border: 3px solid blue;
+          // border: 3px solid blue;
           width: 100%;
 
           .address {
