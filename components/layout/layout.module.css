@@ -4,23 +4,30 @@
   display: grid;
   grid-template: "head" 130px "main" 1fr "foot" 50px/1fr;
 }
-
-.header {
+.body .header {
   grid-area: head;
-}
-
-.main {
   width: 100%;
+}
+.body .main {
   grid-area: main;
-}
-
-.footer {
   width: 100%;
+}
+.body .footer {
   grid-area: foot;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(60, 60, 60);
   color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .body {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template: "head" 100px "main" 1fr "foot" 50px/1fr;
+  }
 }
 /*# sourceMappingURL=layout.module.css.map */

@@ -136,6 +136,29 @@
   }
 }
 @media screen and (max-width: 480px) {
+  .body {
+    height: 100px;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    transition-duration: 0ms;
+  }
+  .body .section {
+    height: 100px;
+  }
+  .body .section h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+  .body .section .button {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 390px) {
+  .body {
+    height: 100px;
+  }
+  .body .section {
+    height: 100px;
+  }
   .body .section h1 {
     font-size: 25px;
   }
