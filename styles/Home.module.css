@@ -266,11 +266,14 @@
     background-color: white;
   }
   .body .sentenceSection .sentence .titleBox h4 {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .body .sentenceSection .sentence .titleBox h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 0 0 2rem;
+  }
+  .body .sentenceSection .sentence p {
+    font-size: 0.8rem;
   }
   .body .linkSection {
     padding: 1.5rem;
@@ -288,10 +291,10 @@
     border: none;
   }
   .body .accessSection .titleBox h4 {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .body .accessSection .titleBox h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 0 0 2rem;
   }
   .body .accessSection .accessBox {
@@ -307,7 +310,7 @@
   }
   .body .accessSection .accessBox .addressBox .address {
     border-bottom: 1px solid black;
-    font-size: 14px;
+    font-size: 0.8rem;
     padding: 0 0 0.5rem;
   }
   .body .accessSection .accessBox .addressBox .address .title {
@@ -333,10 +336,10 @@
     width: 100%;
   }
   .body .sentenceSection .sentence .titleBox h4 {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .body .sentenceSection .sentence .titleBox h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 0 0 1.5rem;
   }
   .body .accessSection {
@@ -347,10 +350,10 @@
     border: none;
   }
   .body .accessSection .titleBox h4 {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .body .accessSection .titleBox h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 0 0 1.5rem;
   }
   .body .accessSection .accessBox {
@@ -365,8 +368,7 @@
     padding: 1.5rem 0;
   }
   .body .accessSection .accessBox .addressBox .address {
-    border: none;
-    font-size: 14px;
+    border-bottom: 1px solid black;
     padding: 0 0 0.5rem;
   }
   .body .accessSection .accessBox .addressBox .address .title {

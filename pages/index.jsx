@@ -96,7 +96,7 @@ export default function Home() {
             <div className={styles.address}>
               <p className={styles.title}>住所</p>
               <p className={styles.item}>
-                〒150-0000 東京都渋谷区恵比寿◯-◯-◯ ◯◯ビル1F
+                〒150-0000 東京都渋谷区恵比寿1-2-3 エビスビル1F
               </p>
             </div>
             <div className={styles.address}>
