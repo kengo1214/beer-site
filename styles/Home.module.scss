@@ -19,7 +19,7 @@
 
   .headerSection {
     width: 100%;
-    height: 400px;
+    height: 350px;
     background-image: url("/image/mainHeader.jpg");
     background-size: cover;
     background-position: center;
@@ -46,8 +46,8 @@
       }
 
       p {
-        width: 80%;
         font-size: 18px;
+        width: 80%;
         margin: 0;
         line-height: 1.8;
       }
@@ -94,7 +94,6 @@
   }
 
   .accessSection {
-    background-color: white;
     padding: 5rem;
     width: 100%;
     display: flex;
@@ -103,13 +102,11 @@
     flex-direction: column;
 
     .titleBox {
-      // border: 3px solid red;
       @include title;
       width: 90%;
     }
 
     .accessBox {
-      // border: 5px solid greenyellow;
       width: 90%;
       display: flex;
       justify-content: center;
@@ -117,7 +114,6 @@
       flex-direction: row;
 
       .mapBox {
-        // border: 5px solid orange;
         width: 45%;
 
         .mapSize {
@@ -127,7 +123,6 @@
       }
 
       .addressBox {
-        // border: 3px solid blue;
         width: 55%;
         height: 100%;
         padding: 1rem;
@@ -141,7 +136,6 @@
         }
 
         .address {
-          // border: 3px solid magenta;
           border-bottom: 1px solid black;
           display: flex;
           flex-direction: row;
@@ -166,6 +160,7 @@
           }
 
           .itemBox {
+            // border: 3px solid green;
             width: 100%;
 
             .item:nth-child(1) {
@@ -182,8 +177,12 @@
 
 @media screen and (max-width: 1024px) {
   .body {
+    .headerSection {
+      height: 300px;
+    }
+
+    // background-color: pink;
     .sentenceSection {
-      // border: 5px solid red;
       padding: 3rem;
 
       .sentence:nth-child(1) {
@@ -202,13 +201,19 @@
     }
 
     .accessSection {
-      // background-color: pink;
+      padding: 3rem;
+
+      .titleBox {
+        @include title;
+        width: 100%;
+      }
 
       .accessBox {
         flex-direction: column;
+        width: 100%;
 
         .mapBox {
-          width: 100%;
+          width: 70%;
 
           .mapSize {
             height: 300px;
@@ -216,12 +221,12 @@
         }
 
         .addressBox {
-          // border: 3px solid blue;
           width: 100%;
+          padding: 2rem 0;
 
           .address {
-            width: 80%;
-            padding: 0 1.5rem 0.5rem;
+            font-size: 16px;
+            width: 70%;
           }
         }
       }
@@ -233,10 +238,6 @@
 
 @media screen and (max-width: 768px) {
   @mixin title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     h4 {
       font-size: 0.8rem;
     }
@@ -248,13 +249,13 @@
   }
 
   .body {
+    // background-color: skyblue;
+
     .headerSection {
       height: 300px;
     }
 
     .sentenceSection {
-      // background-color: skyblue;
-
       .sentence {
         .titleBox {
           @include title;
@@ -287,9 +288,16 @@
       }
     }
 
+    // 🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦
+
     .accessSection {
-      background-color: white;
       padding: 3rem;
+
+      .titleBox {
+        @include title;
+        width: 100%;
+      }
+
       .titleBox {
         @include title;
         width: 100%;
@@ -299,7 +307,7 @@
         width: 100%;
 
         .mapBox {
-          width: 100%;
+          width: 85%;
 
           .mapSize {
             height: 230px;
@@ -307,14 +315,12 @@
         }
 
         .addressBox {
-          // border: 3px solid blue;
           width: 100%;
+          padding: 2rem 0;
 
           .address {
             font-size: 15px;
-            width: 100%;
-            padding: 0 1.5rem 0.5rem;
-            margin-bottom: 1rem;
+            width: 85%;
           }
         }
       }
@@ -339,12 +345,13 @@
   }
 
   .body {
+    // background-color: greenyellow;
     .headerSection {
       height: 250px;
     }
 
     .sentenceSection {
-      background-color: white;
+      // background-color: white;
 
       .sentence {
         .titleBox {
@@ -371,7 +378,7 @@
     }
 
     .accessSection {
-      background-color: white;
+      // background-color: white;
 
       .titleBox {
         border: none;
@@ -383,14 +390,18 @@
         width: 100%;
 
         .mapBox {
+          //以下のwidth: 100%;は本来存在しないので消して大丈夫🔥🔥🔥
+          width: 100%;
           border: none;
         }
 
         .addressBox {
-          border: none;
+          // border: 5px solid red;
           padding: 1.5rem 0;
 
           .address {
+            //以下のwidth: 100%;は本来存在しないので消して大丈夫🔥🔥🔥
+            width: 100%;
             border-bottom: 1px solid black;
 
             // border: none;
@@ -435,7 +446,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 1.5rem;
+      // 👇👇👇👇👇
+      padding: 1.5rem 2.5rem;
+      // padding: 1.5rem;
       // padding: 1.5rem 0rem;
       // padding: 1.5rem 0.5rem;
       // padding: 1rem;
@@ -458,7 +471,10 @@
 
     .accessSection {
       background-color: white;
-      padding: 1.5rem;
+      // 👇👇👇👇👇
+      padding: 1.5rem 2.5rem;
+      // padding: 1.5rem 2rem;
+      // padding: 1.5rem;
 
       .titleBox {
         border: none;
