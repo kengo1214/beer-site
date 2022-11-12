@@ -343,7 +343,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem 2.5rem;
+    padding: 2.5rem;
   }
   .body .sentenceSection .sentence:nth-child(1) {
     margin-bottom: 2.5rem;
