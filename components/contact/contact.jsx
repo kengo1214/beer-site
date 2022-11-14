@@ -59,11 +59,11 @@ export default function Contact() {
               type="submit"
               value="送信"
             />
-            <input className={styles.button} type="reset" value="リセット" />
+            <input type="reset" value="リセット" />
+            {/* <input className={styles.button} type="reset" value="リセット" /> */}
           </div>
         </form>
       </main>
     </div>
   );
 }
-

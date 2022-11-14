@@ -96,12 +96,12 @@
       justify-content: center;
       align-items: center;
 
-      .button[type="submit"] {
+      input[type="submit"] {
         @include button;
         background-color: red;
       }
 
-      .button[type="reset"] {
+      input[type="reset"] {
         @include button;
         background-color: gray;
       }
@@ -164,8 +164,7 @@
   @mixin button {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
-    border-radius: 0;
-    // border-radius: 3px;
+    border-radius: 3px;
   }
 
   .body {
@@ -199,11 +198,11 @@
       }
 
       .buttonBox {
-        .button[type="submit"] {
+        input[type="submit"] {
           @include button;
         }
 
-        .button[type="reset"] {
+        input[type="reset"] {
           @include button;
         }
       }

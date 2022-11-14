@@ -73,7 +73,7 @@
   justify-content: center;
   align-items: center;
 }
-.body .main .buttonBox .button[type=submit] {
+.body .main .buttonBox input[type=submit] {
   color: white;
   padding: 0.5rem 1.5rem;
   font-weight: bold;
@@ -84,10 +84,10 @@
   box-shadow: 1px 1px 5px black;
   background-color: red;
 }
-.body .main .buttonBox .button[type=submit]:hover {
+.body .main .buttonBox input[type=submit]:hover {
   opacity: 0.8;
 }
-.body .main .buttonBox .button[type=reset] {
+.body .main .buttonBox input[type=reset] {
   color: white;
   padding: 0.5rem 1.5rem;
   font-weight: bold;
@@ -98,7 +98,7 @@
   box-shadow: 1px 1px 5px black;
   background-color: gray;
 }
-.body .main .buttonBox .button[type=reset]:hover {
+.body .main .buttonBox input[type=reset]:hover {
   opacity: 0.8;
 }
 
@@ -156,12 +156,12 @@
   .body .main form .contactItem label {
     width: 150px;
   }
-  .body .main .buttonBox .button[type=submit] {
+  .body .main .buttonBox input[type=submit] {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
     border-radius: 3px;
   }
-  .body .main .buttonBox .button[type=reset] {
+  .body .main .buttonBox input[type=reset] {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
     border-radius: 3px;
