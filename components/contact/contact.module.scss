@@ -164,7 +164,8 @@
   @mixin button {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
-    border-radius: 3px;
+    border-radius: 0;
+    // border-radius: 3px;
   }
 
   .body {
