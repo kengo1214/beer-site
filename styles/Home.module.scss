@@ -249,8 +249,6 @@
   }
 
   .body {
-    // background-color: skyblue;
-
     .headerSection {
       height: 300px;
     }
@@ -274,7 +272,6 @@
       justify-content: center;
 
       .linkBox {
-        width: 80%;
         flex-direction: column;
 
         .linkItem:nth-child(2) {
@@ -367,6 +364,8 @@
 
     .linkSection {
       padding: 1.5rem;
+
+      // 👇👇👇👇👇👇👇👇👇👇👇👇
 
       .linkBox {
         width: 100%;
@@ -470,6 +469,9 @@
       }
     }
 
+    // .linkSection {
+    // }
+
     .accessSection {
       background-color: white;
       // 👇👇👇👇👇
@@ -508,3 +510,12 @@
     }
   }
 }
+
+// @media screen and (max-width: 360px) {
+//   .body {
+//     .sentenceSection {
+//       padding: 2rem;
+//     }
+//   }
+
+// }

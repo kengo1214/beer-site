@@ -124,8 +124,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className={styles.contactSection}></section>
+      <Contact />
+      {/* <section className={styles.contactSection}></section> */}
     </div>
   );
 }

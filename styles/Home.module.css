@@ -228,7 +228,6 @@
     justify-content: center;
   }
   .body .linkSection .linkBox {
-    width: 80%;
     flex-direction: column;
   }
   .body .linkSection .linkBox .linkItem:nth-child(2) {
@@ -360,7 +359,7 @@
   }
   .body .accessSection {
     background-color: white;
-    padding: 1.5rem 2.5rem;
+    padding: 2.5rem;
   }
   .body .accessSection .titleBox {
     border: none;
