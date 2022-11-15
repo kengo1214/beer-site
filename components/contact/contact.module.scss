@@ -23,8 +23,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+  }
 
   .main {
+    position: relative;
+    z-index: 1;
     width: 80%;
     display: flex;
     justify-content: center;
@@ -164,7 +178,6 @@
   @mixin button {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
-    border-radius: 3px;
   }
 
   .body {

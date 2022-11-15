@@ -53,14 +53,8 @@ export default function Contact() {
           </div>
 
           <div className={styles.buttonBox}>
-            <input
-              id="modalOpen"
-              className={styles.button}
-              type="submit"
-              value="送信"
-            />
+            <input id="modalOpen" type="submit" value="送信" />
             <input type="reset" value="リセット" />
-            {/* <input className={styles.button} type="reset" value="リセット" /> */}
           </div>
         </form>
       </main>
