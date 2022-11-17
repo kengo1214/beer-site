@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import Contact from "../components/contact/contact";
+import LinkSection from "../components/Link/link";
 import Link from "next/link";
 
 export default function Home() {
@@ -32,51 +33,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.linkSection}>
-        <div className={styles.linkBox}>
-          <div className={styles.linkItem}>
-            <Link href="/menu/all-menu">
-              <Image
-                src="/image/menu-link.jpg"
-                layout="fill"
-                objectFit="cover"
-                alt="menu"
-              />
-            </Link>
-            <Link href="/menu/all-menu">
-              <a className={styles.linkTitle}>Menu</a>
-            </Link>
-          </div>
-
-          <div className={styles.linkItem}>
-            <Link href="/blog">
-              <Image
-                src="/image/blog-link.jpg"
-                layout="fill"
-                objectFit="cover"
-                alt="blog"
-              />
-            </Link>
-            <Link href="/blog">
-              <a className={styles.linkTitle}>Blog</a>
-            </Link>
-          </div>
-
-          <div className={styles.linkItem}>
-            <Link href="/">
-              <Image
-                src="/image/contact-link.jpg"
-                layout="fill"
-                objectFit="cover"
-                alt="contact"
-              />
-            </Link>
-            <Link href="/">
-              <a className={styles.linkTitle}>Contact</a>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <LinkSection />
 
       <section className={styles.accessSection}>
         <div className={styles.titleBox}>

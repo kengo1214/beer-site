@@ -112,7 +112,8 @@
 
       input[type="submit"] {
         @include button;
-        background-color: red;
+        background-color: orangered;
+        // background-color: red;
       }
 
       input[type="reset"] {

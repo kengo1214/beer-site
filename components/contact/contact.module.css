@@ -95,7 +95,7 @@
   margin: 0 0.5rem;
   cursor: pointer;
   box-shadow: 1px 1px 5px black;
-  background-color: red;
+  background-color: orangered;
 }
 .body .main .buttonBox input[type=submit]:hover {
   opacity: 0.8;

@@ -160,7 +160,6 @@
           }
 
           .itemBox {
-            // border: 3px solid green;
             width: 100%;
 
             .item:nth-child(1) {
@@ -331,25 +330,20 @@
   @mixin title {
     h4 {
       font-size: 0.6rem;
-      // font-size: 0.8rem;
     }
 
     h1 {
       font-size: 1.4rem;
-      // font-size: 1.6rem;
       margin: 0 0 2rem;
     }
   }
 
   .body {
-    // background-color: greenyellow;
     .headerSection {
       height: 250px;
     }
 
     .sentenceSection {
-      // background-color: white;
-
       .sentence {
         .titleBox {
           @include title;
@@ -357,15 +351,12 @@
 
         p {
           font-size: 0.8rem;
-          // font-size: 15px;
         }
       }
     }
 
     .linkSection {
       padding: 1.5rem;
-
-      // 👇👇👇👇👇👇👇👇👇👇👇👇
 
       .linkBox {
         width: 100%;
@@ -377,8 +368,6 @@
     }
 
     .accessSection {
-      // background-color: white;
-
       .titleBox {
         border: none;
         @include title;
@@ -389,23 +378,17 @@
         width: 100%;
 
         .mapBox {
-          //以下のwidth: 100%;は本来存在しないので消して大丈夫🔥🔥🔥
           width: 100%;
           border: none;
         }
 
         .addressBox {
-          // border: 5px solid red;
           padding: 1.5rem 0;
 
           .address {
-            //以下のwidth: 100%;は本来存在しないので消して大丈夫🔥🔥🔥
             width: 100%;
             border-bottom: 1px solid black;
-
-            // border: none;
             font-size: 0.8rem;
-            // font-size: 14px;
             padding: 0 0 0.5rem;
 
             .title {
@@ -424,12 +407,10 @@
   @mixin title {
     h4 {
       font-size: 0.6rem;
-      // font-size: 0.8rem;
     }
 
     h1 {
       font-size: 1.4rem;
-      // font-size: 1.6rem;
       margin: 0 0 1.5rem;
     }
   }
@@ -445,23 +426,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // 👇👇👇👇👇
       padding: 2.5rem;
-      // padding: 1.5rem 2.5rem;
-      // padding: 1.5rem;
-      // padding: 1.5rem 0rem;
-      // padding: 1.5rem 0.5rem;
-      // padding: 1rem;
 
       .sentence:nth-child(1) {
         margin-bottom: 2.5rem;
-        // margin-bottom: 1.5rem;
-        // margin-bottom: 1rem;
       }
 
       .sentence {
         width: 100%;
-        // width: 80%;
 
         .titleBox {
           @include title;
@@ -469,16 +441,9 @@
       }
     }
 
-    // .linkSection {
-    // }
-
     .accessSection {
       background-color: white;
-      // 👇👇👇👇👇
       padding: 2.5rem;
-      // padding: 1.5rem 2.5rem;
-      // padding: 1.5rem 2rem;
-      // padding: 1.5rem;
 
       .titleBox {
         border: none;
@@ -510,12 +475,3 @@
     }
   }
 }
-
-// @media screen and (max-width: 360px) {
-//   .body {
-//     .sentenceSection {
-//       padding: 2rem;
-//     }
-//   }
-
-// }
