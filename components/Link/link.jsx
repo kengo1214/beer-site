@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./link.module.scss";
+import { Link as Scroll } from "react-scroll";
 
 export default function LinkSection() {
   return (
@@ -41,7 +42,13 @@ export default function LinkSection() {
         </div>
 
         <div className={styles.linkItem}>
-          <Link href="/">
+          <Scroll
+            to="contact"
+            smooth={true}
+            duration={800}
+            className={styles.link}
+            offset={-129}
+          >
             <Image
               src={"/image/contact-link.jpg"}
               layout="fill"
@@ -49,11 +56,20 @@ export default function LinkSection() {
               alt="image"
               className={styles.image}
             />
-          </Link>
+          </Scroll>
+
           <div className={styles.sentence}>
-            <Link href="/">
+            {/* <Link href="/"> */}
+            <Scroll
+              to="contact"
+              smooth={true}
+              duration={800}
+              className={styles.link}
+              offset={-130}
+            >
               <h1>Contact</h1>
-            </Link>
+            </Scroll>
+            {/* </Link> */}
           </div>
         </div>
       </div>
