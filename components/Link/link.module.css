@@ -30,6 +30,7 @@
 }
 .linkSection .linkBox .linkItem .image:hover {
   opacity: 0.7;
+  transition: 300ms;
 }
 .linkSection .linkBox .linkItem .sentence {
   position: absolute;

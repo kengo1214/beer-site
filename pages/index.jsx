@@ -4,10 +4,12 @@ import styles from "../styles/Home.module.scss";
 import Contact from "../components/contact/contact";
 import LinkSection from "../components/Link/link";
 import Link from "next/link";
+import Header from "../components/Header/header";
 
 export default function Home() {
   return (
-    <div className={styles.body}>
+    <div className={styles.body} id="/">
+      <Header />
       <section className={styles.headerSection}></section>
 
       <section className={styles.sentenceSection}>

@@ -52,7 +52,7 @@ export default function LinkSection() {
           </Link>
           <div className={styles.sentence}>
             <Link href="/">
-              <h1>Menu</h1>
+              <h1>Contact</h1>
             </Link>
           </div>
         </div>

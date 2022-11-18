@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { client00 } from "../../libs/client";
 import { groupBy } from "../../libs/util";
+import HeaderAnother from "../../components/Header/headerAnother";
 
 //（1）パスを生成
 export const getStaticPaths = async () => {
@@ -54,6 +55,7 @@ export const getStaticProps = async (context) => {
 export default function BlogId({ title, news, monthlyIndex }) {
   return (
     <div className={styles.body}>
+      <HeaderAnother />
       <div className={styles.header}>
         <h1>Blog</h1>
       </div>

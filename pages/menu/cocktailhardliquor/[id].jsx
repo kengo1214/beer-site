@@ -3,6 +3,7 @@ import { clientMenu } from "../../../libs/client";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/[id].module.scss";
+import HeaderAnother from "../../../components/Header/headerAnother";
 
 //getStaticPaths(パスの指定)
 export async function getStaticPaths() {
@@ -36,6 +37,7 @@ export async function getStaticProps(context) {
 export default function MoreInformation({ cocktail }) {
   return (
     <div className={styles.body}>
+      <HeaderAnother />
       <div className={styles.header}>
         <h1>All Menu -Bottle Beer- </h1>
       </div>
@@ -77,4 +79,3 @@ export default function MoreInformation({ cocktail }) {
     </div>
   );
 }
-

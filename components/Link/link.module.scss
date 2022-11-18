@@ -21,6 +21,7 @@
       position: relative;
       border-radius: 10px;
       box-shadow: 10px 10px 10px gray;
+      
 
       .image {
         width: 100%;
@@ -32,6 +33,7 @@
 
         &:hover {
           opacity: 0.7;
+          transition: 300ms;
         }
       }
 

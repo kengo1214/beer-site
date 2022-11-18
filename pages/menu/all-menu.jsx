@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/all-menu.module.scss";
 import { clientMenu } from "../../libs/client";
+import HederAnother from "../../components/Header/headerAnother";
 
 export default function AllMenu({
   barrelbeer,
@@ -10,6 +11,7 @@ export default function AllMenu({
 }) {
   return (
     <div className={styles.body}>
+      <HederAnother/>
       <div className={styles.pageTitle}>
         <h1>All Menu</h1>
       </div>

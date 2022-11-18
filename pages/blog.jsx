@@ -3,6 +3,7 @@ import Link from "next/link";
 import { client00 } from "../libs/client";
 import { groupBy } from "../libs/util";
 import styles from "../styles/blog.module.scss";
+import HeaderAnother from "../components/Header/headerAnother";
 
 export const getStaticProps = async () => {
   //ニュース記事の取得
@@ -24,6 +25,7 @@ export const getStaticProps = async () => {
 export default function News({ news, monthlyIndex }) {
   return (
     <div className={styles.body}>
+      <HeaderAnother />
       <div className={styles.header}>
         <h1>Blog</h1>
       </div>

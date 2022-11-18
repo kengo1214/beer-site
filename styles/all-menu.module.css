@@ -41,7 +41,7 @@
   flex-wrap: wrap;
 }
 .body .barrel .menuSection .menuItem {
-  border: 3px solid black;
+  box-shadow: 5px 5px 10px gray;
   box-sizing: content-box;
   border-radius: 5px;
   width: calc(33% - 4rem);
@@ -53,7 +53,6 @@
 .body .barrel .menuSection .menuItem .aboutBox {
   grid-area: about;
   width: 100%;
-  border-bottom: 1px solid black;
 }
 .body .barrel .menuSection .menuItem .aboutBox .title {
   width: 100%;
@@ -137,7 +136,7 @@
   flex-wrap: wrap;
 }
 .body .bottle .menuSection .menuItem {
-  border: 3px solid black;
+  box-shadow: 5px 5px 10px gray;
   box-sizing: content-box;
   border-radius: 5px;
   width: calc(33% - 4rem);
@@ -149,7 +148,6 @@
 .body .bottle .menuSection .menuItem .aboutBox {
   grid-area: about;
   width: 100%;
-  border-bottom: 1px solid black;
 }
 .body .bottle .menuSection .menuItem .aboutBox .title {
   width: 100%;
@@ -233,7 +231,7 @@
   flex-wrap: wrap;
 }
 .body .cocktail .menuSection .menuItem {
-  border: 3px solid black;
+  box-shadow: 5px 5px 10px gray;
   box-sizing: content-box;
   border-radius: 5px;
   width: calc(33% - 4rem);
@@ -245,7 +243,6 @@
 .body .cocktail .menuSection .menuItem .aboutBox {
   grid-area: about;
   width: 100%;
-  border-bottom: 1px solid black;
 }
 .body .cocktail .menuSection .menuItem .aboutBox .title {
   width: 100%;

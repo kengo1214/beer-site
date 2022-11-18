@@ -2,7 +2,7 @@ import styles from "./header.module.scss";
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
-import { Link as Scroll } from "react-scroll";
+
 
 export default function Nav() {
   const [nav, setNav] = useState(false);
@@ -18,15 +18,9 @@ export default function Nav() {
         </Link>
         <ul className={styles.nav}>
           <li>
-            <Scroll
-              to="/"
-              smooth={true}
-              duration={800}
-              className={styles.link}
-              offset={-130}
-            >
-              Home
-            </Scroll>
+            <Link href="/" className={styles.link}>
+              <a>Home</a>
+            </Link>
           </li>
           <li>
             <Link href="/menu/all-menu" className={styles.link}>
@@ -39,15 +33,9 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Scroll
-              to="contact"
-              smooth={true}
-              duration={800}
-              className={styles.orangeButton}
-              offset={-120}
-            >
-              Contact
-            </Scroll>
+            <Link href="/#contact" className={styles.link}>
+              <a className={styles.orangeButton}>Contact</a>
+            </Link>
           </li>
         </ul>
 

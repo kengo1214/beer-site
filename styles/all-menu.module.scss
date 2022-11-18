@@ -24,7 +24,8 @@
     flex-wrap: wrap;
 
     .menuItem {
-      border: 3px solid black;
+      // border: 3px solid black;
+      box-shadow: 5px 5px 10px gray;
       box-sizing: content-box;
       border-radius: 5px;
       width: calc(33% - 4rem);
@@ -40,7 +41,7 @@
       .aboutBox {
         grid-area: about;
         width: 100%;
-        border-bottom: 1px solid black;
+        // border-bottom: 1px solid black;
 
         .title {
           width: 100%;
