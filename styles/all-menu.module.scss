@@ -1,11 +1,121 @@
-// @mixin parts {
+@mixin parts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-// }
+  .titleSection {
+    border: 5px solid black;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .menuSection {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .menuItem {
+      box-shadow: 5px 5px 10px gray;
+      box-sizing: content-box;
+      border-radius: 5px;
+      width: calc(33% - 32px);
+
+      height: 440px;
+      margin: 1rem;
+      display: grid;
+      grid-template:
+        "about" 180px
+        "image" 180px
+        "button" 80px;
+
+      .aboutBox {
+        grid-area: about;
+        width: 100%;
+
+        .title {
+          width: 100%;
+          height: 60px;
+          font-size: 18px;
+          padding: 0.5rem;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .price {
+          width: 100%;
+          height: 20px;
+          font-size: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .product {
+          height: 100px;
+          font-size: 15px;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .imageBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .image {
+          grid-area: image;
+          height: 180px;
+          width: 200px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .buttonBox {
+        grid-area: button;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          padding: 0.8rem 1.5rem;
+          border: 1px solid black;
+          border-radius: 5px;
+          margin: 0.5rem;
+          font-weight: bold;
+
+          &:hover {
+            color: white;
+            background-color: black;
+            transition: 300ms;
+          }
+        }
+      }
+    }
+  }
+}
 
 // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
 .body {
-  // border: 5px solid red;
   position: relative;
   top: 130px;
   width: 100%;
@@ -33,142 +143,18 @@
 
   .barrel {
     grid-area: barrel;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    .titleSection {
-      border: 5px solid black;
-      background-color: black;
-      color: white;
-      padding: 1rem;
-      width: 100%;
-      h1 {
-        margin: 0;
-      }
-    }
-
-    .menuSection {
-      // border: 5px solid red;
-      width: 100%;
-      height: 100%;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      .menuItem {
-        // border: 5px solid red;
-        box-shadow: 5px 5px 10px gray;
-        box-sizing: content-box;
-        border-radius: 5px;
-        width: calc(33% - 32px);
-        // width: calc(33% - 42px);
-        height: 440px;
-        margin: 1rem;
-        display: grid;
-        grid-template:
-          "about" 180px
-          "image" 180px
-          // "image" 200px
-          "button" 80px;
-
-        .aboutBox {
-          // border: 1px solid blue;
-          grid-area: about;
-          width: 100%;
-          // border-bottom: 1px solid black;
-
-          .title {
-            width: 100%;
-            height: 60px;
-            font-size: 18px;
-            padding: 0.5rem;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-
-          .price {
-            width: 100%;
-            height: 20px;
-            // height: 30px;
-            font-size: 15px;
-            // padding: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-
-          .product {
-            height: 100px;
-            // height: 110px;
-            font-size: 15px;
-            margin: 0;
-            // padding: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-
-        .imageBox {
-          // border: 1px solid green;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-
-          .image {
-            // border: 1px solid orange;
-            grid-area: image;
-            height: 180px;
-            width: 200px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-        .buttonBox {
-          // border: 1px solid magenta;
-          grid-area: button;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          a {
-            padding: 0.8rem 1.5rem;
-            // padding: 1rem 2rem;
-            border: 1px solid black;
-            border-radius: 5px;
-            margin: 0.5rem;
-            font-weight: bold;
-
-            &:hover {
-              color: white;
-              background-color: black;
-              transition: 300ms;
-            }
-          }
-        }
-      }
-    }
+    @include parts;
   }
 
-  // .bottle {
-  //   grid-area: bottle;
-  //   @include parts;
-  // }
+  .bottle {
+    grid-area: bottle;
+    @include parts;
+  }
 
-  // .cocktail {
-  //   grid-area: cocktail;
-  //   @include parts;
-  // }
+  .cocktail {
+    grid-area: cocktail;
+    @include parts;
+  }
 
   footer {
     width: 100%;
@@ -185,48 +171,22 @@
   }
 }
 
-// @media screen and (max-width: 1170px) {
-//   .body {
-//     .barrel {
-//       .menuSection {
-//         .menuItem {
-//           .aboutBox {
-//             .title {
-//               font-size: 16px;
-//               // font-size: 18px;
-//             }
-//             .price {
-//               font-size: 14px;
-//               // font-size: 15px;
-//             }
-//             .product {
-//               font-size: 14px;
-//               // font-size: 15px;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
 @media screen and (max-width: 1155px) {
   .body {
-    .barrel {
+    .barrel,
+    .bottle,
+    .cocktail {
       .menuSection {
         .menuItem {
           .aboutBox {
             .title {
               font-size: 15px;
-              // font-size: 18px;
             }
             .price {
               font-size: 13px;
-              // font-size: 15px;
             }
             .product {
               font-size: 13px;
-              // font-size: 15px;
             }
           }
         }
@@ -239,24 +199,22 @@
 
 @media screen and (max-width: 1000px) {
   .body {
-    .barrel {
+    .barrel,
+    .bottle,
+    .cocktail {
       .menuSection {
-        background-color: pink;
         .menuItem {
           width: calc(50% - 32px);
 
           .aboutBox {
             .title {
               font-size: 17px;
-              // font-size: 15px;
             }
             .price {
               font-size: 14px;
-              // font-size: 13px;
             }
             .product {
               font-size: 14px;
-              // font-size: 13px;
             }
           }
         }
@@ -267,11 +225,11 @@
 
 @media screen and (max-width: 768px) {
   .body {
-    .barrel {
+    .barrel,
+    .bottle,
+    .cocktail {
       .menuSection {
-        background-color: skyblue;
         padding: 1rem;
-        // padding: 1rem 0.5rem;
 
         .menuItem {
           width: calc(50% - 32px);
@@ -301,10 +259,10 @@
 
 @media screen and (max-width: 650px) {
   .body {
-    .barrel {
+    .barrel,
+    .bottle,
+    .cocktail {
       .menuSection {
-        background-color: greenyellow;
-
         .menuItem {
           width: 75%;
 
@@ -329,10 +287,10 @@
 @media screen and (max-width: 480px) {
   .body {
     top: 100px;
-    .barrel {
+    .barrel,
+    .bottle,
+    .cocktail {
       .menuSection {
-        background-color: orange;
-
         .menuItem {
           width: 75%;
 
@@ -357,19 +315,16 @@
 @media screen and (max-width: 390px) {
   .body {
     top: 100px;
-    .barrel {
+    .barrel,
+    .bottle,
+    .cocktail {
       .menuSection {
-        background-color: white;
-        // background-color: orange;
-
         .menuItem {
           width: 85%;
 
           .aboutBox {
             .title {
               font-size: 16px;
-              // デプロイしたのは14px
-              // font-size: 14px;
               padding: 0.3rem;
             }
             .price {
@@ -377,6 +332,33 @@
             }
             .product {
               font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 360px) {
+  .body {
+    top: 100px;
+    .barrel,
+    .bottle,
+    .cocktail {
+      .menuSection {
+        .menuItem {
+          width: 85%;
+
+          .aboutBox {
+            .title {
+              font-size: 14px;
+              padding: 0.3rem;
+            }
+            .price {
+              font-size: 12px;
+            }
+            .product {
+              font-size: 12px;
             }
           }
         }

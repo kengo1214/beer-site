@@ -17,7 +17,6 @@ export default function AllMenu({
       </div>
 
       {/* 🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺 */}
-
       <section className={styles.barrel}>
         <div className={styles.titleSection}>
           <h1>Barrel Beer</h1>
@@ -60,7 +59,8 @@ export default function AllMenu({
       </section>
 
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
-      {/* <section className={styles.bottle}>
+
+      <section className={styles.bottle}>
         <div className={styles.titleSection}>
           <h1>Bottle Beer</h1>
         </div>
@@ -82,13 +82,14 @@ export default function AllMenu({
                 </div>
               </div>
               <div className={styles.imageBox}>
-                <Image
-                  className={styles.image}
-                  src={bottlebeer.image.url}
-                  alt="image"
-                  width="200"
-                  height="200"
-                />
+                <div className={styles.image}>
+                  <Image
+                    src={bottlebeer.image.url}
+                    alt="image"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
               </div>
               <div className={styles.buttonBox}>
                 <Link href={`/menu/bottlebeer/${bottlebeer.id}`}>
@@ -98,12 +99,12 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
-      {/* <section className={styles.cocktail}>
+      <section className={styles.cocktail}>
         <div className={styles.titleSection}>
-          <h1>Barrel Beer</h1>
+          <h1>Cocktail and Hardliquor</h1>
         </div>
         <div className={styles.menuSection}>
           {cocktailhardliquor.map((cocktailhardliquor) => (
@@ -123,13 +124,14 @@ export default function AllMenu({
                 </div>
               </div>
               <div className={styles.imageBox}>
-                <Image
-                  className={styles.image}
-                  src={cocktailhardliquor.image.url}
-                  alt="image"
-                  width="200"
-                  height="200"
-                />
+                <div className={styles.image}>
+                  <Image
+                    src={cocktailhardliquor.image.url}
+                    alt="image"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
               </div>
               <div className={styles.buttonBox}>
                 <Link
@@ -141,7 +143,7 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       <footer>
         <p>No Beer No Life Tokyo</p>
