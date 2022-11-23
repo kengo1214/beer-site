@@ -1,4 +1,5 @@
-import styles from "./header.module.scss";
+// import styles from "./header.module.scss";
+import styles from "./hederAnother.module.scss"
 import Link from "next/link";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";

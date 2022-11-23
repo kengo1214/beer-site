@@ -1,2 +1,2 @@
-.body{width:100%;min-height:100vh;display:grid;grid-template:"head" 130px "main" 1fr "foot" 50px/1fr}.body .header{grid-area:head;width:100%}.body .main{grid-area:main;width:100%}.body .footer{grid-area:foot;width:100%;display:flex;justify-content:center;align-items:center;background-color:#3c3c3c;color:#fff}@media screen and (max-width: 480px){.body{width:100%;min-height:100vh;display:grid;grid-template:"head" 100px "main" 1fr "foot" 50px/1fr}}
+
 /*# sourceMappingURL=layout.module.min.css.map */

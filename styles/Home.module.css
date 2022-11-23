@@ -1,6 +1,8 @@
 .body {
   width: 100%;
   min-height: 100vh;
+  position: relative;
+  top: 130px;
 }
 .body .headerSection {
   width: 100%;
@@ -152,6 +154,18 @@
 .body .accessSection .accessBox .addressBox .address .itemBox .item:nth-child(1) {
   margin-bottom: 0.8rem;
 }
+.body footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(178, 178, 178);
+}
+.body footer p {
+  margin: 0;
+  color: white;
+}
 
 @media screen and (max-width: 1024px) {
   .body .headerSection {
@@ -279,6 +293,10 @@
   }
 }
 @media screen and (max-width: 480px) {
+  .body {
+    position: relative;
+    top: 100px;
+  }
   .body .headerSection {
     height: 250px;
   }

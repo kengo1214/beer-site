@@ -34,20 +34,25 @@ export default function MoreInformation({ barrelbeer }) {
   return (
     <div className={styles.body}>
       <HeaderAnother />
-      <div className={styles.header}>
-        <h1>All Menu -Barre Beer- </h1>
+      <div className={styles.pageTitle}>
+        <h1>All Menu - Bottle Beer -</h1>
       </div>
-      <div className={styles.section}>
-        <div className={styles.main}>
-          <div className={styles.sentenceBox}>
+
+      <main>
+        <div className={styles.box}>
+          <div className={styles.sentence}>
             <h1 className={styles.title}>{barrelbeer.title}</h1>
-            <div className={styles.price}>{barrelbeer.price}</div>
-            <div
-              className={styles.product}
-              dangerouslySetInnerHTML={{
-                __html: `${barrelbeer.product}`,
-              }}
-            />
+
+            <div className={styles.aboutBox}>
+              <p className={styles.price}>{barrelbeer.price}</p>
+              <div
+                className={styles.product}
+                dangerouslySetInnerHTML={{
+                  __html: `${barrelbeer.product}`,
+                }}
+              />
+            </div>
+
             <div
               className={styles.detail}
               dangerouslySetInnerHTML={{
@@ -55,23 +60,39 @@ export default function MoreInformation({ barrelbeer }) {
               }}
             />
           </div>
+
           <div className={styles.imageBox}>
             <div className={styles.image}>
               <Image
                 src={barrelbeer.image.url}
                 alt="image"
                 layout="fill"
+                // objectFit="cover"
                 objectFit="contain"
               />
             </div>
           </div>
-          <div className={styles.buttonBox}>
-            <Link href="/menu/all-menu">
-              <a>Back</a>
-            </Link>
-          </div>
         </div>
-      </div>
+
+        <div className={styles.button}>
+          <ul>
+            <li>
+              <Link href="/" className={styles.link}>
+                <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/menu/all-menu" className={styles.link}>
+                <a>All-Menu</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </main>
+
+      <footer>
+        <p>No Beer No Life Tokyo 2022</p>
+      </footer>
     </div>
   );
 }

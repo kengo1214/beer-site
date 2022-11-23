@@ -11,7 +11,7 @@ export default function AllMenu({
 }) {
   return (
     <div className={styles.body}>
-      <HederAnother/>
+      <HederAnother />
       <div className={styles.pageTitle}>
         <h1>All Menu</h1>
       </div>
@@ -40,13 +40,14 @@ export default function AllMenu({
                 </div>
               </div>
               <div className={styles.imageBox}>
-                <Image
-                  className={styles.image}
-                  src={barrelbeer.image.url}
-                  alt="image"
-                  width="200"
-                  height="200"
-                />
+                <div className={styles.image}>
+                  <Image
+                    src={barrelbeer.image.url}
+                    alt="image"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
               </div>
               <div className={styles.buttonBox}>
                 <Link href={`/menu/barrelbeer/${barrelbeer.id}`}>
@@ -59,8 +60,7 @@ export default function AllMenu({
       </section>
 
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
-
-      <section className={styles.bottle}>
+      {/* <section className={styles.bottle}>
         <div className={styles.titleSection}>
           <h1>Bottle Beer</h1>
         </div>
@@ -98,10 +98,10 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
-      <section className={styles.cocktail}>
+      {/* <section className={styles.cocktail}>
         <div className={styles.titleSection}>
           <h1>Barrel Beer</h1>
         </div>
@@ -141,7 +141,11 @@ export default function AllMenu({
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+
+      <footer>
+        <p>No Beer No Life Tokyo</p>
+      </footer>
     </div>
   );
 }

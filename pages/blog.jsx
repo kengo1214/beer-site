@@ -60,7 +60,7 @@ export default function News({ news, monthlyIndex }) {
           <Link href="/">
             <a>Home</a>
           </Link>
-          <Link href="/news">
+          <Link href="/blog">
             <a>Top</a>
           </Link>
         </div>

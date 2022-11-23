@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import Contact from "../components/contact/contact";
 import LinkSection from "../components/Link/link";
-import Link from "next/link";
 import Header from "../components/Header/header";
 
 export default function Home() {
@@ -84,7 +83,11 @@ export default function Home() {
         </div>
       </section>
       <Contact />
-      {/* <section className={styles.contactSection}></section> */}
+
+      <footer>
+        <p>No Beer No Life Tokyo</p>
+      </footer>
+      
     </div>
   );
 }

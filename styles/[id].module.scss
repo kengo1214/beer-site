@@ -1,190 +1,246 @@
 .body {
+  // border: 5px solid red;
+  position: relative;
+  top: 130px;
   width: 100%;
-  min-height: 100%;
-  display: grid;
-  grid-template:
-    "head" 80px
-    "section" 1fr
-    / 1fr;
+  min-height: calc(100vh - 130px);
 
-  .header {
-    grid-area: head;
+  .pageTitle {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(187 187 187);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(178 178 178);
+
+    h1 {
+      margin: 0;
+    }
   }
 
-  .section {
-    grid-area: section;
+  main {
+    // border: 5px solid red;
+    width: 100%;
+    min-height: calc(100vh - 260px);
+    padding: 3rem;
+    // padding: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
-    .main {
-      border: 3px solid black;
-      border-radius: 10px;
-      width: 60%;
-      height: 80%;
-      display: grid;
-      grid-template:
-        "sentence image" 80%
-        "button    image" 20%
-        / 70% 30%;
+    .box {
+      box-shadow: 5px 5px 10px gray;
+      border: 3px solid red;
+      width: 950px;
+      // width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
 
-      .sentenceBox {
-        grid-area: sentence;
-        padding: 0.5rem 0.5rem 0;
-        display: grid;
-        grid-template:
-          "title" 60px
-          "price" 30px
-          "product" 80px
-          "detail"
-          / 1fr;
+      .sentence {
+        border: 3px solid blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 70%;
+        padding: 1.5rem;
 
         .title {
-          grid-area: title;
+          // border: 3px solid red;
           margin: 0;
+          width: 95%;
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 23px;
+          font-size: 1.5rem;
         }
 
-        .price {
-          grid-area: price;
+        .aboutBox {
+          // border: 3px solid blue;
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 15px;
-        }
+          padding: 1.5rem 0;
+          width: 95%;
 
-        .product {
-          grid-area: product;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 13px;
+          .price {
+            margin-right: 1.5rem;
+            font-weight: bold;
+            font-size: 1rem;
+            // font-size: 1.1rem;
+          }
+
+          .product {
+            font-weight: bold;
+            font-size: 0.9rem;
+            p {
+              margin: 0;
+            }
+          }
         }
 
         .detail {
-          grid-area: detail;
-          padding: 0 0.5rem;
-          overflow: scroll;
-          font-size: 14px;
+          // border: 3px solid green;
+          width: 95%;
+          font-size: 15px;
+          line-height: 1.8;
+          padding: 0 1rem;
+
+          p {
+            margin: 0;
+          }
         }
       }
 
       .imageBox {
-        border-left: 3px solid black;
-        grid-area: image;
+        border: 3px solid green;
+        width: 30%;
         display: flex;
         justify-content: center;
-        align-items: center;
 
         .image {
-          width: 80%;
-          height: 80%;
+          // border: 3px solid orange;
+          width: 300px;
+          height: 350px;
           position: relative;
         }
       }
+    }
+  }
 
-      .buttonBox {
-        grid-area: button;
+  .button {
+    margin-top: 3rem;
+
+    ul {
+      padding: 0rem;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li:nth-child(2) {
+        margin-right: 0;
+      }
+
+      li {
+        border: 1px solid black;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        margin-right: 2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+
+        &:hover {
+          background-color: black;
+          color: white;
+          transition: 300ms;
+        }
 
         a {
-          border: 1px solid black;
-          padding: 0.5rem 1rem;
-          border-radius: 5px;
-
-          &:hover {
-            color: white;
-            background: black;
-          }
+          padding: 1rem;
         }
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(187 187 187);
+
+    p {
+      margin: 0;
+      color: black;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .body {
+    main {
+      .box {
+        width: 800px;
       }
     }
   }
 }
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 900px) {
   .body {
-    .section {
-      .main {
-        grid-template:
-          "sentence image" 80%
-          "button    image" 20%
-          / 70% 30%;
+    main {
+      .box {
+        border: 3px solid red;
+        width: 90%;
+        flex-direction: column;
 
-        .sentenceBox {
+        .sentence {
+          border: 3px solid blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          padding: 1.5rem;
+          // padding: 1.5rem 1.5rem 0;
+
           .title {
-            font-size: 20px;
-          }
-          .price {
-            font-size: 14px;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
           }
 
-          .product {
-            font-size: 12px;
+          .aboutBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0;
+            width: 100%;
+
+            .price {
+              margin-right: 1.5rem;
+              font-weight: bold;
+              font-size: 1rem;
+            }
+
+            .product {
+              font-weight: bold;
+              font-size: 0.9rem;
+              p {
+                margin: 0;
+              }
+            }
           }
 
           .detail {
-            font-size: 13px;
-          }
-        }
-
-        .imageBox {
-          .image {
-            width: 70%;
-            height: 70%;
-            position: relative;
-          }
-        }
-
-        .buttonBox {
-          a {
-            padding: 0.5rem 1rem;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 930px) {
-  .body {
-    width: 100%;
-    min-height: 100vh;
-
-    .section {
-      .main {
-        width: 600px;
-        height: 85%;
-        grid-template:
-          "sentence" 50%
-          "image" 35%
-          "button" 15%
-          / 100%;
-
-        .sentenceBox {
-          border-bottom: 1px solid black;
-          grid-template:
-            "title" 60px
-            "price" 30px
-            "product" 80px
-            "detail"
-            / 100%;
-        }
-
-        .imageBox {
-          border: none;
-          .image {
             width: 100%;
-            min-height: 170px;
+            font-size: 14px;
+            line-height: 1.8;
+            padding: 0;
+
+            p {
+              margin: 0;
+            }
+          }
+        }
+
+        .imageBox {
+          border: 3px solid green;
+          width: 100%;
+
+          .image {
+            border: 3px solid orange;
+            width: 300px;
+            height: 200px;
             position: relative;
           }
         }
@@ -195,9 +251,51 @@
 
 @media screen and (max-width: 768px) {
   .body {
-    .section {
-      .main {
-        width: 500px;
+    main {
+      .box {
+        border: 3px solid red;
+        width: 90%;
+        flex-direction: column;
+
+        .sentence {
+          border: 3px solid blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          padding: 1.5rem;
+          // padding: 1.5rem 1.5rem 0;
+
+          .title {
+            font-size: 1.3rem;
+          }
+
+          .aboutBox {
+            padding: 1rem 0;
+            width: 100%;
+
+            .price {
+              margin-right: 1.5rem;
+              font-size: 0.9rem;
+            }
+
+            .product {
+              font-size: 0.8rem;
+            }
+          }
+
+          .detail {
+            width: 100%;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 0;
+
+            p {
+              margin: 0;
+            }
+          }
+        }
       }
     }
   }
@@ -205,87 +303,120 @@
 
 @media screen and (max-width: 600px) {
   .body {
-    .section {
-      .main {
-        width: 400px;
+    main {
+      .box {
+        border: 3px solid red;
+        width: 100%;
+        // width: 90%;
+        flex-direction: column;
+
+        .sentence {
+          border: 3px solid blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          padding: 1.5rem;
+          // padding: 1.5rem 1.5rem 0;
+
+          .title {
+            font-size: 1.3rem;
+          }
+
+          .aboutBox {
+            // border: 3px solid blue;
+            flex-direction: column;
+            padding: 1rem;
+
+            .price {
+              // border: 3px solid green;
+              margin-right: 0rem;
+
+              margin: 0;
+              font-size: 0.9rem;
+            }
+
+            .product {
+              // border: 3px solid orange;
+              margin-top: 1rem;
+              font-size: 0.8rem;
+            }
+          }
+
+          .detail {
+            width: 100%;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 0;
+
+            p {
+              margin: 0;
+            }
+          }
+        }
       }
     }
   }
 }
-
 @media screen and (max-width: 480px) {
   .body {
-    .section {
-      .main {
-        width: 80%;
-        // width: 380px;
-        .sentenceBox {
+    position: relative;
+    top: 100px;
+
+    main {
+      padding: 1rem;
+
+      .box {
+        border: 3px solid red;
+        width: 100%;
+        // width: 90%;
+        flex-direction: column;
+
+        .sentence {
+          border: 3px solid blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          padding: 1.5rem;
+          // padding: 1.5rem 1.5rem 0;
+
           .title {
-            font-size: 18px;
-          }
-          .price {
-            font-size: 13px;
+            font-size: 1.1rem;
+            // font-size: 1.3rem;
           }
 
-          .product {
-            font-size: 12px;
+          .aboutBox {
+            // border: 3px solid blue;
+            flex-direction: column;
+            padding: 1rem;
+
+            .price {
+              // border: 3px solid green;
+              margin-right: 0rem;
+
+              margin: 0;
+              font-size: 0.9rem;
+            }
+
+            .product {
+              // border: 3px solid orange;
+              margin-top: 1rem;
+              font-size: 0.8rem;
+            }
           }
 
           .detail {
-            font-size: 12px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 390px) {
-  .body {
-    width: 100%;
-    min-height: 100%;
-
-    .section {
-      .main {
-        width: 80%;
-        height: 85%;
-        grid-template:
-          "sentence" 50%
-          "image" 35%
-          "button" 15%
-          / 100%;
-
-        .sentenceBox {
-          border-bottom: 1px solid black;
-          grid-template:
-            "title" 60px
-            "price" 30px
-            "product" 80px
-            "detail"
-            / 100%;
-
-          .title {
-            font-size: 15px;
-          }
-          .price {
-            font-size: 12px;
-          }
-
-          .product {
-            font-size: 11px;
-          }
-
-          .detail {
-            font-size: 12px;
-          }
-        }
-
-        .imageBox {
-          border: none;
-          .image {
             width: 100%;
-            min-height: 170px;
-            position: relative;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 0;
+
+            p {
+              margin: 0;
+            }
           }
         }
       }

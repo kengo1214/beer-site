@@ -13,9 +13,15 @@ export default function Nav() {
   return (
     <div className={styles.body}>
       <div className={styles.section}>
-        <Link href="/">
+        <Scroll
+          to="/"
+          smooth={true}
+          duration={800}
+          className={styles.link}
+          offset={-130}
+        >
           <h1>No Beer No Life Tokyo</h1>
-        </Link>
+        </Scroll>
         <ul className={styles.nav}>
           <li>
             <Scroll
@@ -61,9 +67,16 @@ export default function Nav() {
         <div className={nav ? styles.menuOpen : styles.menuClose}>
           <ul>
             <li onClick={handleNav}>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
+              <Scroll
+                to="/"
+                smooth={true}
+                duration={800}
+                className={styles.link}
+                offset={-130}
+                onClick={handleNav}
+              >
+                Home
+              </Scroll>
             </li>
             <li onClick={handleNav}>
               <Link href="/menu/all-menu">
@@ -76,13 +89,20 @@ export default function Nav() {
               </Link>
             </li>
             <li onClick={handleNav}>
-              <Link href="/#contact">
-                <a>Contact</a>
-              </Link>
+              <Scroll
+                to="contact"
+                smooth={true}
+                duration={800}
+                className={styles.orangeButton}
+                // offset={-90}/
+                offset={-120}
+                onClick={handleNav}
+              >
+                Contact
+              </Scroll>
             </li>
           </ul>
         </div>
-        {/* ############################################# */}
       </div>
     </div>
   );
