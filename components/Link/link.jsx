@@ -10,7 +10,7 @@ export default function LinkSection() {
         <div className={styles.linkItem}>
           <Link href="/menu/all-menu">
             <Image
-              src={"/image/menu-link.jpg"}
+              src={"/image/link/menu-link.jpg"}
               layout="fill"
               objectFit="cover"
               alt="image"
@@ -27,7 +27,7 @@ export default function LinkSection() {
         <div className={styles.linkItem}>
           <Link href="/blog">
             <Image
-              src={"/image/blog-link.jpg"}
+              src={"/image/link/blog-link.jpg"}
               layout="fill"
               objectFit="cover"
               alt="image"
@@ -50,7 +50,7 @@ export default function LinkSection() {
             offset={-129}
           >
             <Image
-              src={"/image/contact-link.jpg"}
+              src={"/image/link/contact-link.jpg"}
               layout="fill"
               objectFit="cover"
               alt="image"

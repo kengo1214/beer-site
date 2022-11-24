@@ -16,6 +16,10 @@
   }
 
   .menuSection {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     padding: 1rem;
@@ -23,7 +27,22 @@
     justify-content: center;
     flex-wrap: wrap;
 
+    &::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+    }
+
     .menuItem {
+      // position: absolute;
+
+      z-index: 1;
+      background-color: white;
       box-shadow: 5px 5px 10px gray;
       box-sizing: content-box;
       border-radius: 5px;
@@ -123,7 +142,6 @@
   display: grid;
   grid-template:
     "head" 100px
-    // "head" 100px
     "barrel"
     "bottle"
     "cocktail"
@@ -137,16 +155,25 @@
   .barrel {
     grid-area: barrel;
     @include parts;
+    .menuSection {
+      background-image: url("/image/all-menu/barrel.jpg");
+    }
   }
 
   .bottle {
     grid-area: bottle;
     @include parts;
+    .menuSection {
+      background-image: url("/image/all-menu/bottle.jpg");
+    }
   }
 
   .cocktail {
     grid-area: cocktail;
     @include parts;
+    .menuSection {
+      background-image: url("/image/all-menu/cocktail.jpg");
+    }
   }
 
   footer {

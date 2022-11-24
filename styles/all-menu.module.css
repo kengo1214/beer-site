@@ -27,6 +27,10 @@
   margin: 0;
 }
 .body .barrel .menuSection {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -34,7 +38,19 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.body .barrel .menuSection::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
 .body .barrel .menuSection .menuItem {
+  z-index: 1;
+  background-color: white;
   box-shadow: 5px 5px 10px gray;
   box-sizing: content-box;
   border-radius: 5px;
@@ -109,6 +125,9 @@
   background-color: black;
   transition: 300ms;
 }
+.body .barrel .menuSection {
+  background-image: url("/image/all-menu/barrel.jpg");
+}
 .body .bottle {
   grid-area: bottle;
   display: flex;
@@ -127,6 +146,10 @@
   margin: 0;
 }
 .body .bottle .menuSection {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -134,7 +157,19 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.body .bottle .menuSection::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
 .body .bottle .menuSection .menuItem {
+  z-index: 1;
+  background-color: white;
   box-shadow: 5px 5px 10px gray;
   box-sizing: content-box;
   border-radius: 5px;
@@ -209,6 +244,9 @@
   background-color: black;
   transition: 300ms;
 }
+.body .bottle .menuSection {
+  background-image: url("/image/all-menu/bottle.jpg");
+}
 .body .cocktail {
   grid-area: cocktail;
   display: flex;
@@ -227,6 +265,10 @@
   margin: 0;
 }
 .body .cocktail .menuSection {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -234,7 +276,19 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.body .cocktail .menuSection::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
 .body .cocktail .menuSection .menuItem {
+  z-index: 1;
+  background-color: white;
   box-shadow: 5px 5px 10px gray;
   box-sizing: content-box;
   border-radius: 5px;
@@ -308,6 +362,9 @@
   color: white;
   background-color: black;
   transition: 300ms;
+}
+.body .cocktail .menuSection {
+  background-image: url("/image/all-menu/cocktail.jpg");
 }
 .body footer {
   grid-area: footer;
