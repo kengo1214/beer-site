@@ -4,18 +4,10 @@
   width: 100%;
   min-height: 100vh;
   display: grid;
-  grid-template: "head" 80px "barrel" "bottle" "cocktail"/1fr;
+  grid-template: "head" 100px "barrel" "bottle" "cocktail" "footer" 50px/1fr;
 }
-.body .pageTitle {
+.body .menuNav {
   grid-area: head;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(187, 187, 187);
-}
-.body .pageTitle h1 {
-  margin: 0;
 }
 .body .barrel {
   grid-area: barrel;
@@ -318,6 +310,7 @@
   transition: 300ms;
 }
 .body footer {
+  grid-area: footer;
   width: 100%;
   height: 50px;
   display: flex;
@@ -402,6 +395,9 @@
   }
 }
 @media screen and (max-width: 650px) {
+  .body {
+    grid-template: "head" 100px "barrel" "bottle" "cocktail" "footer" 50px/1fr;
+  }
   .body .barrel .menuSection .menuItem,
 .body .bottle .menuSection .menuItem,
 .body .cocktail .menuSection .menuItem {
@@ -427,6 +423,13 @@
 @media screen and (max-width: 480px) {
   .body {
     top: 100px;
+    grid-template: "head" 130px "barrel" "bottle" "cocktail" "footer" 50px/1fr;
+  }
+  .body .barrel .titleSection h1,
+.body .bottle .titleSection h1,
+.body .cocktail .titleSection h1 {
+    font-size: 1.2rem;
+    margin: 0;
   }
   .body .barrel .menuSection .menuItem,
 .body .bottle .menuSection .menuItem,

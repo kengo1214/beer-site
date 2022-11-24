@@ -122,23 +122,16 @@
   min-height: 100vh;
   display: grid;
   grid-template:
-    "head" 80px
+    "head" 100px
+    // "head" 100px
     "barrel"
     "bottle"
     "cocktail"
+    "footer" 50px
     / 1fr;
 
-  .pageTitle {
+  .menuNav {
     grid-area: head;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(187, 187, 187);
-
-    h1 {
-      margin: 0;
-    }
   }
 
   .barrel {
@@ -157,6 +150,7 @@
   }
 
   footer {
+    grid-area: footer;
     width: 100%;
     height: 50px;
     display: flex;
@@ -259,6 +253,14 @@
 
 @media screen and (max-width: 650px) {
   .body {
+    grid-template:
+      "head" 100px
+      "barrel"
+      "bottle"
+      "cocktail"
+      "footer" 50px
+      / 1fr;
+
     .barrel,
     .bottle,
     .cocktail {
@@ -287,9 +289,24 @@
 @media screen and (max-width: 480px) {
   .body {
     top: 100px;
+
+    grid-template:
+      "head" 130px
+      "barrel"
+      "bottle"
+      "cocktail"
+      "footer" 50px
+      / 1fr;
+
     .barrel,
     .bottle,
     .cocktail {
+      .titleSection {
+        h1 {
+          font-size: 1.2rem;
+          margin: 0;
+        }
+      }
       .menuSection {
         .menuItem {
           width: 75%;

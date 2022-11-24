@@ -4,6 +4,8 @@ import styles from "../../styles/all-menu.module.scss";
 import { clientMenu } from "../../libs/client";
 import HederAnother from "../../components/Header/headerAnother";
 
+import MenuNav from "../../components/Menu-Nav/menu-nav";
+
 export default function AllMenu({
   barrelbeer,
   bottlebeer,
@@ -12,12 +14,10 @@ export default function AllMenu({
   return (
     <div className={styles.body}>
       <HederAnother />
-      <div className={styles.pageTitle}>
-        <h1>All Menu</h1>
-      </div>
+      <MenuNav className={styles.menuNav} />
 
       {/* 🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺 */}
-      <section className={styles.barrel}>
+      <section className={styles.barrel} id="barrel">
         <div className={styles.titleSection}>
           <h1>Barrel Beer</h1>
         </div>
@@ -60,7 +60,7 @@ export default function AllMenu({
 
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
 
-      <section className={styles.bottle}>
+      <section className={styles.bottle} id="bottle">
         <div className={styles.titleSection}>
           <h1>Bottle Beer</h1>
         </div>
@@ -102,7 +102,7 @@ export default function AllMenu({
       </section>
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
-      <section className={styles.cocktail}>
+      <section className={styles.cocktail} id="cocktail">
         <div className={styles.titleSection}>
           <h1>Cocktail and Hardliquor</h1>
         </div>
