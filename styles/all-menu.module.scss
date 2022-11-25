@@ -164,7 +164,7 @@
     grid-area: bottle;
     @include parts;
     .menuSection {
-      background-image: url("/image/all-menu/bottle.jpg");
+      background-image: url("/image/all-menu/bottle03.jpg");
     }
   }
 
@@ -188,6 +188,18 @@
     p {
       margin: 0;
       color: white;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .body {
+    .barrel,
+    .bottle,
+    .cocktail {
+      .menuSection {
+        padding: 1rem 10rem;
+      }
     }
   }
 }

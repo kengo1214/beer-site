@@ -245,7 +245,7 @@
   transition: 300ms;
 }
 .body .bottle .menuSection {
-  background-image: url("/image/all-menu/bottle.jpg");
+  background-image: url("/image/all-menu/bottle03.jpg");
 }
 .body .cocktail {
   grid-area: cocktail;
@@ -380,6 +380,13 @@
   color: white;
 }
 
+@media screen and (min-width: 1500px) {
+  .body .barrel .menuSection,
+.body .bottle .menuSection,
+.body .cocktail .menuSection {
+    padding: 1rem 10rem;
+  }
+}
 @media screen and (max-width: 1155px) {
   .body .barrel .menuSection .menuItem .aboutBox .title,
 .body .bottle .menuSection .menuItem .aboutBox .title,
