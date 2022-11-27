@@ -114,11 +114,17 @@
   align-items: center;
 }
 .body .barrel .menuSection .menuItem .buttonBox a {
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1rem;
   border: 1px solid black;
   border-radius: 5px;
   margin: 0.5rem;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body .barrel .menuSection .menuItem .buttonBox a .icon {
+  margin-left: 0.5rem;
 }
 .body .barrel .menuSection .menuItem .buttonBox a:hover {
   color: white;
@@ -233,11 +239,17 @@
   align-items: center;
 }
 .body .bottle .menuSection .menuItem .buttonBox a {
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1rem;
   border: 1px solid black;
   border-radius: 5px;
   margin: 0.5rem;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body .bottle .menuSection .menuItem .buttonBox a .icon {
+  margin-left: 0.5rem;
 }
 .body .bottle .menuSection .menuItem .buttonBox a:hover {
   color: white;
@@ -352,11 +364,17 @@
   align-items: center;
 }
 .body .cocktail .menuSection .menuItem .buttonBox a {
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1rem;
   border: 1px solid black;
   border-radius: 5px;
   margin: 0.5rem;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body .cocktail .menuSection .menuItem .buttonBox a .icon {
+  margin-left: 0.5rem;
 }
 .body .cocktail .menuSection .menuItem .buttonBox a:hover {
   color: white;

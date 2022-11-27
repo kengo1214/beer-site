@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/all-menu.module.scss";
+import { AiOutlineDoubleRight } from "react-icons/ai";
 import { clientMenu } from "../../libs/client";
 import HederAnother from "../../components/Header/headerAnother";
-
 import MenuNav from "../../components/Menu-Nav/menu-nav";
 
 export default function AllMenu({
@@ -18,12 +18,15 @@ export default function AllMenu({
 
       {/* 🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺 */}
       <section className={styles.barrel} id="barrel">
+
         <div className={styles.titleSection}>
           <h1>Barrel Beer</h1>
         </div>
+        
         <div className={styles.menuSection}>
           {barrelbeer.map((barrelbeer) => (
             <div key={barrelbeer.id} className={styles.menuItem}>
+
               <div className={styles.aboutBox}>
                 <div className={styles.titleBox}>
                   <div className={styles.title}>{barrelbeer.title}</div>
@@ -38,6 +41,7 @@ export default function AllMenu({
                   />
                 </div>
               </div>
+
               <div className={styles.imageBox}>
                 <div className={styles.image}>
                   <Image
@@ -50,7 +54,10 @@ export default function AllMenu({
               </div>
               <div className={styles.buttonBox}>
                 <Link href={`/menu/barrelbeer/${barrelbeer.id}`}>
-                  <a>More</a>
+                  <a>
+                    More
+                    <AiOutlineDoubleRight size={18} className={styles.icon} />
+                  </a>
                 </Link>
               </div>
             </div>
@@ -93,7 +100,10 @@ export default function AllMenu({
               </div>
               <div className={styles.buttonBox}>
                 <Link href={`/menu/bottlebeer/${bottlebeer.id}`}>
-                  <a>More</a>
+                  <a>
+                    More
+                    <AiOutlineDoubleRight size={18} className={styles.icon} />
+                  </a>
                 </Link>
               </div>
             </div>
@@ -137,7 +147,10 @@ export default function AllMenu({
                 <Link
                   href={`/menu/cocktailhardliquor/${cocktailhardliquor.id}`}
                 >
-                  <a>More</a>
+                  <a>
+                    More
+                    <AiOutlineDoubleRight size={18} className={styles.icon} />
+                  </a>
                 </Link>
               </div>
             </div>

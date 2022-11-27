@@ -1,5 +1,6 @@
 .body {
-  background-color: rgb(171, 171, 171);
+  background-color: whitesmoke;
+  background-color: gainsboro;
   grid-area: head;
   position: fixed;
   z-index: 5;
@@ -18,7 +19,6 @@
   justify-content: center;
   align-items: center;
   justify-content: space-around;
-  color: white;
 }
 .body main .title {
   display: flex;
@@ -57,7 +57,7 @@
   margin-right: 2rem;
   border-radius: 10px;
   cursor: pointer;
-  background-color: orange;
+  background-color: darkorange;
   color: white;
 }
 .body main nav ul li .list {
@@ -77,9 +77,14 @@
 .body main nav ul li:hover {
   transition: 300ms;
   color: white;
-  background-color: orangered;
+  background-color: orange;
 }
 
+@media screen and (min-width: 1500px) {
+  .body main {
+    width: 65%;
+  }
+}
 @media screen and (max-width: 1000px) {
   .body main {
     width: 100%;

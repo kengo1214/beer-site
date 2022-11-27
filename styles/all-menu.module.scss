@@ -115,11 +115,19 @@
         align-items: center;
 
         a {
-          padding: 0.8rem 1.5rem;
+          padding: 0.8rem 1rem;
+          // padding: 0.8rem 1.5rem;
           border: 1px solid black;
           border-radius: 5px;
           margin: 0.5rem;
           font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .icon {
+            margin-left: 0.5rem;
+          }
 
           &:hover {
             color: white;

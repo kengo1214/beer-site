@@ -16,6 +16,11 @@
   margin: 0;
 }
 .body main {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/image/all-menu/barrel.jpg");
   width: 100%;
   min-height: calc(100vh - 260px);
   padding: 3rem;
@@ -24,100 +29,87 @@
   align-items: center;
   flex-direction: column;
 }
+.body main::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
 .body main .box {
+  z-index: 1;
+  background-color: white;
   box-shadow: 5px 5px 10px gray;
-  border: 3px solid red;
-  width: 950px;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
 }
 .body main .box .sentence {
-  border: 3px solid blue;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 70%;
-  padding: 1.5rem;
 }
 .body main .box .sentence .title {
-  margin: 0;
-  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  margin: 0;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.3rem;
 }
 .body main .box .sentence .aboutBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 0;
-  width: 95%;
+  flex-direction: row;
+  width: 100%;
+  padding: 0.8rem;
+  font-weight: bold;
 }
 .body main .box .sentence .aboutBox .price {
-  margin-right: 1.5rem;
-  font-weight: bold;
-  font-size: 1rem;
-}
-.body main .box .sentence .aboutBox .product {
-  font-weight: bold;
+  margin: 0 1.5rem 0 0;
   font-size: 0.9rem;
 }
 .body main .box .sentence .aboutBox .product p {
   margin: 0;
+  font-size: 0.85rem;
 }
 .body main .box .sentence .detail {
-  width: 95%;
-  font-size: 15px;
+  width: 100%;
+  padding: 0.8rem;
   line-height: 1.8;
-  padding: 0 1rem;
 }
 .body main .box .sentence .detail p {
   margin: 0;
+  font-size: 0.9rem;
 }
-.body main .box .imageBox {
-  border: 3px solid green;
-  width: 30%;
-  display: flex;
-  justify-content: center;
-}
-.body main .box .imageBox .image {
-  width: 300px;
-  height: 350px;
+.body main .box .image {
   position: relative;
+  width: 30%;
+  height: 300px;
 }
-.body .button {
-  margin-top: 3rem;
-}
-.body .button ul {
-  padding: 0rem;
-  margin: 0;
-  list-style: none;
+.body main .buttonBox {
+  width: 70%;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.body .button ul li:nth-child(2) {
-  margin-right: 0;
-}
-.body .button ul li {
-  border: 1px solid black;
-  display: flex;
-  margin-right: 2rem;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.body .button ul li:hover {
-  background-color: black;
   color: white;
-  transition: 300ms;
+  z-index: 1;
 }
-.body .button ul li a {
-  padding: 1rem;
+.body main .buttonBox a {
+  color: white;
+  z-index: 1;
+  padding: 1rem 2rem;
 }
 .body footer {
   width: 100%;
@@ -132,199 +124,162 @@
   color: black;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
   .body main .box {
-    width: 800px;
+    width: 75%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
   .body main .box {
-    border: 3px solid red;
     width: 90%;
-    flex-direction: column;
-  }
-  .body main .box .sentence {
-    border: 3px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 1.5rem;
   }
   .body main .box .sentence .title {
-    margin: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-  }
-  .body main .box .sentence .aboutBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
-    width: 100%;
+    font-size: 1.3rem;
   }
   .body main .box .sentence .aboutBox .price {
-    margin-right: 1.5rem;
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  .body main .box .sentence .aboutBox .product {
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   .body main .box .sentence .aboutBox .product p {
-    margin: 0;
-  }
-  .body main .box .sentence .detail {
-    width: 100%;
-    font-size: 14px;
-    line-height: 1.8;
-    padding: 0;
+    font-size: 0.8rem;
   }
   .body main .box .sentence .detail p {
-    margin: 0;
+    font-size: 0.9rem;
   }
-  .body main .box .imageBox {
-    border: 3px solid green;
-    width: 100%;
-  }
-  .body main .box .imageBox .image {
-    border: 3px solid orange;
-    width: 300px;
-    height: 200px;
-    position: relative;
+  .body main .box .image {
+    width: 30%;
+    height: 280px;
   }
 }
 @media screen and (max-width: 768px) {
   .body main .box {
-    border: 3px solid red;
-    width: 90%;
+    width: 100%;
     flex-direction: column;
   }
   .body main .box .sentence {
-    border: 3px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     width: 100%;
-    padding: 1.5rem;
   }
   .body main .box .sentence .title {
     font-size: 1.3rem;
   }
-  .body main .box .sentence .aboutBox {
-    padding: 1rem 0;
-    width: 100%;
-  }
   .body main .box .sentence .aboutBox .price {
-    margin-right: 1.5rem;
     font-size: 0.9rem;
   }
-  .body main .box .sentence .aboutBox .product {
-    font-size: 0.8rem;
-  }
-  .body main .box .sentence .detail {
-    width: 100%;
-    font-size: 13px;
-    line-height: 1.8;
-    padding: 0;
+  .body main .box .sentence .aboutBox .product p {
+    font-size: 0.85rem;
   }
   .body main .box .sentence .detail p {
-    margin: 0;
+    font-size: 0.9rem;
+  }
+  .body main .box .image {
+    width: 100%;
+    height: 200px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
+  .body main {
+    padding: 3rem 2.5rem;
+  }
   .body main .box {
-    border: 3px solid red;
     width: 100%;
     flex-direction: column;
   }
   .body main .box .sentence {
-    border: 3px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     width: 100%;
-    padding: 1.5rem;
   }
   .body main .box .sentence .title {
     font-size: 1.3rem;
   }
-  .body main .box .sentence .aboutBox {
-    flex-direction: column;
-    padding: 1rem;
-  }
   .body main .box .sentence .aboutBox .price {
-    margin-right: 0rem;
-    margin: 0;
-    font-size: 0.9rem;
-  }
-  .body main .box .sentence .aboutBox .product {
-    margin-top: 1rem;
     font-size: 0.8rem;
   }
-  .body main .box .sentence .detail {
-    width: 100%;
-    font-size: 13px;
-    line-height: 1.8;
-    padding: 0;
+  .body main .box .sentence .aboutBox .product p {
+    font-size: 0.8rem;
   }
   .body main .box .sentence .detail p {
-    margin: 0;
+    font-size: 0.8rem;
+  }
+  .body main .box .image {
+    width: 100%;
+    height: 200px;
   }
 }
 @media screen and (max-width: 480px) {
   .body {
-    position: relative;
     top: 100px;
   }
   .body main {
-    padding: 1rem;
+    padding: 3rem 1.8rem;
   }
   .body main .box {
-    border: 3px solid red;
     width: 100%;
     flex-direction: column;
+    padding: 0.5rem;
   }
   .body main .box .sentence {
-    border: 3px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     width: 100%;
-    padding: 1.5rem;
   }
   .body main .box .sentence .title {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding: 0.5rem;
   }
   .body main .box .sentence .aboutBox {
-    flex-direction: column;
-    padding: 1rem;
+    padding: 0.5rem;
   }
   .body main .box .sentence .aboutBox .price {
-    margin-right: 0rem;
-    margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
-  .body main .box .sentence .aboutBox .product {
-    margin-top: 1rem;
-    font-size: 0.8rem;
+  .body main .box .sentence .aboutBox .product p {
+    font-size: 0.7rem;
   }
   .body main .box .sentence .detail {
-    width: 100%;
-    font-size: 13px;
-    line-height: 1.8;
-    padding: 0;
+    padding: 0.5rem;
   }
   .body main .box .sentence .detail p {
-    margin: 0;
+    font-size: 0.8rem;
+  }
+  .body main .box .image {
+    width: 100%;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .body {
+    top: 100px;
+  }
+  .body main {
+    padding: 3rem 1.8rem;
+  }
+  .body main .box {
+    width: 100%;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .body main .box .sentence {
+    width: 100%;
+  }
+  .body main .box .sentence .title {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .body main .box .sentence .aboutBox {
+    padding: 0.5rem;
+  }
+  .body main .box .sentence .aboutBox .price {
+    font-size: 0.6rem;
+    margin: 0 1rem 0 0;
+  }
+  .body main .box .sentence .aboutBox .product p {
+    font-size: 0.6rem;
+  }
+  .body main .box .sentence .detail {
+    padding: 0.5rem;
+  }
+  .body main .box .sentence .detail p {
+    font-size: 0.7rem;
+  }
+  .body main .box .image {
+    width: 100%;
+    height: 200px;
   }
 }
 /*# sourceMappingURL=[id].module.css.map */

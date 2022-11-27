@@ -60,33 +60,24 @@ export default function MoreInformation({ barrelbeer }) {
               }}
             />
           </div>
-
-          <div className={styles.imageBox}>
-            <div className={styles.image}>
-              <Image
-                src={barrelbeer.image.url}
-                alt="image"
-                layout="fill"
-                // objectFit="cover"
-                objectFit="contain"
-              />
-            </div>
+          
+          <div className={styles.image}>
+            <Image
+              src={barrelbeer.image.url}
+              layout="fill"
+              objectFit="contain"
+              alt="image"
+            />
           </div>
         </div>
 
-        <div className={styles.button}>
-          <ul>
-            <li>
-              <Link href="/" className={styles.link}>
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/menu/all-menu" className={styles.link}>
-                <a>All-Menu</a>
-              </Link>
-            </li>
-          </ul>
+        <div className={styles.buttonBox}>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <Link href="/">
+            <a>All-Menu</a>
+          </Link>
         </div>
       </main>
 

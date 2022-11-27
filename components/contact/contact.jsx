@@ -1,4 +1,5 @@
 import styles from "./contact.module.scss";
+import { AiOutlineSend } from "react-icons/ai";
 
 export default function Contact() {
   return (
