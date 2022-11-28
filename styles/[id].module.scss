@@ -105,6 +105,9 @@
         }
 
         .detail {
+          // border: 3px solid red;
+          height: 230px;
+          overflow: scroll;
           width: 100%;
           padding: 0.8rem;
           line-height: 1.8;
@@ -353,7 +356,7 @@
       padding: 3rem 2rem;
 
       .box {
-        background-color: pink;
+        // background-color: pink;
         width: 100%;
         flex-direction: column;
         padding: 0.5rem;
@@ -383,6 +386,7 @@
           }
 
           .detail {
+            height: 200px;
             padding: 0.5rem;
             p {
               // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
@@ -411,14 +415,15 @@
     top: 100px;
     .pageTitle {
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        // font-size: 1.5rem;
       }
     }
     main {
       padding: 3rem 2rem;
 
       .box {
-        background-color: skyblue;
+        // background-color: skyblue;
         width: 100%;
         flex-direction: column;
         padding: 0.5rem;

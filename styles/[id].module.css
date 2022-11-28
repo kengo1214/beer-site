@@ -84,6 +84,8 @@
   font-size: 0.85rem;
 }
 .body main .box .sentence .detail {
+  height: 230px;
+  overflow: scroll;
   width: 100%;
   padding: 0.8rem;
   line-height: 1.8;
@@ -263,7 +265,6 @@
     padding: 3rem 2rem;
   }
   .body main .box {
-    background-color: pink;
     width: 100%;
     flex-direction: column;
     padding: 0.5rem;
@@ -287,6 +288,7 @@
     font-size: 0.8rem;
   }
   .body main .box .sentence .detail {
+    height: 200px;
     padding: 0.5rem;
   }
   .body main .box .sentence .detail p {
@@ -309,13 +311,12 @@
     top: 100px;
   }
   .body .pageTitle h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .body main {
     padding: 3rem 2rem;
   }
   .body main .box {
-    background-color: skyblue;
     width: 100%;
     flex-direction: column;
     padding: 0.5rem;
