@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/[id].module.scss";
 import HeaderAnother from "../../../components/Header/headerAnother";
+import { AiOutlineDoubleLeft } from "react-icons/ai";
+import { AiOutlineRollback } from "react-icons/ai";
 
 //getStaticPaths(パスの指定)
 export async function getStaticPaths() {
@@ -35,7 +37,7 @@ export default function MoreInformation({ barrelbeer }) {
     <div className={styles.body}>
       <HeaderAnother />
       <div className={styles.pageTitle}>
-        <h1>All Menu - Bottle Beer -</h1>
+        <h1>All Menu - Barrel Beer -</h1>
       </div>
 
       <main>
@@ -60,7 +62,7 @@ export default function MoreInformation({ barrelbeer }) {
               }}
             />
           </div>
-          
+
           <div className={styles.image}>
             <Image
               src={barrelbeer.image.url}
@@ -73,10 +75,16 @@ export default function MoreInformation({ barrelbeer }) {
 
         <div className={styles.buttonBox}>
           <Link href="/">
-            <a>Home</a>
+            <a>
+              <AiOutlineDoubleLeft size={20} className={styles.icon} />
+              Home
+            </a>
           </Link>
-          <Link href="/">
-            <a>All-Menu</a>
+          <Link href="/menu/all-menu/#barrel">
+            <a>
+              <AiOutlineRollback size={20} className={styles.icon} />
+              Back
+            </a>
           </Link>
         </div>
       </main>

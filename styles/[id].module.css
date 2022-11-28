@@ -40,15 +40,15 @@
   height: 100%;
 }
 .body main .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
   background-color: white;
   box-shadow: 5px 5px 10px gray;
   border-radius: 10px;
   padding: 1rem;
   width: 65%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .body main .box .sentence {
   width: 70%;
@@ -98,7 +98,7 @@
   height: 300px;
 }
 .body main .buttonBox {
-  width: 70%;
+  width: 65%;
   margin-top: 2rem;
   display: flex;
   justify-content: center;
@@ -106,10 +106,29 @@
   color: white;
   z-index: 1;
 }
+.body main .buttonBox a:nth-child(2) {
+  margin: 0;
+}
 .body main .buttonBox a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
   color: white;
   z-index: 1;
   padding: 1rem 2rem;
+  margin: 0 2rem 0 0;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.body main .buttonBox a:hover {
+  background-color: white;
+  color: black;
+  transition: 300ms;
+}
+.body main .buttonBox a .icon {
+  margin: 0 1rem 0 0;
 }
 .body footer {
   width: 100%;
@@ -125,7 +144,13 @@
 }
 
 @media screen and (max-width: 1100px) {
+  .body .pageTitle h1 {
+    font-size: 1.8rem;
+  }
   .body main .box {
+    width: 75%;
+  }
+  .body main .buttonBox {
     width: 75%;
   }
 }
@@ -149,17 +174,29 @@
     width: 30%;
     height: 280px;
   }
+  .body main .buttonBox {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 768px) {
+  .body .pageTitle h1 {
+    font-size: 1.7rem;
+  }
   .body main .box {
     width: 100%;
     flex-direction: column;
   }
   .body main .box .sentence {
+    display: grid;
+    grid-template: "title" "product" "about" "image"/1fr;
     width: 100%;
   }
   .body main .box .sentence .title {
+    grid-area: title;
     font-size: 1.3rem;
+  }
+  .body main .box .sentence .aboutBox {
+    grid-area: product;
   }
   .body main .box .sentence .aboutBox .price {
     font-size: 0.9rem;
@@ -167,12 +204,22 @@
   .body main .box .sentence .aboutBox .product p {
     font-size: 0.85rem;
   }
+  .body main .box .sentence .detail {
+    grid-area: about;
+  }
   .body main .box .sentence .detail p {
     font-size: 0.9rem;
   }
   .body main .box .image {
+    grid-area: image;
     width: 100%;
     height: 200px;
+  }
+  .body main .buttonBox {
+    width: 100%;
+  }
+  .body main .buttonBox a {
+    padding: 0.8rem 1.5rem;
   }
 }
 @media screen and (max-width: 550px) {
@@ -182,6 +229,8 @@
   .body main .box {
     width: 100%;
     flex-direction: column;
+    padding: 1rem;
+    padding: 0.5rem;
   }
   .body main .box .sentence {
     width: 100%;
@@ -207,10 +256,14 @@
   .body {
     top: 100px;
   }
+  .body .pageTitle h1 {
+    font-size: 1.6rem;
+  }
   .body main {
-    padding: 3rem 1.8rem;
+    padding: 3rem 2rem;
   }
   .body main .box {
+    background-color: pink;
     width: 100%;
     flex-direction: column;
     padding: 0.5rem;
@@ -219,17 +272,19 @@
     width: 100%;
   }
   .body main .box .sentence .title {
-    font-size: 1rem;
-    padding: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
   }
   .body main .box .sentence .aboutBox {
+    flex-direction: column;
     padding: 0.5rem;
   }
   .body main .box .sentence .aboutBox .price {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
+    margin: 0 0 1rem;
   }
   .body main .box .sentence .aboutBox .product p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .body main .box .sentence .detail {
     padding: 0.5rem;
@@ -241,15 +296,26 @@
     width: 100%;
     height: 200px;
   }
+  .body main .buttonBox {
+    width: 100%;
+  }
+  .body main .buttonBox a {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 @media screen and (max-width: 390px) {
   .body {
     top: 100px;
   }
+  .body .pageTitle h1 {
+    font-size: 1.5rem;
+  }
   .body main {
-    padding: 3rem 1.8rem;
+    padding: 3rem 2rem;
   }
   .body main .box {
+    background-color: skyblue;
     width: 100%;
     flex-direction: column;
     padding: 0.5rem;
@@ -259,23 +325,24 @@
   }
   .body main .box .sentence .title {
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
   .body main .box .sentence .aboutBox {
+    flex-direction: column;
     padding: 0.5rem;
   }
   .body main .box .sentence .aboutBox .price {
-    font-size: 0.6rem;
-    margin: 0 1rem 0 0;
+    font-size: 0.8rem;
+    margin: 0 0 1rem;
   }
   .body main .box .sentence .aboutBox .product p {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
   .body main .box .sentence .detail {
     padding: 0.5rem;
   }
   .body main .box .sentence .detail p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .body main .box .image {
     width: 100%;
