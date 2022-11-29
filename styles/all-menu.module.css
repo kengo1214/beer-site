@@ -40,7 +40,7 @@
 }
 .body .barrel .menuSection::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   left: 0;
   right: 0;
@@ -166,7 +166,7 @@
 }
 .body .bottle .menuSection::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   left: 0;
   right: 0;
@@ -259,7 +259,7 @@
   transition: 300ms;
 }
 .body .bottle .menuSection {
-  background-image: url("/image/all-menu/bottle03.jpg");
+  background-image: url("/image/all-menu/bottle.jpg");
 }
 .body .cocktail {
   grid-area: cocktail;
@@ -292,7 +292,7 @@
 }
 .body .cocktail .menuSection::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   left: 0;
   right: 0;

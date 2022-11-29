@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/[id].module.scss";
 import HeaderAnother from "../../../components/Header/headerAnother";
-import { AiOutlineDoubleLeft } from "react-icons/ai";
 import { AiOutlineRollback } from "react-icons/ai";
 
 //getStaticPaths(パスの指定)
@@ -75,12 +74,6 @@ export default function MoreInformation({ bottlebeer }) {
         </div>
 
         <div className={styles.buttonBox}>
-          <Link href="/">
-            <a>
-              <AiOutlineDoubleLeft size={20} className={styles.icon} />
-              Home
-            </a>
-          </Link>
           <Link href="/menu/all-menu/#bottle">
             <a>
               <AiOutlineRollback size={20} className={styles.icon} />

@@ -63,7 +63,8 @@
       background-color: white;
       box-shadow: 5px 5px 10px gray;
       border-radius: 10px;
-      padding: 1rem;
+      padding: 1.5rem;
+      // padding: 1rem;
       width: 65%;
 
       .sentence {
@@ -105,8 +106,7 @@
         }
 
         .detail {
-          // border: 3px solid red;
-          height: 250px;
+          max-height: 200px;
           overflow: scroll;
           width: 100%;
           padding: 0.8rem;
@@ -128,7 +128,6 @@
     }
 
     .buttonBox {
-      // border: 3px solid red;
       width: 65%;
       margin-top: 2rem;
       @include center;
@@ -145,7 +144,6 @@
         color: white;
         z-index: 1;
         padding: 1rem 2rem;
-        margin: 0 2rem 0 0;
         font-weight: bold;
         border-radius: 10px;
         cursor: pointer;
@@ -308,7 +306,7 @@
         width: 100%;
         flex-direction: column;
         padding: 1rem;
-        padding: 0.5rem;
+        padding: 1rem 0.5rem;
 
         .sentence {
           width: 100%;
@@ -317,8 +315,10 @@
           }
 
           .aboutBox {
+            flex-direction: column;
             .price {
-              font-size: 0.8rem;
+              font-size: 0.9rem;
+              margin: 0 0 1rem;
             }
 
             .product {
@@ -331,7 +331,7 @@
           .detail {
             p {
               // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
-              font-size: 0.8rem;
+              font-size: 0.9rem;
             }
           }
         }
@@ -356,7 +356,6 @@
       padding: 3rem 2rem;
 
       .box {
-        // background-color: pink;
         width: 100%;
         flex-direction: column;
         padding: 0.5rem;
@@ -386,7 +385,8 @@
           }
 
           .detail {
-            height: 200px;
+            max-height: 200px;
+            overflow: scroll;
             padding: 0.5rem;
             p {
               // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
@@ -416,14 +416,12 @@
     .pageTitle {
       h1 {
         font-size: 1.2rem;
-        // font-size: 1.5rem;
       }
     }
     main {
       padding: 3rem 2rem;
 
       .box {
-        // background-color: skyblue;
         width: 100%;
         flex-direction: column;
         padding: 0.5rem;

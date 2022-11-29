@@ -47,7 +47,7 @@
   background-color: white;
   box-shadow: 5px 5px 10px gray;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.5rem;
   width: 65%;
 }
 .body main .box .sentence {
@@ -84,7 +84,7 @@
   font-size: 0.85rem;
 }
 .body main .box .sentence .detail {
-  height: 250px;
+  max-height: 200px;
   overflow: scroll;
   width: 100%;
   padding: 0.8rem;
@@ -119,7 +119,6 @@
   color: white;
   z-index: 1;
   padding: 1rem 2rem;
-  margin: 0 2rem 0 0;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
@@ -232,7 +231,7 @@
     width: 100%;
     flex-direction: column;
     padding: 1rem;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
   }
   .body main .box .sentence {
     width: 100%;
@@ -240,14 +239,18 @@
   .body main .box .sentence .title {
     font-size: 1.3rem;
   }
+  .body main .box .sentence .aboutBox {
+    flex-direction: column;
+  }
   .body main .box .sentence .aboutBox .price {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    margin: 0 0 1rem;
   }
   .body main .box .sentence .aboutBox .product p {
     font-size: 0.8rem;
   }
   .body main .box .sentence .detail p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   .body main .box .image {
     width: 100%;
@@ -288,7 +291,8 @@
     font-size: 0.8rem;
   }
   .body main .box .sentence .detail {
-    height: 200px;
+    max-height: 200px;
+    overflow: scroll;
     padding: 0.5rem;
   }
   .body main .box .sentence .detail p {
