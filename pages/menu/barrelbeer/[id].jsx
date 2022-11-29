@@ -37,11 +37,10 @@ export default function MoreInformation({ barrelbeer }) {
   return (
     <div className={styles.body}>
       <HeaderAnother />
-      <div className={styles.pageTitle}>
-        <h1>All Menu - Barrel Beer -</h1>
-      </div>
-
       <main>
+        <div className={styles.pageTitle}>
+          <h1>All Menu - Barrel Beer -</h1>
+        </div>
         <div className={styles.box}>
           <div className={styles.sentence}>
             <h1 className={styles.title}>{barrelbeer.title}</h1>
