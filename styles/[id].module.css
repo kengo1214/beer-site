@@ -247,7 +247,8 @@
     margin-bottom: 0.3rem;
   }
   .body .pageTitleCocktail h1 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+    margin-left: 0rem;
   }
   .body main {
     padding: 3rem 2.5rem;
@@ -290,7 +291,7 @@
     font-size: 1.8rem;
   }
   .body .pageTitleCocktail h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
   .body main {
     padding: 3rem 2rem;
@@ -346,7 +347,7 @@
     font-size: 1.7rem;
   }
   .body .pageTitleCocktail h1 {
-    font-size: 1.3em;
+    font-size: 1.45rem;
   }
   .body main {
     padding: 3rem 2rem;
@@ -390,7 +391,7 @@
     font-size: 1.4rem;
   }
   .body .pageTitleCocktail h1 {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 }
 /*# sourceMappingURL=[id].module.css.map */
