@@ -425,7 +425,6 @@
 
     grid-template:
       "head"
-      // "head" 130px
       "barrel"
       "bottle"
       "cocktail"
@@ -538,7 +537,7 @@
     }
     .cocktail {
       .titleSection {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         h1 {
           margin: 0;
         }
@@ -587,8 +586,35 @@
         }
       }
     }
-    .bottle,
+
+    .bottle {
+      .menuSection {
+        .menuItem {
+          width: 85%;
+
+          .aboutBox {
+            .title {
+              font-size: 14px;
+              padding: 0.3rem;
+            }
+            .price {
+              font-size: 12px;
+            }
+            .product {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
     .cocktail {
+      .titleSection {
+        font-size: 0.95rem;
+        h1 {
+          margin: 0;
+        }
+      }
       .menuSection {
         .menuItem {
           width: 85%;
