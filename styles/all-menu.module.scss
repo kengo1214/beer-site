@@ -1,12 +1,126 @@
-@mixin parts {
+// 🔗🔗🔗🔗🔗🔗🔗🔗＠mixin🔗🔗🔗🔗🔗🔗🔗🔗🔗🔗
+
+@mixin center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin menu {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  @include center;
+  flex-wrap: wrap;
+
+  &::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+  }
+
+  .menuItem {
+    z-index: 1;
+    background-color: white;
+    box-shadow: 5px 5px 10px gray;
+    box-sizing: content-box;
+    border-radius: 5px;
+    width: calc(33% - 32px);
+    height: 440px;
+    margin: 1rem;
+    display: grid;
+    grid-template:
+      "about" 180px
+      "image" 180px
+      "button" 80px;
+
+    .aboutBox {
+      grid-area: about;
+      width: 100%;
+
+      .title {
+        width: 100%;
+        height: 60px;
+        font-size: 18px;
+        padding: 0.5rem;
+        font-weight: bold;
+        @include center;
+      }
+
+      .price {
+        width: 100%;
+        height: 20px;
+        font-size: 15px;
+        font-weight: bold;
+        @include center;
+      }
+
+      .product {
+        height: 100px;
+        font-size: 15px;
+        margin: 0;
+        @include center;
+      }
+    }
+
+    .imageBox {
+      @include center;
+      width: 100%;
+      height: 100%;
+
+      .image {
+        grid-area: image;
+        height: 180px;
+        width: 200px;
+        position: relative;
+        @include center;
+      }
+    }
+    .buttonBox {
+      grid-area: button;
+      width: 100%;
+      @include center;
+
+      a {
+        padding: 0.8rem 1rem;
+        // padding: 0.8rem 1.5rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 0.5rem;
+        font-weight: bold;
+        @include center;
+
+        .icon {
+          margin-left: 0.5rem;
+        }
+
+        &:hover {
+          color: white;
+          background-color: black;
+          transition: 300ms;
+        }
+      }
+    }
+  }
+}
+
+@mixin parts {
+  @include center;
   flex-direction: column;
 
   .titleSection {
-    border: 5px solid black;
-    background-color: black;
+    @include center;
+    z-index: 1;
+    font-size: 1.5rem;
     color: white;
     padding: 1rem;
     width: 100%;
@@ -15,134 +129,16 @@
     }
   }
 
+  .menuSectionFirst {
+    @include menu;
+  }
+
   .menuSection {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    &::after {
-      content: "";
-      // background-color: rgba(0, 0, 0, 0.5);
-      background-color: rgba(0, 0, 0, 0.4);
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      height: 100%;
-    }
-
-    .menuItem {
-      // position: absolute;
-
-      z-index: 1;
-      background-color: white;
-      box-shadow: 5px 5px 10px gray;
-      box-sizing: content-box;
-      border-radius: 5px;
-      width: calc(33% - 32px);
-
-      height: 440px;
-      margin: 1rem;
-      display: grid;
-      grid-template:
-        "about" 180px
-        "image" 180px
-        "button" 80px;
-
-      .aboutBox {
-        grid-area: about;
-        width: 100%;
-
-        .title {
-          width: 100%;
-          height: 60px;
-          font-size: 18px;
-          padding: 0.5rem;
-          font-weight: bold;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .price {
-          width: 100%;
-          height: 20px;
-          font-size: 15px;
-          font-weight: bold;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .product {
-          height: 100px;
-          font-size: 15px;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-
-      .imageBox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-
-        .image {
-          grid-area: image;
-          height: 180px;
-          width: 200px;
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-      .buttonBox {
-        grid-area: button;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        a {
-          padding: 0.8rem 1rem;
-          // padding: 0.8rem 1.5rem;
-          border: 1px solid black;
-          border-radius: 5px;
-          margin: 0.5rem;
-          font-weight: bold;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          .icon {
-            margin-left: 0.5rem;
-          }
-
-          &:hover {
-            color: white;
-            background-color: black;
-            transition: 300ms;
-          }
-        }
-      }
-    }
+    @include menu;
   }
 }
 
-// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// 🔥🔥🔥🔥🔥🔥🔥🔥メイン🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
 .body {
   position: relative;
@@ -151,7 +147,7 @@
   min-height: 100vh;
   display: grid;
   grid-template:
-    "head" 100px
+    "head"
     "barrel"
     "bottle"
     "cocktail"
@@ -165,7 +161,8 @@
   .barrel {
     grid-area: barrel;
     @include parts;
-    .menuSection {
+    .menuSectionFirst {
+      padding: 116px 1rem 1rem;
       background-image: url("/image/all-menu/barrel.jpg");
     }
   }
@@ -190,9 +187,7 @@
     grid-area: footer;
     width: 100%;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
     background-color: rgb(178 178 178);
 
     p {
@@ -202,9 +197,17 @@
   }
 }
 
+// 💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡
+// 💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡
+// 💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡
+
 @media screen and (min-width: 1500px) {
   .body {
-    .barrel,
+    .barrel {
+      .menuSectionFirst {
+        padding: 116px 10rem 1rem;
+      }
+    }
     .bottle,
     .cocktail {
       .menuSection {
@@ -216,7 +219,23 @@
 
 @media screen and (max-width: 1155px) {
   .body {
-    .barrel,
+    .barrel {
+      .menuSectionFirst {
+        .menuItem {
+          .aboutBox {
+            .title {
+              font-size: 15px;
+            }
+            .price {
+              font-size: 13px;
+            }
+            .product {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
     .bottle,
     .cocktail {
       .menuSection {
@@ -238,11 +257,30 @@
   }
 }
 
-//  🔥ここから2列に変更
+//ここから2列に変更
 
 @media screen and (max-width: 1000px) {
   .body {
-    .barrel,
+    .barrel {
+      .menuSectionFirst {
+        .menuItem {
+          width: calc(50% - 32px);
+
+          .aboutBox {
+            .title {
+              font-size: 17px;
+            }
+            .price {
+              font-size: 14px;
+            }
+            .product {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
     .bottle,
     .cocktail {
       .menuSection {
@@ -268,7 +306,32 @@
 
 @media screen and (max-width: 768px) {
   .body {
-    .barrel,
+    .barrel {
+      .menuSectionFirst {
+        padding: 116px 1rem 1rem;
+        .menuItem {
+          width: calc(50% - 32px);
+
+          .aboutBox {
+            .title {
+              font-size: 14px;
+            }
+            .price {
+              font-size: 12px;
+            }
+            .product {
+              font-size: 12px;
+            }
+          }
+
+          .buttonBox {
+            a {
+              padding: 0.5rem 1.2rem;
+            }
+          }
+        }
+      }
+    }
     .bottle,
     .cocktail {
       .menuSection {
@@ -303,14 +366,35 @@
 @media screen and (max-width: 650px) {
   .body {
     grid-template:
-      "head" 100px
+      "head"
+      // "head" 100px
       "barrel"
       "bottle"
       "cocktail"
       "footer" 50px
       / 1fr;
 
-    .barrel,
+    .barrel {
+      .menuSectionFirst {
+        padding: 116px 1rem 1rem;
+        .menuItem {
+          width: 75%;
+
+          .aboutBox {
+            .title {
+              font-size: 18px;
+              padding: 0.3rem;
+            }
+            .price {
+              font-size: 15px;
+            }
+            .product {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
     .bottle,
     .cocktail {
       .menuSection {
@@ -340,19 +424,50 @@
     top: 100px;
 
     grid-template:
-      "head" 130px
+      "head"
+      // "head" 130px
       "barrel"
       "bottle"
       "cocktail"
       "footer" 50px
       / 1fr;
 
-    .barrel,
-    .bottle,
+    .barrel {
+      .titleSection {
+        font-size: 1.2rem;
+        h1 {
+          margin: 0;
+        }
+      }
+      .menuSectionFirst {
+        padding: 148px 1rem 1rem;
+        .menuItem {
+          width: 75%;
+
+          .aboutBox {
+            .title {
+              font-size: 16px;
+              padding: 0.3rem;
+            }
+            .price {
+              font-size: 14px;
+            }
+            .product {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .bottle {
+      .titleSection {
+        font-size: 1.2rem;
+      }
+    }
     .cocktail {
       .titleSection {
+        font-size: 1.2rem;
         h1 {
-          font-size: 1.2rem;
           margin: 0;
         }
       }
@@ -381,9 +496,53 @@
 @media screen and (max-width: 390px) {
   .body {
     top: 100px;
-    .barrel,
-    .bottle,
+    .barrel {
+      .menuSectionFirst {
+        .menuItem {
+          width: 85%;
+
+          .aboutBox {
+            .title {
+              font-size: 16px;
+              padding: 0.3rem;
+            }
+            .price {
+              font-size: 13px;
+            }
+            .product {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    .bottle {
+      .menuSection {
+        .menuItem {
+          width: 85%;
+
+          .aboutBox {
+            .title {
+              font-size: 16px;
+              padding: 0.3rem;
+            }
+            .price {
+              font-size: 13px;
+            }
+            .product {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
     .cocktail {
+      .titleSection {
+        font-size: 0.9rem;
+        h1 {
+          margin: 0;
+        }
+      }
       .menuSection {
         .menuItem {
           width: 85%;
@@ -408,7 +567,26 @@
 @media screen and (max-width: 360px) {
   .body {
     top: 100px;
-    .barrel,
+    .barrel {
+      .menuSectionFirst {
+        .menuItem {
+          width: 85%;
+
+          .aboutBox {
+            .title {
+              font-size: 14px;
+              padding: 0.3rem;
+            }
+            .price {
+              font-size: 12px;
+            }
+            .product {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
     .bottle,
     .cocktail {
       .menuSection {

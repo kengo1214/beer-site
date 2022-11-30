@@ -18,15 +18,12 @@ export default function AllMenu({
 
       {/* 🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺 */}
       <section className={styles.barrel} id="barrel">
-
-        <div className={styles.titleSection}>
-          <h1>Barrel Beer</h1>
-        </div>
-        
-        <div className={styles.menuSection}>
+        <div className={styles.menuSectionFirst}>
+          <div className={styles.titleSection}>
+            <h1>Barrel Beer</h1>
+          </div>
           {barrelbeer.map((barrelbeer) => (
             <div key={barrelbeer.id} className={styles.menuItem}>
-
               <div className={styles.aboutBox}>
                 <div className={styles.titleBox}>
                   <div className={styles.title}>{barrelbeer.title}</div>
@@ -68,10 +65,10 @@ export default function AllMenu({
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
 
       <section className={styles.bottle} id="bottle">
-        <div className={styles.titleSection}>
-          <h1>Bottle Beer</h1>
-        </div>
         <div className={styles.menuSection}>
+          <div className={styles.titleSection}>
+            <h1>Bottle Beer</h1>
+          </div>
           {bottlebeer.map((bottlebeer) => (
             <div key={bottlebeer.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
@@ -113,10 +110,10 @@ export default function AllMenu({
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
       <section className={styles.cocktail} id="cocktail">
-        <div className={styles.titleSection}>
-          <h1>Cocktail and Hardliquor</h1>
-        </div>
         <div className={styles.menuSection}>
+          <div className={styles.titleSection}>
+            <h1>Cocktail and Hardliquor</h1>
+          </div>
           {cocktailhardliquor.map((cocktailhardliquor) => (
             <div key={cocktailhardliquor.id} className={styles.menuItem}>
               <div className={styles.aboutBox}>
