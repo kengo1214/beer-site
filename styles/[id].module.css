@@ -16,14 +16,14 @@
 }
 .body .pageTitle h1,
 .body .pageTitleCocktail h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0;
 }
 .body .pageTitleCocktail h1:nth-child(2) {
   margin-left: 1rem;
 }
 .body .pageTitleCocktail h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0;
 }
 .body .barrelMain {
@@ -442,7 +442,7 @@
 }
 @media screen and (max-width: 768px) {
   .body .pageTitle h1 {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
   .body .pageTitleCocktail h1 {
     font-size: 2rem;
