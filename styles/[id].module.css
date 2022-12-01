@@ -246,6 +246,7 @@
   }
   .body .pageTitleCocktail {
     padding: 0.5rem 0;
+    padding: 0;
     flex-direction: column;
   }
   .body .pageTitleCocktail h1 {
@@ -293,6 +294,9 @@
 @media screen and (max-width: 480px) {
   .body {
     top: 100px;
+  }
+  .body .pageTitle {
+    padding: 0;
   }
   .body .pageTitle h1 {
     font-size: 1.7rem;
