@@ -14,6 +14,129 @@
     / 1fr;
 }
 
+@mixin main {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+  }
+
+  width: 100%;
+  min-height: calc(100vh - 130px);
+  padding: 3rem;
+  padding: 2rem;
+  @include center;
+  flex-direction: column;
+
+  .box {
+    @include center;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 65%;
+
+    .sentence {
+      width: 70%;
+      @include center;
+      flex-direction: column;
+
+      .title {
+        @include center;
+        margin: 0;
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1.3rem;
+      }
+
+      .aboutBox {
+        @include center;
+        flex-direction: row;
+        width: 100%;
+        padding: 0.8rem;
+        font-weight: bold;
+
+        .price {
+          margin: 0 1.5rem 0 0;
+          font-size: 0.9rem;
+        }
+
+        .product {
+          p {
+            margin: 0;
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      .detail {
+        max-height: 200px;
+        overflow: scroll;
+        width: 100%;
+        padding: 0.8rem;
+        line-height: 1.8;
+
+        p {
+          margin: 0;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .image {
+      position: relative;
+      width: 30%;
+      height: 300px;
+    }
+  }
+
+  .buttonBox {
+    width: 65%;
+    margin-top: 2rem;
+    @include center;
+    color: white;
+    z-index: 1;
+
+    a:nth-child(2) {
+      margin: 0;
+    }
+
+    a {
+      @include center;
+      border: 1px solid white;
+      color: white;
+      z-index: 1;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: white;
+        color: black;
+        transition: 300ms;
+      }
+
+      .icon {
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
+}
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
 .body {
   position: relative;
   top: 130px;
@@ -45,137 +168,19 @@
     }
   }
 
-  main {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  .barrelMain {
+    @include main;
     background-image: url("/image/all-menu/barrel.jpg");
+  }
 
-    &::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      height: 100%;
-    }
-    //
-    width: 100%;
-    // min-height: calc(100vh - 260px);
-    min-height: calc(100vh - 130px);
-    padding: 3rem;
-    padding: 2rem;
-    @include center;
-    flex-direction: column;
+  .bottleMain {
+    @include main;
+    background-image: url("/image/all-menu/bottle.jpg");
+  }
 
-    .box {
-      @include center;
-      z-index: 1;
-      background-color: white;
-      box-shadow: 5px 5px 10px gray;
-      border-radius: 10px;
-      padding: 1.5rem;
-      // padding: 1rem;
-      width: 65%;
-
-      .sentence {
-        width: 70%;
-
-        @include center;
-        flex-direction: column;
-
-        .title {
-          @include center;
-          margin: 0;
-          width: 100%;
-          padding: 0.8rem;
-          // 🔥🔥🔥🔥🔥🔥🔥
-          font-size: 1.3rem;
-        }
-
-        .aboutBox {
-          @include center;
-          flex-direction: row;
-          width: 100%;
-          padding: 0.8rem;
-          font-weight: bold;
-
-          .price {
-            margin: 0 1.5rem 0 0;
-
-            // 🔥🔥🔥🔥🔥🔥🔥
-            font-size: 0.9rem;
-          }
-
-          .product {
-            p {
-              margin: 0;
-              // 🔥🔥🔥🔥🔥🔥🔥
-              font-size: 0.85rem;
-            }
-          }
-        }
-
-        .detail {
-          max-height: 200px;
-          overflow: scroll;
-          width: 100%;
-          padding: 0.8rem;
-          line-height: 1.8;
-          // background: linear-gradient(white, white, white, silver);
-          // background: linear-gradient(white, white,  lightgray);
-          // box-shadow: 0px -20px 10px 0px black inset;
-
-          p {
-            margin: 0;
-            // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
-            font-size: 0.9rem;
-          }
-        }
-      }
-
-      .image {
-        position: relative;
-        width: 30%;
-        height: 300px;
-      }
-    }
-
-    .buttonBox {
-      width: 65%;
-      margin-top: 2rem;
-      @include center;
-      color: white;
-      z-index: 1;
-
-      a:nth-child(2) {
-        margin: 0;
-      }
-
-      a {
-        @include center;
-        border: 1px solid white;
-        color: white;
-        z-index: 1;
-        padding: 1rem 2rem;
-        font-weight: bold;
-        border-radius: 10px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: white;
-          color: black;
-          transition: 300ms;
-        }
-
-        .icon {
-          margin: 0 1rem 0 0;
-        }
-      }
-    }
+  .cocktailMain {
+    @include main;
+    background-image: url("/image/all-menu/cocktail.jpg");
   }
 
   footer {
@@ -193,14 +198,13 @@
   }
 }
 
+// 💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡
+
 @media screen and (max-width: 1100px) {
   .body {
-    // .pageTitle {
-    //   h1 {
-    //     font-size: 2rem;
-    //   }
-    // }
-    main {
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
       .box {
         width: 75%;
       }
@@ -213,7 +217,9 @@
 
 @media screen and (max-width: 1024px) {
   .body {
-    main {
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
       .box {
         width: 90%;
 
@@ -236,7 +242,6 @@
 
           .detail {
             p {
-              // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
               font-size: 0.9rem;
             }
           }
@@ -266,7 +271,9 @@
       }
     }
 
-    main {
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
       .box {
         width: 100%;
         flex-direction: column;
@@ -297,7 +304,6 @@
           .detail {
             grid-area: about;
             p {
-              // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
               font-size: 0.9rem;
             }
           }
@@ -358,7 +364,9 @@
       }
     }
 
-    main {
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
       padding: 2rem 2.5rem;
 
       .box {
@@ -389,7 +397,6 @@
 
           .detail {
             p {
-              // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
               font-size: 0.9rem;
             }
           }
@@ -407,7 +414,7 @@
   .body {
     top: 100px;
     .pageTitle {
-      padding:  0;
+      padding: 0;
       h1 {
         font-size: 1.7rem;
       }
@@ -419,7 +426,10 @@
         font-size: 1.6rem;
       }
     }
-    main {
+
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
       padding: 2rem 2rem;
 
       .box {
@@ -456,7 +466,6 @@
             overflow: scroll;
             padding: 0.5rem;
             p {
-              // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
               font-size: 0.8rem;
             }
           }
@@ -491,7 +500,9 @@
         font-size: 1.45rem;
       }
     }
-    main {
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
       padding: 2rem 2rem;
 
       .box {
@@ -526,7 +537,6 @@
           .detail {
             padding: 0.5rem;
             p {
-              // ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
               font-size: 0.8rem;
             }
           }

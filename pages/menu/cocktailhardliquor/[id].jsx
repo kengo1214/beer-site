@@ -39,7 +39,7 @@ export default function MoreInformation({ cocktail }) {
   return (
     <div className={styles.body}>
       <HeaderAnother />
-      <main>
+      <main className={styles.cocktailMain}>
         <div className={styles.pageTitleCocktail}>
           <h1>All Menu </h1>
           <h1>- Cocktail and Hardliquor -</h1>
