@@ -6,27 +6,25 @@
 }
 .body .pageTitle,
 .body .pageTitleCocktail {
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  color: white;
   z-index: 1;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
 }
 .body .pageTitle h1,
 .body .pageTitleCocktail h1 {
+  font-size: 2rem;
   margin: 0;
 }
-.body .pageTitleCocktail {
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-  z-index: 1;
+.body .pageTitleCocktail h1:nth-child(2) {
+  margin-left: 1rem;
 }
 .body .pageTitleCocktail h1 {
-  margin-left: 1rem;
+  font-size: 2rem;
+  margin: 0;
 }
 .body main {
   position: relative;
@@ -37,6 +35,7 @@
   width: 100%;
   min-height: calc(100vh - 130px);
   padding: 3rem;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,9 +157,6 @@
 }
 
 @media screen and (max-width: 1100px) {
-  .body .pageTitle h1 {
-    font-size: 2rem;
-  }
   .body main .box {
     width: 75%;
   }
@@ -197,7 +193,7 @@
     font-size: 2rem;
   }
   .body .pageTitleCocktail h1 {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
   .body main .box {
     width: 100%;
@@ -239,19 +235,30 @@
     padding: 0.8rem 1.5rem;
   }
 }
+@media screen and (max-width: 650px) {
+  .body .pageTitleCocktail h1 {
+    font-size: 1.75rem;
+  }
+}
 @media screen and (max-width: 550px) {
+  .body .pageTitle h1 {
+    font-size: 1.8rem;
+  }
   .body .pageTitleCocktail {
+    padding: 0.5rem 0;
     flex-direction: column;
+  }
+  .body .pageTitleCocktail h1 {
+    font-size: 1.8rem;
   }
   .body .pageTitleCocktail h1:nth-child(1) {
     margin-bottom: 0.3rem;
   }
-  .body .pageTitleCocktail h1 {
-    font-size: 1.8rem;
-    margin-left: 0rem;
+  .body .pageTitleCocktail h1:nth-child(2) {
+    margin-left: 0;
   }
   .body main {
-    padding: 3rem 2.5rem;
+    padding: 2rem 2.5rem;
   }
   .body main .box {
     width: 100%;
@@ -288,13 +295,14 @@
     top: 100px;
   }
   .body .pageTitle h1 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   .body .pageTitleCocktail h1 {
     font-size: 1.7rem;
+    font-size: 1.6rem;
   }
   .body main {
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
   }
   .body main .box {
     width: 100%;
@@ -344,13 +352,13 @@
     top: 100px;
   }
   .body .pageTitle h1 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
   .body .pageTitleCocktail h1 {
     font-size: 1.45rem;
   }
   .body main {
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
   }
   .body main .box {
     width: 100%;
@@ -384,6 +392,14 @@
   .body main .box .image {
     width: 100%;
     height: 200px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .body .pageTitle h1 {
+    font-size: 1.6rem;
+  }
+  .body .pageTitleCocktail h1 {
+    font-size: 1.35em;
   }
 }
 @media screen and (max-width: 320px) {

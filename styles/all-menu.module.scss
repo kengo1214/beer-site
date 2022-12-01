@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-@mixin menu {
+@mixin parts {
   position: relative;
   background-size: cover;
   background-position: center;
@@ -113,16 +113,15 @@
   }
 }
 
-@mixin parts {
+@mixin section {
   @include center;
   flex-direction: column;
-
   .titleSection {
     @include center;
-    z-index: 1;
-    font-size: 1.5rem;
     color: white;
+    z-index: 1;
     padding: 1rem;
+    font-size: 1.5rem;
     width: 100%;
     h1 {
       margin: 0;
@@ -130,11 +129,11 @@
   }
 
   .menuSectionFirst {
-    @include menu;
+    @include parts;
   }
 
   .menuSection {
-    @include menu;
+    @include parts;
   }
 }
 
@@ -160,7 +159,7 @@
 
   .barrel {
     grid-area: barrel;
-    @include parts;
+    @include section;
     .menuSectionFirst {
       padding: 116px 1rem 1rem;
       background-image: url("/image/all-menu/barrel.jpg");
@@ -169,7 +168,7 @@
 
   .bottle {
     grid-area: bottle;
-    @include parts;
+    @include section;
     .menuSection {
       background-image: url("/image/all-menu/bottle.jpg");
     }
@@ -177,7 +176,7 @@
 
   .cocktail {
     grid-area: cocktail;
-    @include parts;
+    @include section;
     .menuSection {
       background-image: url("/image/all-menu/cocktail.jpg");
     }

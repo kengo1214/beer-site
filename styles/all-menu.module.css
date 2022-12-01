@@ -20,10 +20,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
-  font-size: 1.5rem;
   color: white;
+  z-index: 1;
   padding: 1rem;
+  font-size: 1.5rem;
   width: 100%;
 }
 .body .barrel .titleSection h1 {
@@ -258,10 +258,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
-  font-size: 1.5rem;
   color: white;
+  z-index: 1;
   padding: 1rem;
+  font-size: 1.5rem;
   width: 100%;
 }
 .body .bottle .titleSection h1 {
@@ -495,10 +495,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
-  font-size: 1.5rem;
   color: white;
+  z-index: 1;
   padding: 1rem;
+  font-size: 1.5rem;
   width: 100%;
 }
 .body .cocktail .titleSection h1 {
