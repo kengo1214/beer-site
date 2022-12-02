@@ -137,6 +137,7 @@
   transition: 300ms;
 }
 .body .barrel .menuSection {
+  border: 6px dashed blue;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -375,6 +376,7 @@
   transition: 300ms;
 }
 .body .bottle .menuSection {
+  border: 6px dashed blue;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -612,6 +614,7 @@
   transition: 300ms;
 }
 .body .cocktail .menuSection {
+  border: 6px dashed blue;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -768,6 +771,11 @@
   }
 }
 @media screen and (max-width: 1000px) {
+  .body .barrel .menuSectionFirst {
+    background-size: 100%;
+    background-position: center;
+    background-repeat: repeat-y;
+  }
   .body .barrel .menuSectionFirst .menuItem {
     width: calc(50% - 32px);
   }
@@ -779,6 +787,12 @@
   }
   .body .barrel .menuSectionFirst .menuItem .aboutBox .product {
     font-size: 14px;
+  }
+  .body .bottle .menuSection,
+.body .cocktail .menuSection {
+    background-size: 100%;
+    background-position: center;
+    background-repeat: repeat-y;
   }
   .body .bottle .menuSection .menuItem,
 .body .cocktail .menuSection .menuItem {

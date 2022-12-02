@@ -92,7 +92,6 @@
 
       a {
         padding: 0.8rem 1rem;
-        // padding: 0.8rem 1.5rem;
         border: 1px solid black;
         border-radius: 5px;
         margin: 0.5rem;
@@ -262,8 +261,12 @@
   .body {
     .barrel {
       .menuSectionFirst {
+        background-size: 100%;
+        background-position: center;
+        background-repeat: repeat-y;
         .menuItem {
           width: calc(50% - 32px);
+          // width: calc(33% - 32px);
 
           .aboutBox {
             .title {
@@ -283,8 +286,12 @@
     .bottle,
     .cocktail {
       .menuSection {
+        background-size: 100%;
+        background-position: center;
+        background-repeat: repeat-y;
         .menuItem {
           width: calc(50% - 32px);
+          // width: calc(33% - 32px);
 
           .aboutBox {
             .title {
