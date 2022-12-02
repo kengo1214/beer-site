@@ -447,6 +447,14 @@
   .body .pageTitleCocktail h1 {
     font-size: 2rem;
   }
+  .body .barrelMain,
+.body .bottleMain,
+.body .cocktailMain {
+    background-size: 100%;
+    background-position: center;
+    background-position: top;
+    background-repeat: repeat-y;
+  }
   .body .barrelMain .box,
 .body .bottleMain .box,
 .body .cocktailMain .box {
