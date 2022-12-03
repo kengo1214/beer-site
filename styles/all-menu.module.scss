@@ -37,6 +37,7 @@
     width: calc(33% - 32px);
     height: 440px;
     margin: 1rem;
+    padding: 1rem 0;
     display: grid;
     grid-template:
       "about" 180px
@@ -114,7 +115,7 @@
 
 @mixin section {
   @include center;
-  flex-direction: column;
+
   .titleSection {
     @include center;
     color: white;
@@ -127,11 +128,7 @@
     }
   }
 
-  .menuSectionFirst {
-    @include parts;
-  }
-
-  .menuSection {
+  main {
     @include parts;
   }
 }
@@ -143,49 +140,33 @@
   top: 130px;
   width: 100%;
   min-height: 100vh;
-  display: grid;
-  grid-template:
-    "head"
-    "barrel"
-    "bottle"
-    "cocktail"
-    "footer" 50px
-    / 1fr;
-
-  .menuNav {
-    grid-area: head;
-  }
 
   .barrel {
-    grid-area: barrel;
     @include section;
-    .menuSectionFirst {
+    main {
       padding: 116px 1rem 1rem;
       background-image: url("/image/all-menu/barrel.jpg");
     }
   }
 
   .bottle {
-    grid-area: bottle;
     @include section;
-    .menuSection {
+    main {
       background-image: url("/image/all-menu/bottle.jpg");
     }
   }
 
   .cocktail {
-    grid-area: cocktail;
     @include section;
-    .menuSection {
+    main {
       background-image: url("/image/all-menu/cocktail.jpg");
     }
   }
 
   footer {
-    grid-area: footer;
+    @include center;
     width: 100%;
     height: 50px;
-    @include center;
     background-color: rgb(178 178 178);
 
     p {
@@ -196,19 +177,17 @@
 }
 
 // 💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡
-// 💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡
-// 💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡
 
 @media screen and (min-width: 1500px) {
   .body {
     .barrel {
-      .menuSectionFirst {
+      main {
         padding: 116px 10rem 1rem;
       }
     }
     .bottle,
     .cocktail {
-      .menuSection {
+      main {
         padding: 1rem 10rem;
       }
     }
@@ -217,30 +196,14 @@
 
 @media screen and (max-width: 1155px) {
   .body {
-    .barrel {
-      .menuSectionFirst {
-        .menuItem {
-          .aboutBox {
-            .title {
-              font-size: 15px;
-            }
-            .price {
-              font-size: 13px;
-            }
-            .product {
-              font-size: 13px;
-            }
-          }
-        }
-      }
-    }
+    .barrel,
     .bottle,
     .cocktail {
-      .menuSection {
+      main {
         .menuItem {
           .aboutBox {
             .title {
-              font-size: 15px;
+              font-size: 16px;
             }
             .price {
               font-size: 13px;
@@ -254,44 +217,37 @@
     }
   }
 }
-
-//ここから2列に変更
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   .body {
-    .barrel {
-      .menuSectionFirst {
-        background-size: 100%;
-        background-position: center;
-        background-repeat: repeat-y;
+    .barrel,
+    .bottle,
+    .cocktail {
+      main {
         .menuItem {
-          width: calc(50% - 32px);
-          // width: calc(33% - 32px);
-
           .aboutBox {
             .title {
-              font-size: 17px;
-            }
-            .price {
-              font-size: 14px;
-            }
-            .product {
-              font-size: 14px;
+              font-size: 15px;
             }
           }
         }
       }
     }
+  }
+}
 
+//🔥🔥🔥ここから2列に変更🔥🔥🔥
+
+@media screen and (max-width: 1000px) {
+  .body {
+    .barrel,
     .bottle,
     .cocktail {
-      .menuSection {
+      main {
         background-size: 100%;
-        background-position: center;
+        background-position: top;
         background-repeat: repeat-y;
         .menuItem {
           width: calc(50% - 32px);
-          // width: calc(33% - 32px);
 
           .aboutBox {
             .title {
@@ -312,37 +268,10 @@
 
 @media screen and (max-width: 768px) {
   .body {
-    .barrel {
-      .menuSectionFirst {
-        padding: 116px 1rem 1rem;
-        .menuItem {
-          width: calc(50% - 32px);
-
-          .aboutBox {
-            .title {
-              font-size: 14px;
-            }
-            .price {
-              font-size: 12px;
-            }
-            .product {
-              font-size: 12px;
-            }
-          }
-
-          .buttonBox {
-            a {
-              padding: 0.5rem 1.2rem;
-            }
-          }
-        }
-      }
-    }
+    .barrel,
     .bottle,
     .cocktail {
-      .menuSection {
-        padding: 1rem;
-
+      main {
         .menuItem {
           width: calc(50% - 32px);
 
@@ -369,48 +298,22 @@
   }
 }
 
+//🔥🔥🔥ここから1列に変更🔥🔥🔥
+
 @media screen and (max-width: 650px) {
   .body {
-    grid-template:
-      "head"
-      // "head" 100px
-      "barrel"
-      "bottle"
-      "cocktail"
-      "footer" 50px
-      / 1fr;
-
-    .barrel {
-      .menuSectionFirst {
-        padding: 116px 1rem 1rem;
-        .menuItem {
-          width: 75%;
-
-          .aboutBox {
-            .title {
-              font-size: 18px;
-              padding: 0.3rem;
-            }
-            .price {
-              font-size: 15px;
-            }
-            .product {
-              font-size: 15px;
-            }
-          }
-        }
-      }
-    }
+    .barrel,
     .bottle,
     .cocktail {
-      .menuSection {
+      main {
         .menuItem {
           width: 75%;
+          margin: 1rem 0;
 
           .aboutBox {
             .title {
               font-size: 18px;
-              padding: 0.3rem;
+              padding: 0 0.5rem;
             }
             .price {
               font-size: 15px;
@@ -429,30 +332,20 @@
   .body {
     top: 100px;
 
-    grid-template:
-      "head"
-      "barrel"
-      "bottle"
-      "cocktail"
-      "footer" 50px
-      / 1fr;
-
     .barrel {
       .titleSection {
         font-size: 1.2rem;
-        h1 {
-          margin: 0;
-        }
       }
-      .menuSectionFirst {
+      main {
         padding: 148px 1rem 1rem;
+
         .menuItem {
-          width: 75%;
+          width: 80%;
 
           .aboutBox {
             .title {
-              font-size: 16px;
-              padding: 0.3rem;
+              font-size: 15.5px;
+              padding: 0 0.5rem;
             }
             .price {
               font-size: 14px;
@@ -464,26 +357,19 @@
         }
       }
     }
-    .bottle {
-      .titleSection {
-        font-size: 1.2rem;
-      }
-    }
+    .bottle,
     .cocktail {
       .titleSection {
         font-size: 1.2rem;
-        h1 {
-          margin: 0;
-        }
       }
-      .menuSection {
+      main {
         .menuItem {
-          width: 75%;
+          width: 80%;
 
           .aboutBox {
             .title {
-              font-size: 16px;
-              padding: 0.3rem;
+              font-size: 15.5px;
+              padding: 0 0.5rem;
             }
             .price {
               font-size: 14px;
@@ -500,36 +386,16 @@
 
 @media screen and (max-width: 390px) {
   .body {
-    top: 100px;
-    .barrel {
-      .menuSectionFirst {
-        .menuItem {
-          width: 85%;
-
-          .aboutBox {
-            .title {
-              font-size: 16px;
-              padding: 0.3rem;
-            }
-            .price {
-              font-size: 13px;
-            }
-            .product {
-              font-size: 13px;
-            }
-          }
-        }
-      }
-    }
+    .barrel,
     .bottle {
-      .menuSection {
+      main {
         .menuItem {
           width: 85%;
 
           .aboutBox {
             .title {
-              font-size: 16px;
-              padding: 0.3rem;
+              font-size: 14.5px;
+              padding: 0 0.5rem;
             }
             .price {
               font-size: 13px;
@@ -541,21 +407,19 @@
         }
       }
     }
+
     .cocktail {
       .titleSection {
         font-size: 1.1rem;
-        h1 {
-          margin: 0;
-        }
       }
-      .menuSection {
+      main {
         .menuItem {
           width: 85%;
 
           .aboutBox {
             .title {
-              font-size: 16px;
-              padding: 0.3rem;
+              font-size: 14.5px;
+              padding: 0 0.5rem;
             }
             .price {
               font-size: 13px;
@@ -571,37 +435,16 @@
 }
 @media screen and (max-width: 360px) {
   .body {
-    top: 100px;
-    .barrel {
-      .menuSectionFirst {
-        .menuItem {
-          width: 85%;
-
-          .aboutBox {
-            .title {
-              font-size: 14px;
-              padding: 0.3rem;
-            }
-            .price {
-              font-size: 12px;
-            }
-            .product {
-              font-size: 12px;
-            }
-          }
-        }
-      }
-    }
-
+    .barrel,
     .bottle {
-      .menuSection {
+      main {
         .menuItem {
           width: 85%;
 
           .aboutBox {
             .title {
-              font-size: 14px;
-              padding: 0.3rem;
+              font-size: 13px;
+              padding: 0 0.5rem;
             }
             .price {
               font-size: 12px;
@@ -617,18 +460,65 @@
     .cocktail {
       .titleSection {
         font-size: 0.95rem;
-        h1 {
-          margin: 0;
-        }
       }
-      .menuSection {
+      main {
         .menuItem {
           width: 85%;
 
           .aboutBox {
             .title {
-              font-size: 14px;
-              padding: 0.3rem;
+              font-size: 13px;
+              padding: 0 0.5rem;
+            }
+            .price {
+              font-size: 12px;
+            }
+            .product {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .body {
+    .barrel,
+    .bottle {
+      main {
+        .menuItem {
+          width: 90%;
+
+          .aboutBox {
+            .title {
+              font-size: 13px;
+              padding: 0 0.5rem;
+            }
+            .price {
+              font-size: 12px;
+            }
+            .product {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .cocktail {
+      .titleSection {
+        font-size: 0.95rem;
+      }
+      main {
+        .menuItem {
+          width: 90%;
+
+          .aboutBox {
+            .title {
+              font-size: 13px;
+              padding: 0 0.5rem;
             }
             .price {
               font-size: 12px;

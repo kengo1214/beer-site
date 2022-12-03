@@ -451,7 +451,6 @@
 .body .bottleMain,
 .body .cocktailMain {
     background-size: 100%;
-    background-position: center;
     background-position: top;
     background-repeat: repeat-y;
   }

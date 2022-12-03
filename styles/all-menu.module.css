@@ -3,18 +3,11 @@
   top: 130px;
   width: 100%;
   min-height: 100vh;
-  display: grid;
-  grid-template: "head" "barrel" "bottle" "cocktail" "footer" 50px/1fr;
-}
-.body .menuNav {
-  grid-area: head;
 }
 .body .barrel {
-  grid-area: barrel;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 .body .barrel .titleSection {
   display: flex;
@@ -29,7 +22,7 @@
 .body .barrel .titleSection h1 {
   margin: 0;
 }
-.body .barrel .menuSectionFirst {
+.body .barrel main {
   position: relative;
   background-size: cover;
   background-position: center;
@@ -42,7 +35,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.body .barrel .menuSectionFirst::after {
+.body .barrel main::after {
   content: "";
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -52,7 +45,7 @@
   bottom: 0;
   height: 100%;
 }
-.body .barrel .menuSectionFirst .menuItem {
+.body .barrel main .menuItem {
   z-index: 1;
   background-color: white;
   box-shadow: 5px 5px 10px gray;
@@ -61,14 +54,15 @@
   width: calc(33% - 32px);
   height: 440px;
   margin: 1rem;
+  padding: 1rem 0;
   display: grid;
   grid-template: "about" 180px "image" 180px "button" 80px;
 }
-.body .barrel .menuSectionFirst .menuItem .aboutBox {
+.body .barrel main .menuItem .aboutBox {
   grid-area: about;
   width: 100%;
 }
-.body .barrel .menuSectionFirst .menuItem .aboutBox .title {
+.body .barrel main .menuItem .aboutBox .title {
   width: 100%;
   height: 60px;
   font-size: 18px;
@@ -78,7 +72,7 @@
   justify-content: center;
   align-items: center;
 }
-.body .barrel .menuSectionFirst .menuItem .aboutBox .price {
+.body .barrel main .menuItem .aboutBox .price {
   width: 100%;
   height: 20px;
   font-size: 15px;
@@ -87,7 +81,7 @@
   justify-content: center;
   align-items: center;
 }
-.body .barrel .menuSectionFirst .menuItem .aboutBox .product {
+.body .barrel main .menuItem .aboutBox .product {
   height: 100px;
   font-size: 15px;
   margin: 0;
@@ -95,14 +89,14 @@
   justify-content: center;
   align-items: center;
 }
-.body .barrel .menuSectionFirst .menuItem .imageBox {
+.body .barrel main .menuItem .imageBox {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
-.body .barrel .menuSectionFirst .menuItem .imageBox .image {
+.body .barrel main .menuItem .imageBox .image {
   grid-area: image;
   height: 180px;
   width: 200px;
@@ -111,14 +105,14 @@
   justify-content: center;
   align-items: center;
 }
-.body .barrel .menuSectionFirst .menuItem .buttonBox {
+.body .barrel main .menuItem .buttonBox {
   grid-area: button;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.body .barrel .menuSectionFirst .menuItem .buttonBox a {
+.body .barrel main .menuItem .buttonBox a {
   padding: 0.8rem 1rem;
   border: 1px solid black;
   border-radius: 5px;
@@ -128,132 +122,22 @@
   justify-content: center;
   align-items: center;
 }
-.body .barrel .menuSectionFirst .menuItem .buttonBox a .icon {
+.body .barrel main .menuItem .buttonBox a .icon {
   margin-left: 0.5rem;
 }
-.body .barrel .menuSectionFirst .menuItem .buttonBox a:hover {
+.body .barrel main .menuItem .buttonBox a:hover {
   color: white;
   background-color: black;
   transition: 300ms;
 }
-.body .barrel .menuSection {
-  border: 6px dashed blue;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.body .barrel .menuSection::after {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-}
-.body .barrel .menuSection .menuItem {
-  z-index: 1;
-  background-color: white;
-  box-shadow: 5px 5px 10px gray;
-  box-sizing: content-box;
-  border-radius: 5px;
-  width: calc(33% - 32px);
-  height: 440px;
-  margin: 1rem;
-  display: grid;
-  grid-template: "about" 180px "image" 180px "button" 80px;
-}
-.body .barrel .menuSection .menuItem .aboutBox {
-  grid-area: about;
-  width: 100%;
-}
-.body .barrel .menuSection .menuItem .aboutBox .title {
-  width: 100%;
-  height: 60px;
-  font-size: 18px;
-  padding: 0.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .barrel .menuSection .menuItem .aboutBox .price {
-  width: 100%;
-  height: 20px;
-  font-size: 15px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .barrel .menuSection .menuItem .aboutBox .product {
-  height: 100px;
-  font-size: 15px;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .barrel .menuSection .menuItem .imageBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.body .barrel .menuSection .menuItem .imageBox .image {
-  grid-area: image;
-  height: 180px;
-  width: 200px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .barrel .menuSection .menuItem .buttonBox {
-  grid-area: button;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .barrel .menuSection .menuItem .buttonBox a {
-  padding: 0.8rem 1rem;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 0.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .barrel .menuSection .menuItem .buttonBox a .icon {
-  margin-left: 0.5rem;
-}
-.body .barrel .menuSection .menuItem .buttonBox a:hover {
-  color: white;
-  background-color: black;
-  transition: 300ms;
-}
-.body .barrel .menuSectionFirst {
+.body .barrel main {
   padding: 116px 1rem 1rem;
   background-image: url("/image/all-menu/barrel.jpg");
 }
 .body .bottle {
-  grid-area: bottle;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 .body .bottle .titleSection {
   display: flex;
@@ -268,7 +152,7 @@
 .body .bottle .titleSection h1 {
   margin: 0;
 }
-.body .bottle .menuSectionFirst {
+.body .bottle main {
   position: relative;
   background-size: cover;
   background-position: center;
@@ -281,7 +165,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.body .bottle .menuSectionFirst::after {
+.body .bottle main::after {
   content: "";
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -291,7 +175,7 @@
   bottom: 0;
   height: 100%;
 }
-.body .bottle .menuSectionFirst .menuItem {
+.body .bottle main .menuItem {
   z-index: 1;
   background-color: white;
   box-shadow: 5px 5px 10px gray;
@@ -300,14 +184,15 @@
   width: calc(33% - 32px);
   height: 440px;
   margin: 1rem;
+  padding: 1rem 0;
   display: grid;
   grid-template: "about" 180px "image" 180px "button" 80px;
 }
-.body .bottle .menuSectionFirst .menuItem .aboutBox {
+.body .bottle main .menuItem .aboutBox {
   grid-area: about;
   width: 100%;
 }
-.body .bottle .menuSectionFirst .menuItem .aboutBox .title {
+.body .bottle main .menuItem .aboutBox .title {
   width: 100%;
   height: 60px;
   font-size: 18px;
@@ -317,7 +202,7 @@
   justify-content: center;
   align-items: center;
 }
-.body .bottle .menuSectionFirst .menuItem .aboutBox .price {
+.body .bottle main .menuItem .aboutBox .price {
   width: 100%;
   height: 20px;
   font-size: 15px;
@@ -326,7 +211,7 @@
   justify-content: center;
   align-items: center;
 }
-.body .bottle .menuSectionFirst .menuItem .aboutBox .product {
+.body .bottle main .menuItem .aboutBox .product {
   height: 100px;
   font-size: 15px;
   margin: 0;
@@ -334,14 +219,14 @@
   justify-content: center;
   align-items: center;
 }
-.body .bottle .menuSectionFirst .menuItem .imageBox {
+.body .bottle main .menuItem .imageBox {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
-.body .bottle .menuSectionFirst .menuItem .imageBox .image {
+.body .bottle main .menuItem .imageBox .image {
   grid-area: image;
   height: 180px;
   width: 200px;
@@ -350,14 +235,14 @@
   justify-content: center;
   align-items: center;
 }
-.body .bottle .menuSectionFirst .menuItem .buttonBox {
+.body .bottle main .menuItem .buttonBox {
   grid-area: button;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.body .bottle .menuSectionFirst .menuItem .buttonBox a {
+.body .bottle main .menuItem .buttonBox a {
   padding: 0.8rem 1rem;
   border: 1px solid black;
   border-radius: 5px;
@@ -367,131 +252,21 @@
   justify-content: center;
   align-items: center;
 }
-.body .bottle .menuSectionFirst .menuItem .buttonBox a .icon {
+.body .bottle main .menuItem .buttonBox a .icon {
   margin-left: 0.5rem;
 }
-.body .bottle .menuSectionFirst .menuItem .buttonBox a:hover {
+.body .bottle main .menuItem .buttonBox a:hover {
   color: white;
   background-color: black;
   transition: 300ms;
 }
-.body .bottle .menuSection {
-  border: 6px dashed blue;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.body .bottle .menuSection::after {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-}
-.body .bottle .menuSection .menuItem {
-  z-index: 1;
-  background-color: white;
-  box-shadow: 5px 5px 10px gray;
-  box-sizing: content-box;
-  border-radius: 5px;
-  width: calc(33% - 32px);
-  height: 440px;
-  margin: 1rem;
-  display: grid;
-  grid-template: "about" 180px "image" 180px "button" 80px;
-}
-.body .bottle .menuSection .menuItem .aboutBox {
-  grid-area: about;
-  width: 100%;
-}
-.body .bottle .menuSection .menuItem .aboutBox .title {
-  width: 100%;
-  height: 60px;
-  font-size: 18px;
-  padding: 0.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .bottle .menuSection .menuItem .aboutBox .price {
-  width: 100%;
-  height: 20px;
-  font-size: 15px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .bottle .menuSection .menuItem .aboutBox .product {
-  height: 100px;
-  font-size: 15px;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .bottle .menuSection .menuItem .imageBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.body .bottle .menuSection .menuItem .imageBox .image {
-  grid-area: image;
-  height: 180px;
-  width: 200px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .bottle .menuSection .menuItem .buttonBox {
-  grid-area: button;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .bottle .menuSection .menuItem .buttonBox a {
-  padding: 0.8rem 1rem;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 0.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .bottle .menuSection .menuItem .buttonBox a .icon {
-  margin-left: 0.5rem;
-}
-.body .bottle .menuSection .menuItem .buttonBox a:hover {
-  color: white;
-  background-color: black;
-  transition: 300ms;
-}
-.body .bottle .menuSection {
+.body .bottle main {
   background-image: url("/image/all-menu/bottle.jpg");
 }
 .body .cocktail {
-  grid-area: cocktail;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 .body .cocktail .titleSection {
   display: flex;
@@ -506,7 +281,7 @@
 .body .cocktail .titleSection h1 {
   margin: 0;
 }
-.body .cocktail .menuSectionFirst {
+.body .cocktail main {
   position: relative;
   background-size: cover;
   background-position: center;
@@ -519,7 +294,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.body .cocktail .menuSectionFirst::after {
+.body .cocktail main::after {
   content: "";
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -529,7 +304,7 @@
   bottom: 0;
   height: 100%;
 }
-.body .cocktail .menuSectionFirst .menuItem {
+.body .cocktail main .menuItem {
   z-index: 1;
   background-color: white;
   box-shadow: 5px 5px 10px gray;
@@ -538,14 +313,15 @@
   width: calc(33% - 32px);
   height: 440px;
   margin: 1rem;
+  padding: 1rem 0;
   display: grid;
   grid-template: "about" 180px "image" 180px "button" 80px;
 }
-.body .cocktail .menuSectionFirst .menuItem .aboutBox {
+.body .cocktail main .menuItem .aboutBox {
   grid-area: about;
   width: 100%;
 }
-.body .cocktail .menuSectionFirst .menuItem .aboutBox .title {
+.body .cocktail main .menuItem .aboutBox .title {
   width: 100%;
   height: 60px;
   font-size: 18px;
@@ -555,7 +331,7 @@
   justify-content: center;
   align-items: center;
 }
-.body .cocktail .menuSectionFirst .menuItem .aboutBox .price {
+.body .cocktail main .menuItem .aboutBox .price {
   width: 100%;
   height: 20px;
   font-size: 15px;
@@ -564,7 +340,7 @@
   justify-content: center;
   align-items: center;
 }
-.body .cocktail .menuSectionFirst .menuItem .aboutBox .product {
+.body .cocktail main .menuItem .aboutBox .product {
   height: 100px;
   font-size: 15px;
   margin: 0;
@@ -572,14 +348,14 @@
   justify-content: center;
   align-items: center;
 }
-.body .cocktail .menuSectionFirst .menuItem .imageBox {
+.body .cocktail main .menuItem .imageBox {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
-.body .cocktail .menuSectionFirst .menuItem .imageBox .image {
+.body .cocktail main .menuItem .imageBox .image {
   grid-area: image;
   height: 180px;
   width: 200px;
@@ -588,14 +364,14 @@
   justify-content: center;
   align-items: center;
 }
-.body .cocktail .menuSectionFirst .menuItem .buttonBox {
+.body .cocktail main .menuItem .buttonBox {
   grid-area: button;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.body .cocktail .menuSectionFirst .menuItem .buttonBox a {
+.body .cocktail main .menuItem .buttonBox a {
   padding: 0.8rem 1rem;
   border: 1px solid black;
   border-radius: 5px;
@@ -605,132 +381,23 @@
   justify-content: center;
   align-items: center;
 }
-.body .cocktail .menuSectionFirst .menuItem .buttonBox a .icon {
+.body .cocktail main .menuItem .buttonBox a .icon {
   margin-left: 0.5rem;
 }
-.body .cocktail .menuSectionFirst .menuItem .buttonBox a:hover {
+.body .cocktail main .menuItem .buttonBox a:hover {
   color: white;
   background-color: black;
   transition: 300ms;
 }
-.body .cocktail .menuSection {
-  border: 6px dashed blue;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.body .cocktail .menuSection::after {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-}
-.body .cocktail .menuSection .menuItem {
-  z-index: 1;
-  background-color: white;
-  box-shadow: 5px 5px 10px gray;
-  box-sizing: content-box;
-  border-radius: 5px;
-  width: calc(33% - 32px);
-  height: 440px;
-  margin: 1rem;
-  display: grid;
-  grid-template: "about" 180px "image" 180px "button" 80px;
-}
-.body .cocktail .menuSection .menuItem .aboutBox {
-  grid-area: about;
-  width: 100%;
-}
-.body .cocktail .menuSection .menuItem .aboutBox .title {
-  width: 100%;
-  height: 60px;
-  font-size: 18px;
-  padding: 0.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .cocktail .menuSection .menuItem .aboutBox .price {
-  width: 100%;
-  height: 20px;
-  font-size: 15px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .cocktail .menuSection .menuItem .aboutBox .product {
-  height: 100px;
-  font-size: 15px;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .cocktail .menuSection .menuItem .imageBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.body .cocktail .menuSection .menuItem .imageBox .image {
-  grid-area: image;
-  height: 180px;
-  width: 200px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .cocktail .menuSection .menuItem .buttonBox {
-  grid-area: button;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .cocktail .menuSection .menuItem .buttonBox a {
-  padding: 0.8rem 1rem;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 0.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.body .cocktail .menuSection .menuItem .buttonBox a .icon {
-  margin-left: 0.5rem;
-}
-.body .cocktail .menuSection .menuItem .buttonBox a:hover {
-  color: white;
-  background-color: black;
-  transition: 300ms;
-}
-.body .cocktail .menuSection {
+.body .cocktail main {
   background-image: url("/image/all-menu/cocktail.jpg");
 }
 .body footer {
-  grid-area: footer;
-  width: 100%;
-  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 50px;
   background-color: rgb(178, 178, 178);
 }
 .body footer p {
@@ -739,307 +406,265 @@
 }
 
 @media screen and (min-width: 1500px) {
-  .body .barrel .menuSectionFirst {
+  .body .barrel main {
     padding: 116px 10rem 1rem;
   }
-  .body .bottle .menuSection,
-.body .cocktail .menuSection {
+  .body .bottle main,
+.body .cocktail main {
     padding: 1rem 10rem;
   }
 }
 @media screen and (max-width: 1155px) {
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .title {
-    font-size: 15px;
+  .body .barrel main .menuItem .aboutBox .title,
+.body .bottle main .menuItem .aboutBox .title,
+.body .cocktail main .menuItem .aboutBox .title {
+    font-size: 16px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .price {
+  .body .barrel main .menuItem .aboutBox .price,
+.body .bottle main .menuItem .aboutBox .price,
+.body .cocktail main .menuItem .aboutBox .price {
     font-size: 13px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .product {
-    font-size: 13px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .title,
-.body .cocktail .menuSection .menuItem .aboutBox .title {
-    font-size: 15px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .price,
-.body .cocktail .menuSection .menuItem .aboutBox .price {
-    font-size: 13px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .product,
-.body .cocktail .menuSection .menuItem .aboutBox .product {
+  .body .barrel main .menuItem .aboutBox .product,
+.body .bottle main .menuItem .aboutBox .product,
+.body .cocktail main .menuItem .aboutBox .product {
     font-size: 13px;
   }
 }
+@media screen and (max-width: 1050px) {
+  .body .barrel main .menuItem .aboutBox .title,
+.body .bottle main .menuItem .aboutBox .title,
+.body .cocktail main .menuItem .aboutBox .title {
+    font-size: 15px;
+  }
+}
 @media screen and (max-width: 1000px) {
-  .body .barrel .menuSectionFirst {
+  .body .barrel main,
+.body .bottle main,
+.body .cocktail main {
     background-size: 100%;
-    background-position: center;
+    background-position: top;
     background-repeat: repeat-y;
   }
-  .body .barrel .menuSectionFirst .menuItem {
+  .body .barrel main .menuItem,
+.body .bottle main .menuItem,
+.body .cocktail main .menuItem {
     width: calc(50% - 32px);
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .title {
+  .body .barrel main .menuItem .aboutBox .title,
+.body .bottle main .menuItem .aboutBox .title,
+.body .cocktail main .menuItem .aboutBox .title {
     font-size: 17px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .price {
+  .body .barrel main .menuItem .aboutBox .price,
+.body .bottle main .menuItem .aboutBox .price,
+.body .cocktail main .menuItem .aboutBox .price {
     font-size: 14px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .product {
-    font-size: 14px;
-  }
-  .body .bottle .menuSection,
-.body .cocktail .menuSection {
-    background-size: 100%;
-    background-position: center;
-    background-repeat: repeat-y;
-  }
-  .body .bottle .menuSection .menuItem,
-.body .cocktail .menuSection .menuItem {
-    width: calc(50% - 32px);
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .title,
-.body .cocktail .menuSection .menuItem .aboutBox .title {
-    font-size: 17px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .price,
-.body .cocktail .menuSection .menuItem .aboutBox .price {
-    font-size: 14px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .product,
-.body .cocktail .menuSection .menuItem .aboutBox .product {
+  .body .barrel main .menuItem .aboutBox .product,
+.body .bottle main .menuItem .aboutBox .product,
+.body .cocktail main .menuItem .aboutBox .product {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 768px) {
-  .body .barrel .menuSectionFirst {
-    padding: 116px 1rem 1rem;
-  }
-  .body .barrel .menuSectionFirst .menuItem {
+  .body .barrel main .menuItem,
+.body .bottle main .menuItem,
+.body .cocktail main .menuItem {
     width: calc(50% - 32px);
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .title {
+  .body .barrel main .menuItem .aboutBox .title,
+.body .bottle main .menuItem .aboutBox .title,
+.body .cocktail main .menuItem .aboutBox .title {
     font-size: 14px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .price {
+  .body .barrel main .menuItem .aboutBox .price,
+.body .bottle main .menuItem .aboutBox .price,
+.body .cocktail main .menuItem .aboutBox .price {
     font-size: 12px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .product {
+  .body .barrel main .menuItem .aboutBox .product,
+.body .bottle main .menuItem .aboutBox .product,
+.body .cocktail main .menuItem .aboutBox .product {
     font-size: 12px;
   }
-  .body .barrel .menuSectionFirst .menuItem .buttonBox a {
-    padding: 0.5rem 1.2rem;
-  }
-  .body .bottle .menuSection,
-.body .cocktail .menuSection {
-    padding: 1rem;
-  }
-  .body .bottle .menuSection .menuItem,
-.body .cocktail .menuSection .menuItem {
-    width: calc(50% - 32px);
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .title,
-.body .cocktail .menuSection .menuItem .aboutBox .title {
-    font-size: 14px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .price,
-.body .cocktail .menuSection .menuItem .aboutBox .price {
-    font-size: 12px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .product,
-.body .cocktail .menuSection .menuItem .aboutBox .product {
-    font-size: 12px;
-  }
-  .body .bottle .menuSection .menuItem .buttonBox a,
-.body .cocktail .menuSection .menuItem .buttonBox a {
+  .body .barrel main .menuItem .buttonBox a,
+.body .bottle main .menuItem .buttonBox a,
+.body .cocktail main .menuItem .buttonBox a {
     padding: 0.5rem 1.2rem;
   }
 }
 @media screen and (max-width: 650px) {
-  .body {
-    grid-template: "head" "barrel" "bottle" "cocktail" "footer" 50px/1fr;
-  }
-  .body .barrel .menuSectionFirst {
-    padding: 116px 1rem 1rem;
-  }
-  .body .barrel .menuSectionFirst .menuItem {
+  .body .barrel main .menuItem,
+.body .bottle main .menuItem,
+.body .cocktail main .menuItem {
     width: 75%;
+    margin: 1rem 0;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .title {
+  .body .barrel main .menuItem .aboutBox .title,
+.body .bottle main .menuItem .aboutBox .title,
+.body .cocktail main .menuItem .aboutBox .title {
     font-size: 18px;
-    padding: 0.3rem;
+    padding: 0 0.5rem;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .price {
+  .body .barrel main .menuItem .aboutBox .price,
+.body .bottle main .menuItem .aboutBox .price,
+.body .cocktail main .menuItem .aboutBox .price {
     font-size: 15px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .product {
-    font-size: 15px;
-  }
-  .body .bottle .menuSection .menuItem,
-.body .cocktail .menuSection .menuItem {
-    width: 75%;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .title,
-.body .cocktail .menuSection .menuItem .aboutBox .title {
-    font-size: 18px;
-    padding: 0.3rem;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .price,
-.body .cocktail .menuSection .menuItem .aboutBox .price {
-    font-size: 15px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .product,
-.body .cocktail .menuSection .menuItem .aboutBox .product {
+  .body .barrel main .menuItem .aboutBox .product,
+.body .bottle main .menuItem .aboutBox .product,
+.body .cocktail main .menuItem .aboutBox .product {
     font-size: 15px;
   }
 }
 @media screen and (max-width: 480px) {
   .body {
     top: 100px;
-    grid-template: "head" "barrel" "bottle" "cocktail" "footer" 50px/1fr;
   }
   .body .barrel .titleSection {
     font-size: 1.2rem;
   }
-  .body .barrel .titleSection h1 {
-    margin: 0;
-  }
-  .body .barrel .menuSectionFirst {
+  .body .barrel main {
     padding: 148px 1rem 1rem;
   }
-  .body .barrel .menuSectionFirst .menuItem {
-    width: 75%;
+  .body .barrel main .menuItem {
+    width: 80%;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .title {
-    font-size: 16px;
-    padding: 0.3rem;
+  .body .barrel main .menuItem .aboutBox .title {
+    font-size: 15.5px;
+    padding: 0 0.5rem;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .price {
+  .body .barrel main .menuItem .aboutBox .price {
     font-size: 14px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .product {
+  .body .barrel main .menuItem .aboutBox .product {
     font-size: 14px;
   }
-  .body .bottle .titleSection {
+  .body .bottle .titleSection,
+.body .cocktail .titleSection {
     font-size: 1.2rem;
   }
-  .body .cocktail .titleSection {
-    font-size: 1.2rem;
+  .body .bottle main .menuItem,
+.body .cocktail main .menuItem {
+    width: 80%;
   }
-  .body .cocktail .titleSection h1 {
-    margin: 0;
+  .body .bottle main .menuItem .aboutBox .title,
+.body .cocktail main .menuItem .aboutBox .title {
+    font-size: 15.5px;
+    padding: 0 0.5rem;
   }
-  .body .cocktail .menuSection .menuItem {
-    width: 75%;
-  }
-  .body .cocktail .menuSection .menuItem .aboutBox .title {
-    font-size: 16px;
-    padding: 0.3rem;
-  }
-  .body .cocktail .menuSection .menuItem .aboutBox .price {
+  .body .bottle main .menuItem .aboutBox .price,
+.body .cocktail main .menuItem .aboutBox .price {
     font-size: 14px;
   }
-  .body .cocktail .menuSection .menuItem .aboutBox .product {
+  .body .bottle main .menuItem .aboutBox .product,
+.body .cocktail main .menuItem .aboutBox .product {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 390px) {
-  .body {
-    top: 100px;
-  }
-  .body .barrel .menuSectionFirst .menuItem {
+  .body .barrel main .menuItem,
+.body .bottle main .menuItem {
     width: 85%;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .title {
-    font-size: 16px;
-    padding: 0.3rem;
+  .body .barrel main .menuItem .aboutBox .title,
+.body .bottle main .menuItem .aboutBox .title {
+    font-size: 14.5px;
+    padding: 0 0.5rem;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .price {
+  .body .barrel main .menuItem .aboutBox .price,
+.body .bottle main .menuItem .aboutBox .price {
     font-size: 13px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .product {
-    font-size: 13px;
-  }
-  .body .bottle .menuSection .menuItem {
-    width: 85%;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .title {
-    font-size: 16px;
-    padding: 0.3rem;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .price {
-    font-size: 13px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .product {
+  .body .barrel main .menuItem .aboutBox .product,
+.body .bottle main .menuItem .aboutBox .product {
     font-size: 13px;
   }
   .body .cocktail .titleSection {
     font-size: 1.1rem;
   }
-  .body .cocktail .titleSection h1 {
-    margin: 0;
-  }
-  .body .cocktail .menuSection .menuItem {
+  .body .cocktail main .menuItem {
     width: 85%;
   }
-  .body .cocktail .menuSection .menuItem .aboutBox .title {
-    font-size: 16px;
-    padding: 0.3rem;
+  .body .cocktail main .menuItem .aboutBox .title {
+    font-size: 14.5px;
+    padding: 0 0.5rem;
   }
-  .body .cocktail .menuSection .menuItem .aboutBox .price {
+  .body .cocktail main .menuItem .aboutBox .price {
     font-size: 13px;
   }
-  .body .cocktail .menuSection .menuItem .aboutBox .product {
+  .body .cocktail main .menuItem .aboutBox .product {
     font-size: 13px;
   }
 }
 @media screen and (max-width: 360px) {
-  .body {
-    top: 100px;
-  }
-  .body .barrel .menuSectionFirst .menuItem {
+  .body .barrel main .menuItem,
+.body .bottle main .menuItem {
     width: 85%;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .title {
-    font-size: 14px;
-    padding: 0.3rem;
+  .body .barrel main .menuItem .aboutBox .title,
+.body .bottle main .menuItem .aboutBox .title {
+    font-size: 13px;
+    padding: 0 0.5rem;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .price {
+  .body .barrel main .menuItem .aboutBox .price,
+.body .bottle main .menuItem .aboutBox .price {
     font-size: 12px;
   }
-  .body .barrel .menuSectionFirst .menuItem .aboutBox .product {
-    font-size: 12px;
-  }
-  .body .bottle .menuSection .menuItem {
-    width: 85%;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .title {
-    font-size: 14px;
-    padding: 0.3rem;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .price {
-    font-size: 12px;
-  }
-  .body .bottle .menuSection .menuItem .aboutBox .product {
+  .body .barrel main .menuItem .aboutBox .product,
+.body .bottle main .menuItem .aboutBox .product {
     font-size: 12px;
   }
   .body .cocktail .titleSection {
     font-size: 0.95rem;
   }
-  .body .cocktail .titleSection h1 {
-    margin: 0;
-  }
-  .body .cocktail .menuSection .menuItem {
+  .body .cocktail main .menuItem {
     width: 85%;
   }
-  .body .cocktail .menuSection .menuItem .aboutBox .title {
-    font-size: 14px;
-    padding: 0.3rem;
+  .body .cocktail main .menuItem .aboutBox .title {
+    font-size: 13px;
+    padding: 0 0.5rem;
   }
-  .body .cocktail .menuSection .menuItem .aboutBox .price {
+  .body .cocktail main .menuItem .aboutBox .price {
     font-size: 12px;
   }
-  .body .cocktail .menuSection .menuItem .aboutBox .product {
+  .body .cocktail main .menuItem .aboutBox .product {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .body .barrel main .menuItem,
+.body .bottle main .menuItem {
+    width: 90%;
+  }
+  .body .barrel main .menuItem .aboutBox .title,
+.body .bottle main .menuItem .aboutBox .title {
+    font-size: 13px;
+    padding: 0 0.5rem;
+  }
+  .body .barrel main .menuItem .aboutBox .price,
+.body .bottle main .menuItem .aboutBox .price {
+    font-size: 12px;
+  }
+  .body .barrel main .menuItem .aboutBox .product,
+.body .bottle main .menuItem .aboutBox .product {
+    font-size: 12px;
+  }
+  .body .cocktail .titleSection {
+    font-size: 0.95rem;
+  }
+  .body .cocktail main .menuItem {
+    width: 90%;
+  }
+  .body .cocktail main .menuItem .aboutBox .title {
+    font-size: 13px;
+    padding: 0 0.5rem;
+  }
+  .body .cocktail main .menuItem .aboutBox .price {
+    font-size: 12px;
+  }
+  .body .cocktail main .menuItem .aboutBox .product {
     font-size: 12px;
   }
 }

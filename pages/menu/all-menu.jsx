@@ -18,7 +18,7 @@ export default function AllMenu({
 
       {/* 🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺🍺 */}
       <section className={styles.barrel} id="barrel">
-        <div className={styles.menuSectionFirst}>
+        <main>
           <div className={styles.titleSection}>
             <h1>Barrel Beer</h1>
           </div>
@@ -59,13 +59,13 @@ export default function AllMenu({
               </div>
             </div>
           ))}
-        </div>
+        </main>
       </section>
 
       {/* 🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 */}
 
       <section className={styles.bottle} id="bottle">
-        <div className={styles.menuSection}>
+        <main>
           <div className={styles.titleSection}>
             <h1>Bottle Beer</h1>
           </div>
@@ -105,12 +105,12 @@ export default function AllMenu({
               </div>
             </div>
           ))}
-        </div>
+        </main>
       </section>
 
       {/* 🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷🍷 */}
       <section className={styles.cocktail} id="cocktail">
-        <div className={styles.menuSection}>
+        <main>
           <div className={styles.titleSection}>
             <h1>Cocktail and Hardliquor</h1>
           </div>
@@ -152,7 +152,7 @@ export default function AllMenu({
               </div>
             </div>
           ))}
-        </div>
+        </main>
       </section>
 
       <footer>
