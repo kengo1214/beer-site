@@ -52,7 +52,6 @@
   align-items: center;
   z-index: 1;
   background-color: white;
-  background-color: red;
   box-shadow: 5px 5px 10px gray;
   border-radius: 10px;
   padding: 1rem;
@@ -176,7 +175,6 @@
   align-items: center;
   z-index: 1;
   background-color: white;
-  background-color: red;
   box-shadow: 5px 5px 10px gray;
   border-radius: 10px;
   padding: 1rem;
@@ -300,7 +298,6 @@
   align-items: center;
   z-index: 1;
   background-color: white;
-  background-color: red;
   box-shadow: 5px 5px 10px gray;
   border-radius: 10px;
   padding: 1rem;
