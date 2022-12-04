@@ -4,21 +4,16 @@
   align-items: center;
 }
 
-@mixin grid {
-  display: grid;
-  grid-template:
-    "title"
-    "product"
-    "about"
-    "image"
-    / 1fr;
-}
-
 @mixin main {
   position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
+  min-height: calc(100vh - 130px);
+  padding: 2rem;
+  @include center;
+  flex-direction: column;
 
   &::after {
     content: "";
@@ -31,26 +26,25 @@
     height: 100%;
   }
 
-  width: 100%;
-  min-height: calc(100vh - 130px);
-  padding: 3rem;
-  padding: 2rem;
-  @include center;
-  flex-direction: column;
-
   .box {
     @include center;
     z-index: 1;
     background-color: white;
     box-shadow: 5px 5px 10px gray;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 1rem;
     width: 65%;
+    display: grid;
+    grid-template:
+      "about image"
+      "product image"
+      / 70% 30%;
 
     .sentence {
-      width: 70%;
+      grid-area: about;
       @include center;
       flex-direction: column;
+      height: 100%;
 
       .title {
         @include center;
@@ -79,7 +73,11 @@
           }
         }
       }
+    }
 
+    .detailBox {
+      grid-area: product;
+      height: 100%;
       .detail {
         max-height: 200px;
         overflow: scroll;
@@ -95,9 +93,9 @@
     }
 
     .image {
+      grid-area: image;
       position: relative;
-      width: 30%;
-      height: 300px;
+      height: 100%;
     }
   }
 
@@ -152,7 +150,7 @@
     margin-bottom: 2rem;
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.25rem;
       margin: 0;
     }
   }
@@ -160,11 +158,6 @@
   .pageTitleCocktail {
     h1:nth-child(2) {
       margin-left: 1rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
     }
   }
 
@@ -200,16 +193,26 @@
 
 // 💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡
 
-@media screen and (max-width: 1100px) {
+@media screen and (min-width: 1500px) {
   .body {
     .barrelMain,
     .bottleMain,
     .cocktailMain {
-      .box {
-        width: 75%;
+      .pageTitle,
+      .pageTitleCocktail {
+        margin-bottom: 3.5rem;
+
+        h1 {
+          font-size: 3rem;
+        }
       }
+
+      .box {
+        width: 50%;
+      }
+
       .buttonBox {
-        width: 75%;
+        margin-top: 3.5rem;
       }
     }
   }
@@ -222,10 +225,139 @@
     .cocktailMain {
       .box {
         width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    .pageTitleCocktail {
+      h1 {
+        font-size: 1.95rem;
+      }
+    }
+
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
+      .box {
+        width: 80%;
+        grid-template:
+          "about "
+          "image"
+          "product "
+          / 100%;
 
         .sentence {
           .title {
+            padding: 0.8rem 0;
             font-size: 1.3rem;
+          }
+
+          .aboutBox {
+            flex-direction: column;
+            padding: 0.8rem 0;
+
+            .price {
+              margin: 0 0 1.6rem;
+              font-size: 1rem;
+            }
+
+            .product {
+              p {
+                margin: 0;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+
+        .image {
+          height: 200px;
+        }
+      }
+    }
+  }
+}
+
+// 2段階表示 / 2段階表示 / 2段階表示
+// 2段階表示 / 2段階表示 / 2段階表示
+// 2段階表示 / 2段階表示 / 2段階表示
+@media screen and (max-width: 600px) {
+  .body {
+    .pageTitleCocktail {
+      flex-direction: column;
+      padding: 0;
+      padding: 1rem 0;
+
+      h1:nth-child(1) {
+        margin-bottom: 0.3rem;
+      }
+      h1:nth-child(2) {
+        margin-left: 0rem;
+      }
+    }
+
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
+      .box {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .body {
+    .pageTitleCocktail {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
+      .box {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .body {
+    top: 100px;
+
+    .pageTitle {
+      margin-bottom: 1rem;
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    .pageTitleCocktail {
+      margin-bottom: 1rem;
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
+      padding: 1rem;
+
+      .box {
+        padding: 0.5rem;
+        width: 90%;
+
+        .sentence {
+          .title {
+            font-size: 0.95rem;
           }
 
           .aboutBox {
@@ -235,189 +367,31 @@
 
             .product {
               p {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
               }
             }
           }
+        }
 
+        .detailBox {
           .detail {
             p {
-              font-size: 0.9rem;
+              font-size: 0.8rem;
             }
           }
         }
+
         .image {
-          width: 30%;
-          height: 280px;
+          height: 180px;
         }
-      }
-      .buttonBox {
-        width: 90%;
       }
     }
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 400px) {
   .body {
     .pageTitle {
-      h1 {
-        font-size: 2.3rem;
-      }
-    }
-    .pageTitleCocktail {
-      h1 {
-        font-size: 2rem;
-      }
-    }
-
-    .barrelMain,
-    .bottleMain,
-    .cocktailMain {
-      background-size: 100%;
-      background-position: top;
-      background-repeat: repeat-y;
-
-      .box {
-        width: 100%;
-        flex-direction: column;
-
-        .sentence {
-          @include grid;
-          width: 100%;
-
-          .title {
-            grid-area: title;
-            font-size: 1.3rem;
-          }
-
-          .aboutBox {
-            grid-area: product;
-            .price {
-              font-size: 0.9rem;
-            }
-
-            .product {
-              p {
-                font-size: 0.85rem;
-              }
-            }
-          }
-
-          .detail {
-            grid-area: about;
-            p {
-              font-size: 0.9rem;
-            }
-          }
-        }
-        .image {
-          grid-area: image;
-          width: 100%;
-          height: 200px;
-        }
-      }
-
-      .buttonBox {
-        width: 100%;
-
-        a {
-          padding: 0.8rem 1.5rem;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .body {
-    .pageTitleCocktail {
-      h1 {
-        font-size: 1.75rem;
-      }
-    }
-  }
-}
-
-// 🔥1列表示に変更🔥
-
-@media screen and (max-width: 550px) {
-  .body {
-    .pageTitle {
-      h1 {
-        font-size: 1.8rem;
-      }
-    }
-
-    .pageTitleCocktail {
-      padding: 0.5rem 0;
-      padding: 0;
-      flex-direction: column;
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      h1:nth-child(1) {
-        margin-bottom: 0.3rem;
-      }
-
-      h1:nth-child(2) {
-        margin-left: 0;
-      }
-    }
-
-    .barrelMain,
-    .bottleMain,
-    .cocktailMain {
-      padding: 2rem 2.5rem;
-
-      .box {
-        width: 100%;
-        flex-direction: column;
-        padding: 1rem;
-        padding: 1rem 0.5rem;
-
-        .sentence {
-          width: 100%;
-          .title {
-            font-size: 1.3rem;
-          }
-
-          .aboutBox {
-            flex-direction: column;
-            .price {
-              font-size: 0.9rem;
-              margin: 0 0 1rem;
-            }
-
-            .product {
-              p {
-                font-size: 0.8rem;
-              }
-            }
-          }
-
-          .detail {
-            p {
-              font-size: 0.9rem;
-            }
-          }
-        }
-        .image {
-          width: 100%;
-          height: 200px;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .body {
-    top: 100px;
-    .pageTitle {
-      padding: 0;
       h1 {
         font-size: 1.7rem;
       }
@@ -425,129 +399,7 @@
 
     .pageTitleCocktail {
       h1 {
-        font-size: 1.7rem;
-        font-size: 1.6rem;
-      }
-    }
-
-    .barrelMain,
-    .bottleMain,
-    .cocktailMain {
-      padding: 2rem 2rem;
-
-      .box {
-        width: 100%;
-        flex-direction: column;
-        padding: 0.5rem;
-
-        .sentence {
-          width: 100%;
-          .title {
-            font-size: 1.2rem;
-
-            padding: 0.5rem 0;
-          }
-
-          .aboutBox {
-            flex-direction: column;
-            padding: 0.5rem;
-
-            .price {
-              font-size: 0.9rem;
-              margin: 0 0 1rem;
-            }
-
-            .product {
-              p {
-                font-size: 0.8rem;
-              }
-            }
-          }
-
-          .detail {
-            max-height: 200px;
-            overflow: scroll;
-            padding: 0.5rem;
-            p {
-              font-size: 0.8rem;
-            }
-          }
-        }
-        .image {
-          width: 100%;
-          height: 200px;
-        }
-      }
-      .buttonBox {
-        width: 100%;
-
-        a {
-          padding: 0.8rem 1rem;
-          font-size: 0.9rem;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 390px) {
-  .body {
-    top: 100px;
-    .pageTitle {
-      h1 {
-        font-size: 1.6rem;
-      }
-    }
-
-    .pageTitleCocktail {
-      h1 {
-        font-size: 1.45rem;
-      }
-    }
-    .barrelMain,
-    .bottleMain,
-    .cocktailMain {
-      padding: 2rem 2rem;
-
-      .box {
-        width: 100%;
-        flex-direction: column;
-        padding: 0.5rem;
-
-        .sentence {
-          width: 100%;
-          .title {
-            font-size: 1rem;
-
-            padding: 0.5rem 0;
-          }
-
-          .aboutBox {
-            flex-direction: column;
-            padding: 0.5rem;
-
-            .price {
-              font-size: 0.8rem;
-              margin: 0 0 1rem;
-            }
-
-            .product {
-              p {
-                font-size: 0.7rem;
-              }
-            }
-          }
-
-          .detail {
-            padding: 0.5rem;
-            p {
-              font-size: 0.8rem;
-            }
-          }
-        }
-        .image {
-          width: 100%;
-          height: 200px;
-        }
+        font-size: 1.35rem;
       }
     }
   }
@@ -557,19 +409,46 @@
   .body {
     .pageTitle {
       h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
     }
 
-    .pageTitleCocktail {
-      h1 {
-        font-size: 1.35em;
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
+      .box {
+        width: 100%;
+
+        .sentence {
+          .title {
+            font-size: 0.9rem;
+          }
+
+          .aboutBox {
+            .price {
+              font-size: 0.8rem;
+            }
+
+            .product {
+              p {
+                font-size: 0.7rem;
+              }
+            }
+          }
+        }
+
+        .detailBox {
+          .detail {
+            p {
+              font-size: 0.75rem;
+            }
+          }
+        }
       }
     }
   }
 }
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 340px) {
   .body {
     .pageTitle {
       h1 {
@@ -579,7 +458,40 @@
 
     .pageTitleCocktail {
       h1 {
-        font-size: 1.2em;
+        font-size: 1.25rem;
+      }
+    }
+
+    .barrelMain,
+    .bottleMain,
+    .cocktailMain {
+      .box {
+        .sentence {
+          .title {
+            padding: 0.8rem 0;
+            font-size: 0.8rem;
+          }
+
+          .aboutBox {
+            .price {
+              font-size: 0.75rem;
+            }
+
+            .product {
+              p {
+                font-size: 0.65rem;
+              }
+            }
+          }
+        }
+
+        .detailBox {
+          .detail {
+            p {
+              font-size: 0.8rem;
+            }
+          }
+        }
       }
     }
   }

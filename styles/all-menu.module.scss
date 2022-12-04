@@ -6,6 +6,25 @@
   align-items: center;
 }
 
+@mixin menuItem {
+  .menuItem {
+    width: 80%;
+
+    .aboutBox {
+      .title {
+        font-size: 15.5px;
+        padding: 0 0.5rem;
+      }
+      .price {
+        font-size: 14px;
+      }
+      .product {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 @mixin parts {
   position: relative;
   background-size: cover;
@@ -115,16 +134,15 @@
 
 @mixin section {
   @include center;
-
   .titleSection {
     @include center;
     color: white;
     z-index: 1;
     padding: 1rem;
-    font-size: 1.5rem;
     width: 100%;
     h1 {
       margin: 0;
+      font-size: 2.25rem;
     }
   }
 
@@ -144,6 +162,7 @@
   .barrel {
     @include section;
     main {
+      // 💎💎💎💎💎💎💎💎💎💎💎
       padding: 116px 1rem 1rem;
       background-image: url("/image/all-menu/barrel.jpg");
     }
@@ -182,6 +201,7 @@
   .body {
     .barrel {
       main {
+        // 💎💎💎💎💎💎💎💎💎💎💎
         padding: 116px 10rem 1rem;
       }
     }
@@ -328,57 +348,45 @@
   }
 }
 
+//💡 ここからbarrel,bottoleのfont-sizeは変更がなく統一
+//💡 ここからcacktailのみfont-sizeが変わっていく
+
 @media screen and (max-width: 480px) {
   .body {
     top: 100px;
 
     .barrel {
       .titleSection {
-        font-size: 1.2rem;
+        h1 {
+          font-size: 1.8rem;
+        }
       }
       main {
+        // 💎💎💎💎💎💎💎💎💎💎💎
         padding: 148px 1rem 1rem;
-
-        .menuItem {
-          width: 80%;
-
-          .aboutBox {
-            .title {
-              font-size: 15.5px;
-              padding: 0 0.5rem;
-            }
-            .price {
-              font-size: 14px;
-            }
-            .product {
-              font-size: 14px;
-            }
-          }
-        }
+        @include menuItem;
       }
     }
-    .bottle,
-    .cocktail {
+
+    .bottle {
       .titleSection {
-        font-size: 1.2rem;
+        h1 {
+          font-size: 1.8rem;
+        }
       }
       main {
-        .menuItem {
-          width: 80%;
+        @include menuItem;
+      }
+    }
 
-          .aboutBox {
-            .title {
-              font-size: 15.5px;
-              padding: 0 0.5rem;
-            }
-            .price {
-              font-size: 14px;
-            }
-            .product {
-              font-size: 14px;
-            }
-          }
+    .cocktail {
+      .titleSection {
+        h1 {
+          font-size: 1.7rem;
         }
+      }
+      main {
+        @include menuItem;
       }
     }
   }
@@ -410,7 +418,9 @@
 
     .cocktail {
       .titleSection {
-        font-size: 1.1rem;
+        h1 {
+          font-size: 1.45rem;
+        }
       }
       main {
         .menuItem {
@@ -439,12 +449,9 @@
     .bottle {
       main {
         .menuItem {
-          width: 85%;
-
           .aboutBox {
             .title {
               font-size: 13px;
-              padding: 0 0.5rem;
             }
             .price {
               font-size: 12px;
@@ -458,17 +465,11 @@
     }
 
     .cocktail {
-      .titleSection {
-        font-size: 0.95rem;
-      }
       main {
         .menuItem {
-          width: 85%;
-
           .aboutBox {
             .title {
               font-size: 13px;
-              padding: 0 0.5rem;
             }
             .price {
               font-size: 12px;
@@ -490,43 +491,14 @@
       main {
         .menuItem {
           width: 90%;
-
-          .aboutBox {
-            .title {
-              font-size: 13px;
-              padding: 0 0.5rem;
-            }
-            .price {
-              font-size: 12px;
-            }
-            .product {
-              font-size: 12px;
-            }
-          }
         }
       }
     }
 
     .cocktail {
-      .titleSection {
-        font-size: 0.95rem;
-      }
       main {
         .menuItem {
           width: 90%;
-
-          .aboutBox {
-            .title {
-              font-size: 13px;
-              padding: 0 0.5rem;
-            }
-            .price {
-              font-size: 12px;
-            }
-            .product {
-              font-size: 12px;
-            }
-          }
         }
       }
     }

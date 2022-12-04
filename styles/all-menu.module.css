@@ -16,11 +16,11 @@
   color: white;
   z-index: 1;
   padding: 1rem;
-  font-size: 1.5rem;
   width: 100%;
 }
 .body .barrel .titleSection h1 {
   margin: 0;
+  font-size: 2.25rem;
 }
 .body .barrel main {
   position: relative;
@@ -146,11 +146,11 @@
   color: white;
   z-index: 1;
   padding: 1rem;
-  font-size: 1.5rem;
   width: 100%;
 }
 .body .bottle .titleSection h1 {
   margin: 0;
+  font-size: 2.25rem;
 }
 .body .bottle main {
   position: relative;
@@ -275,11 +275,11 @@
   color: white;
   z-index: 1;
   padding: 1rem;
-  font-size: 1.5rem;
   width: 100%;
 }
 .body .cocktail .titleSection h1 {
   margin: 0;
+  font-size: 2.25rem;
 }
 .body .cocktail main {
   position: relative;
@@ -522,8 +522,8 @@
   .body {
     top: 100px;
   }
-  .body .barrel .titleSection {
-    font-size: 1.2rem;
+  .body .barrel .titleSection h1 {
+    font-size: 1.8rem;
   }
   .body .barrel main {
     padding: 148px 1rem 1rem;
@@ -541,25 +541,36 @@
   .body .barrel main .menuItem .aboutBox .product {
     font-size: 14px;
   }
-  .body .bottle .titleSection,
-.body .cocktail .titleSection {
-    font-size: 1.2rem;
+  .body .bottle .titleSection h1 {
+    font-size: 1.8rem;
   }
-  .body .bottle main .menuItem,
-.body .cocktail main .menuItem {
+  .body .bottle main .menuItem {
     width: 80%;
   }
-  .body .bottle main .menuItem .aboutBox .title,
-.body .cocktail main .menuItem .aboutBox .title {
+  .body .bottle main .menuItem .aboutBox .title {
     font-size: 15.5px;
     padding: 0 0.5rem;
   }
-  .body .bottle main .menuItem .aboutBox .price,
-.body .cocktail main .menuItem .aboutBox .price {
+  .body .bottle main .menuItem .aboutBox .price {
     font-size: 14px;
   }
-  .body .bottle main .menuItem .aboutBox .product,
-.body .cocktail main .menuItem .aboutBox .product {
+  .body .bottle main .menuItem .aboutBox .product {
+    font-size: 14px;
+  }
+  .body .cocktail .titleSection h1 {
+    font-size: 1.7rem;
+  }
+  .body .cocktail main .menuItem {
+    width: 80%;
+  }
+  .body .cocktail main .menuItem .aboutBox .title {
+    font-size: 15.5px;
+    padding: 0 0.5rem;
+  }
+  .body .cocktail main .menuItem .aboutBox .price {
+    font-size: 14px;
+  }
+  .body .cocktail main .menuItem .aboutBox .product {
     font-size: 14px;
   }
 }
@@ -581,8 +592,8 @@
 .body .bottle main .menuItem .aboutBox .product {
     font-size: 13px;
   }
-  .body .cocktail .titleSection {
-    font-size: 1.1rem;
+  .body .cocktail .titleSection h1 {
+    font-size: 1.45rem;
   }
   .body .cocktail main .menuItem {
     width: 85%;
@@ -599,14 +610,9 @@
   }
 }
 @media screen and (max-width: 360px) {
-  .body .barrel main .menuItem,
-.body .bottle main .menuItem {
-    width: 85%;
-  }
   .body .barrel main .menuItem .aboutBox .title,
 .body .bottle main .menuItem .aboutBox .title {
     font-size: 13px;
-    padding: 0 0.5rem;
   }
   .body .barrel main .menuItem .aboutBox .price,
 .body .bottle main .menuItem .aboutBox .price {
@@ -616,15 +622,8 @@
 .body .bottle main .menuItem .aboutBox .product {
     font-size: 12px;
   }
-  .body .cocktail .titleSection {
-    font-size: 0.95rem;
-  }
-  .body .cocktail main .menuItem {
-    width: 85%;
-  }
   .body .cocktail main .menuItem .aboutBox .title {
     font-size: 13px;
-    padding: 0 0.5rem;
   }
   .body .cocktail main .menuItem .aboutBox .price {
     font-size: 12px;
@@ -638,34 +637,8 @@
 .body .bottle main .menuItem {
     width: 90%;
   }
-  .body .barrel main .menuItem .aboutBox .title,
-.body .bottle main .menuItem .aboutBox .title {
-    font-size: 13px;
-    padding: 0 0.5rem;
-  }
-  .body .barrel main .menuItem .aboutBox .price,
-.body .bottle main .menuItem .aboutBox .price {
-    font-size: 12px;
-  }
-  .body .barrel main .menuItem .aboutBox .product,
-.body .bottle main .menuItem .aboutBox .product {
-    font-size: 12px;
-  }
-  .body .cocktail .titleSection {
-    font-size: 0.95rem;
-  }
   .body .cocktail main .menuItem {
     width: 90%;
-  }
-  .body .cocktail main .menuItem .aboutBox .title {
-    font-size: 13px;
-    padding: 0 0.5rem;
-  }
-  .body .cocktail main .menuItem .aboutBox .price {
-    font-size: 12px;
-  }
-  .body .cocktail main .menuItem .aboutBox .product {
-    font-size: 12px;
   }
 }
 /*# sourceMappingURL=all-menu.module.css.map */
