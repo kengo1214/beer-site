@@ -53,6 +53,7 @@
       flex-direction: column;
 
       .title {
+        border: 3px solid red;
         @include center;
         margin: 0;
         width: 100%;
@@ -61,6 +62,7 @@
       }
 
       .aboutBox {
+        border: 3px solid blue;
         @include center;
         flex-direction: row;
         width: 100%;
@@ -81,6 +83,7 @@
       }
 
       .detail {
+        border: 3px solid green;
         max-height: 200px;
         overflow: scroll;
         width: 100%;
@@ -95,6 +98,7 @@
     }
 
     .image {
+      border: 3px solid orange;
       position: relative;
       width: 30%;
       height: 300px;
@@ -281,18 +285,26 @@
       .box {
         width: 100%;
         flex-direction: column;
-
+        
         .sentence {
           @include grid;
+          grid-template:
+            "title"
+            "about"
+            "image"
+            "detail"
+            / 1fr;
           width: 100%;
 
           .title {
             grid-area: title;
             font-size: 1.3rem;
+            width: 100%;
+            
           }
 
           .aboutBox {
-            grid-area: product;
+            grid-area: about;
             .price {
               font-size: 0.9rem;
             }
@@ -305,7 +317,7 @@
           }
 
           .detail {
-            grid-area: about;
+            grid-area: detail;
             p {
               font-size: 0.9rem;
             }
@@ -585,6 +597,7 @@
   }
 }
 
+// 🔥grid-templateで設定していた時のコード🔥
 
 // @mixin center {
 //   display: flex;

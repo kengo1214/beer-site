@@ -41,8 +41,9 @@ export default function MoreInformation({ barrelbeer }) {
         </div>
         <div className={styles.box}>
           <div className={styles.sentence}>
+            {/* 🟥🟥🟥 */}
             <h1 className={styles.title}>{barrelbeer.title}</h1>
-
+            {/* 🟦🟦🟦 */}
             <div className={styles.aboutBox}>
               <p className={styles.price}>{barrelbeer.price}</p>
               <div
@@ -53,22 +54,24 @@ export default function MoreInformation({ barrelbeer }) {
               />
             </div>
 
+            {/* 🟩🟩🟩 */}
             <div
               className={styles.detail}
               dangerouslySetInnerHTML={{
                 __html: `${barrelbeer.detail}`,
               }}
             />
-          </div>
 
+          {/* 🟧🟧🟧*/}
           <div className={styles.image}>
             <Image
               src={barrelbeer.image.url}
               layout="fill"
               objectFit="contain"
               alt="image"
-            />
+              />
           </div>
+              </div>
         </div>
 
         <div className={styles.buttonBox}>
@@ -87,6 +90,8 @@ export default function MoreInformation({ barrelbeer }) {
     </div>
   );
 }
+
+// 🔥grid-templateで設定していた時のコード🔥
 
 // import { clientMenu } from "../../../libs/client";
 // import Link from "next/link";
