@@ -44,14 +44,11 @@ export default function MoreInformation({ cocktail }) {
           <h1>All Menu </h1>
           <h1>- Cocktail and Hardliquor -</h1>
         </div>
-
-        {/* 🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 */}
         <div className={styles.box}>
-          {/* 🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦 */}
-
           <div className={styles.sentence}>
+            {/* 🟥🟥🟥 */}
             <h1 className={styles.title}>{cocktail.title}</h1>
-
+            {/* 🟦🟦🟦 */}
             <div className={styles.aboutBox}>
               <p className={styles.price}>{cocktail.price}</p>
               <div
@@ -61,28 +58,24 @@ export default function MoreInformation({ cocktail }) {
                 }}
               />
             </div>
-          </div>
 
-          {/* 🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧 */}
-
-          <div className={styles.detailBox}>
+            {/* 🟩🟩🟩 */}
             <div
               className={styles.detail}
               dangerouslySetInnerHTML={{
                 __html: `${cocktail.detail}`,
               }}
             />
-          </div>
 
-          {/* 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 */}
-
-          <div className={styles.image}>
-            <Image
-              src={cocktail.image.url}
-              layout="fill"
-              objectFit="contain"
-              alt="image"
-            />
+            {/* 🟧🟧🟧*/}
+            <div className={styles.image}>
+              <Image
+                src={cocktail.image.url}
+                layout="fill"
+                objectFit="contain"
+                alt="image"
+              />
+            </div>
           </div>
         </div>
 

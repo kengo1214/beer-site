@@ -40,14 +40,11 @@ export default function MoreInformation({ bottlebeer }) {
         <div className={styles.pageTitle}>
           <h1>All Menu - Bottle Beer -</h1>
         </div>
-
-        {/* 🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥 */}
         <div className={styles.box}>
-          {/* 🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦 */}
-
           <div className={styles.sentence}>
+            {/* 🟥🟥🟥 */}
             <h1 className={styles.title}>{bottlebeer.title}</h1>
-
+            {/* 🟦🟦🟦 */}
             <div className={styles.aboutBox}>
               <p className={styles.price}>{bottlebeer.price}</p>
               <div
@@ -57,28 +54,24 @@ export default function MoreInformation({ bottlebeer }) {
                 }}
               />
             </div>
-          </div>
 
-          {/* 🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧 */}
-
-          <div className={styles.detailBox}>
+            {/* 🟩🟩🟩 */}
             <div
               className={styles.detail}
               dangerouslySetInnerHTML={{
                 __html: `${bottlebeer.detail}`,
               }}
             />
-          </div>
 
-          {/* 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 */}
-
-          <div className={styles.image}>
-            <Image
-              src={bottlebeer.image.url}
-              layout="fill"
-              objectFit="contain"
-              alt="image"
-            />
+            {/* 🟧🟧🟧*/}
+            <div className={styles.image}>
+              <Image
+                src={bottlebeer.image.url}
+                layout="fill"
+                objectFit="contain"
+                alt="image"
+              />
+            </div>
           </div>
         </div>
 
@@ -98,6 +91,7 @@ export default function MoreInformation({ bottlebeer }) {
     </div>
   );
 }
+
 // export default function MoreInformation({ bottlebeer }) {
 //   return (
 //     <div className={styles.body}>

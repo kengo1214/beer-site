@@ -62,16 +62,16 @@ export default function MoreInformation({ barrelbeer }) {
               }}
             />
 
-          {/* 🟧🟧🟧*/}
-          <div className={styles.image}>
-            <Image
-              src={barrelbeer.image.url}
-              layout="fill"
-              objectFit="contain"
-              alt="image"
+            {/* 🟧🟧🟧*/}
+            <div className={styles.image}>
+              <Image
+                src={barrelbeer.image.url}
+                layout="fill"
+                objectFit="contain"
+                alt="image"
               />
+            </div>
           </div>
-              </div>
         </div>
 
         <div className={styles.buttonBox}>
