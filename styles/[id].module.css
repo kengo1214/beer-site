@@ -98,11 +98,11 @@
 }
 .body .barrelMain main .box .detail {
   grid-area: detail;
-  max-height: 200px;
-  overflow: scroll;
   width: 100%;
+  max-height: 200px;
   padding: 0.8rem;
   line-height: 1.8;
+  overflow: scroll;
 }
 .body .barrelMain main .box .detail p {
   margin: 0;
@@ -217,11 +217,11 @@
 }
 .body .bottleMain main .box .detail {
   grid-area: detail;
-  max-height: 200px;
-  overflow: scroll;
   width: 100%;
+  max-height: 200px;
   padding: 0.8rem;
   line-height: 1.8;
+  overflow: scroll;
 }
 .body .bottleMain main .box .detail p {
   margin: 0;
@@ -336,11 +336,11 @@
 }
 .body .cocktailMain main .box .detail {
   grid-area: detail;
-  max-height: 200px;
-  overflow: scroll;
   width: 100%;
+  max-height: 200px;
   padding: 0.8rem;
   line-height: 1.8;
+  overflow: scroll;
 }
 .body .cocktailMain main .box .detail p {
   margin: 0;
@@ -456,52 +456,28 @@
 .body .bottleMain main .box,
 .body .cocktailMain main .box {
     grid-template: "title" "about" "image" "detail"/1fr;
-    width: 100%;
   }
   .body .barrelMain main .box .title,
 .body .bottleMain main .box .title,
 .body .cocktailMain main .box .title {
     grid-area: title;
     padding: 0.8rem 0;
-    font-size: 1.3rem;
-    width: 100%;
   }
   .body .barrelMain main .box .aboutBox,
 .body .bottleMain main .box .aboutBox,
 .body .cocktailMain main .box .aboutBox {
-    flex-direction: column;
-    padding: 0.8rem 0;
     grid-area: about;
+    padding: 0.8rem 0;
+    flex-direction: column;
   }
   .body .barrelMain main .box .aboutBox .price,
 .body .bottleMain main .box .aboutBox .price,
 .body .cocktailMain main .box .aboutBox .price {
     margin: 0 0 1.6rem;
-    font-size: 1rem;
-    font-size: 0.9rem;
-  }
-  .body .barrelMain main .box .aboutBox .product p,
-.body .bottleMain main .box .aboutBox .product p,
-.body .cocktailMain main .box .aboutBox .product p {
-    margin: 0;
-    font-size: 0.9rem;
-    font-size: 0.85rem;
-  }
-  .body .barrelMain main .box .detail,
-.body .bottleMain main .box .detail,
-.body .cocktailMain main .box .detail {
-    grid-area: detail;
-  }
-  .body .barrelMain main .box .detail p,
-.body .bottleMain main .box .detail p,
-.body .cocktailMain main .box .detail p {
-    font-size: 0.9rem;
   }
   .body .barrelMain main .image,
 .body .bottleMain main .image,
 .body .cocktailMain main .image {
-    grid-area: image;
-    width: 100%;
     height: 200px;
   }
   .body .barrelMain .buttonBox a,
@@ -519,7 +495,6 @@
 @media screen and (max-width: 600px) {
   .body .pageTitleCocktail {
     flex-direction: column;
-    padding: 0;
     padding: 1rem 0;
   }
   .body .pageTitleCocktail h1:nth-child(1) {
@@ -661,7 +636,6 @@
   .body .barrelMain main .box .title,
 .body .bottleMain main .box .title,
 .body .cocktailMain main .box .title {
-    padding: 0.8rem 0;
     font-size: 0.8rem;
   }
   .body .barrelMain main .box .aboutBox .price,
