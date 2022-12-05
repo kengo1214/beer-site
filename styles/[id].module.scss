@@ -79,15 +79,10 @@
     .detailBox {
       grid-area: product;
       height: 100%;
-      overflow: scroll;
-      background-color: red;
-      max-height: 200px;
-      
       .detail {
-        
-
-
-        
+        max-height: 200px;
+        overflow: scroll;
+        overflow: auto;
         width: 100%;
         padding: 0.8rem;
         line-height: 1.8;
