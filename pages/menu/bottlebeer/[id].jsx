@@ -36,12 +36,12 @@ export default function MoreInformation({ bottlebeer }) {
   return (
     <div className={styles.body}>
       <HeaderAnother />
-      <main className={styles.barrelMain}>
+      <mdiv className={styles.barrelMain}>
         <div className={styles.pageTitle}>
           <h1>All Menu - Bottle Beer -</h1>
         </div>
-        <div className={styles.box}>
-          <div className={styles.sentence}>
+        <main>
+          <div className={styles.box}>
             {/* 🟥🟥🟥 */}
             <h1 className={styles.title}>{bottlebeer.title}</h1>
             {/* 🟦🟦🟦 */}
@@ -73,7 +73,7 @@ export default function MoreInformation({ bottlebeer }) {
               />
             </div>
           </div>
-        </div>
+        </main>
 
         <div className={styles.buttonBox}>
           <Link href="/menu/all-menu/#barrel">
@@ -83,7 +83,7 @@ export default function MoreInformation({ bottlebeer }) {
             </a>
           </Link>
         </div>
-      </main>
+      </mdiv>
 
       <footer>
         <p>No Beer No Life Tokyo 2022</p>
@@ -91,60 +91,3 @@ export default function MoreInformation({ bottlebeer }) {
     </div>
   );
 }
-
-// export default function MoreInformation({ bottlebeer }) {
-//   return (
-//     <div className={styles.body}>
-//       <HeaderAnother />
-//       <main className={styles.bottleMain}>
-//         <div className={styles.pageTitle}>
-//           <h1>All Menu - Bottle Beer -</h1>
-//         </div>
-//         <div className={styles.box}>
-//           <div className={styles.sentence}>
-//             <h1 className={styles.title}>{bottlebeer.title}</h1>
-
-//             <div className={styles.aboutBox}>
-//               <p className={styles.price}>{bottlebeer.price}</p>
-//               <div
-//                 className={styles.product}
-//                 dangerouslySetInnerHTML={{
-//                   __html: `${bottlebeer.product}`,
-//                 }}
-//               />
-//             </div>
-
-//             <div
-//               className={styles.detail}
-//               dangerouslySetInnerHTML={{
-//                 __html: `${bottlebeer.detail}`,
-//               }}
-//             />
-//           </div>
-
-//           <div className={styles.image}>
-//             <Image
-//               src={bottlebeer.image.url}
-//               layout="fill"
-//               objectFit="contain"
-//               alt="image"
-//             />
-//           </div>
-//         </div>
-
-//         <div className={styles.buttonBox}>
-//           <Link href="/menu/all-menu/#bottle">
-//             <a>
-//               <AiOutlineRollback size={20} className={styles.icon} />
-//               Back
-//             </a>
-//           </Link>
-//         </div>
-//       </main>
-
-//       <footer>
-//         <p>No Beer No Life Tokyo 2022</p>
-//       </footer>
-//     </div>
-//   );
-// }
