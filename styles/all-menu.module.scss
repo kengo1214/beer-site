@@ -315,6 +315,14 @@
         }
       }
     }
+
+    footer {
+      height: 40px;
+
+      p {
+        font-size: 0.9em;
+      }
+    }
   }
 }
 
@@ -387,6 +395,13 @@
       }
       main {
         @include menuItem;
+      }
+    }
+    footer {
+      height: 40px;
+
+      p {
+        font-size: 0.8em;
       }
     }
   }

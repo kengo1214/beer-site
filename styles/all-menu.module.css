@@ -493,6 +493,12 @@
 .body .cocktail main .menuItem .buttonBox a {
     padding: 0.5rem 1.2rem;
   }
+  .body footer {
+    height: 40px;
+  }
+  .body footer p {
+    font-size: 0.9em;
+  }
 }
 @media screen and (max-width: 650px) {
   .body .barrel main .menuItem,
@@ -572,6 +578,12 @@
   }
   .body .cocktail main .menuItem .aboutBox .product {
     font-size: 14px;
+  }
+  .body footer {
+    height: 40px;
+  }
+  .body footer p {
+    font-size: 0.8em;
   }
 }
 @media screen and (max-width: 390px) {

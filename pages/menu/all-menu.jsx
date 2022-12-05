@@ -156,7 +156,7 @@ export default function AllMenu({
       </section>
 
       <footer>
-        <p>No Beer No Life Tokyo</p>
+        <p>No Beer No Life Tokyo 2022</p>
       </footer>
     </div>
   );
