@@ -41,9 +41,8 @@ export default function MoreInformation({ barrelbeer }) {
         </div>
         <main>
           <div className={styles.box}>
-            {/* 🟥🟥🟥 */}
             <h1 className={styles.title}>{barrelbeer.title}</h1>
-            {/* 🟦🟦🟦 */}
+
             <div className={styles.aboutBox}>
               <p className={styles.price}>{barrelbeer.price}</p>
               <div
@@ -54,7 +53,6 @@ export default function MoreInformation({ barrelbeer }) {
               />
             </div>
 
-            {/* 🟩🟩🟩 */}
             <div
               className={styles.detail}
               dangerouslySetInnerHTML={{
@@ -62,7 +60,6 @@ export default function MoreInformation({ barrelbeer }) {
               }}
             />
 
-            {/* 🟧🟧🟧*/}
             <div className={styles.image}>
               <Image
                 src={barrelbeer.image.url}

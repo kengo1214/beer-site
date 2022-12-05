@@ -36,15 +36,14 @@ export default function MoreInformation({ bottlebeer }) {
   return (
     <div className={styles.body}>
       <HeaderAnother />
-      <mdiv className={styles.barrelMain}>
+      <mdiv className={styles.bottleMain}>
         <div className={styles.pageTitle}>
           <h1>All Menu - Bottle Beer -</h1>
         </div>
         <main>
           <div className={styles.box}>
-            {/* 🟥🟥🟥 */}
             <h1 className={styles.title}>{bottlebeer.title}</h1>
-            {/* 🟦🟦🟦 */}
+
             <div className={styles.aboutBox}>
               <p className={styles.price}>{bottlebeer.price}</p>
               <div
@@ -55,7 +54,6 @@ export default function MoreInformation({ bottlebeer }) {
               />
             </div>
 
-            {/* 🟩🟩🟩 */}
             <div
               className={styles.detail}
               dangerouslySetInnerHTML={{
@@ -63,7 +61,6 @@ export default function MoreInformation({ bottlebeer }) {
               }}
             />
 
-            {/* 🟧🟧🟧*/}
             <div className={styles.image}>
               <Image
                 src={bottlebeer.image.url}
