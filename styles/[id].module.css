@@ -100,6 +100,7 @@
 .body .barrelMain .box .detailBox .detail {
   max-height: 200px;
   overflow: scroll;
+  overflow: auto;
   width: 100%;
   padding: 0.8rem;
   line-height: 1.8;
@@ -223,6 +224,7 @@
 .body .bottleMain .box .detailBox .detail {
   max-height: 200px;
   overflow: scroll;
+  overflow: auto;
   width: 100%;
   padding: 0.8rem;
   line-height: 1.8;
@@ -346,6 +348,7 @@
 .body .cocktailMain .box .detailBox .detail {
   max-height: 200px;
   overflow: scroll;
+  overflow: auto;
   width: 100%;
   padding: 0.8rem;
   line-height: 1.8;
@@ -482,7 +485,6 @@
     height: 200px;
   }
   .body footer {
-    height: 50px;
     height: 40px;
   }
   .body footer p {
