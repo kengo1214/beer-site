@@ -5,6 +5,8 @@ import styles from "../../../styles/[id].module.scss";
 import HeaderAnother from "../../../components/Header/headerAnother";
 import { AiOutlineRollback } from "react-icons/ai";
 
+import { useRouter } from "next/router";
+
 //getStaticPaths(パスの指定)
 export async function getStaticPaths() {
   const data = await clientMenu.get({ endpoint: "barrel-beer" });
@@ -32,6 +34,8 @@ export async function getStaticProps(context) {
 }
 
 export default function MoreInformation({ barrelbeer }) {
+  const router = useRouter();
+
   return (
     <div className={styles.body}>
       <HeaderAnother />
@@ -71,13 +75,9 @@ export default function MoreInformation({ barrelbeer }) {
           </div>
         </main>
 
-        <div className={styles.buttonBox}>
-          <Link href="/menu/all-menu/#barrel">
-            <a>
-              <AiOutlineRollback size={20} className={styles.icon} />
-              Back
-            </a>
-          </Link>
+        <div className={styles.button} onClick={() => router.back()}>
+          <AiOutlineRollback size={20} className={styles.icon} />
+          Back
         </div>
       </div>
 

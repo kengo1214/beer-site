@@ -102,31 +102,25 @@
     }
   }
 
-  .buttonBox {
+  .button {
     @include center;
     margin-top: 2rem;
     color: white;
+    border: 1px solid white;
     z-index: 1;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
 
-    a {
-      @include center;
-      border: 1px solid white;
-      color: white;
-      z-index: 1;
-      padding: 1rem 2rem;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: black;
+      transition: 300ms;
+    }
 
-      &:hover {
-        background-color: white;
-        color: black;
-        transition: 300ms;
-      }
-
-      .icon {
-        margin: 0 1rem 0 0;
-      }
+    .icon {
+      margin: 0 1rem 0 0;
     }
   }
 }

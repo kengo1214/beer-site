@@ -113,32 +113,25 @@
   position: relative;
   height: 300px;
 }
-.body .barrelMain .buttonBox {
+.body .barrelMain .button {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
   color: white;
-  z-index: 1;
-}
-.body .barrelMain .buttonBox a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid white;
-  color: white;
   z-index: 1;
   padding: 1rem 2rem;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
 }
-.body .barrelMain .buttonBox a:hover {
+.body .barrelMain .button:hover {
   background-color: white;
   color: black;
   transition: 300ms;
 }
-.body .barrelMain .buttonBox a .icon {
+.body .barrelMain .button .icon {
   margin: 0 1rem 0 0;
 }
 .body .bottleMain {
@@ -232,32 +225,25 @@
   position: relative;
   height: 300px;
 }
-.body .bottleMain .buttonBox {
+.body .bottleMain .button {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
   color: white;
-  z-index: 1;
-}
-.body .bottleMain .buttonBox a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid white;
-  color: white;
   z-index: 1;
   padding: 1rem 2rem;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
 }
-.body .bottleMain .buttonBox a:hover {
+.body .bottleMain .button:hover {
   background-color: white;
   color: black;
   transition: 300ms;
 }
-.body .bottleMain .buttonBox a .icon {
+.body .bottleMain .button .icon {
   margin: 0 1rem 0 0;
 }
 .body .cocktailMain {
@@ -351,32 +337,25 @@
   position: relative;
   height: 300px;
 }
-.body .cocktailMain .buttonBox {
+.body .cocktailMain .button {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
   color: white;
-  z-index: 1;
-}
-.body .cocktailMain .buttonBox a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid white;
-  color: white;
   z-index: 1;
   padding: 1rem 2rem;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
 }
-.body .cocktailMain .buttonBox a:hover {
+.body .cocktailMain .button:hover {
   background-color: white;
   color: black;
   transition: 300ms;
 }
-.body .cocktailMain .buttonBox a .icon {
+.body .cocktailMain .button .icon {
   margin: 0 1rem 0 0;
 }
 .body footer {
