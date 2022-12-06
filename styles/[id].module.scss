@@ -281,10 +281,8 @@
         }
       }
 
-      .buttonBox {
-        a {
-          padding: 0.8rem 1.5rem;
-        }
+      .button {
+        padding: 0.8rem 1.5rem;
       }
     }
 
@@ -397,12 +395,9 @@
         }
       }
 
-      .buttonBox {
+      .button {
         margin: 2rem 0 1rem;
-
-        a {
-          padding: 0.7rem 1.7rem;
-        }
+        padding: 0.7rem 1.7rem;
       }
     }
     footer {

@@ -459,9 +459,9 @@
 .body .cocktailMain main .image {
     height: 200px;
   }
-  .body .barrelMain .buttonBox a,
-.body .bottleMain .buttonBox a,
-.body .cocktailMain .buttonBox a {
+  .body .barrelMain .button,
+.body .bottleMain .button,
+.body .cocktailMain .button {
     padding: 0.8rem 1.5rem;
   }
   .body footer {
@@ -550,14 +550,10 @@
 .body .cocktailMain main .image {
     height: 180px;
   }
-  .body .barrelMain .buttonBox,
-.body .bottleMain .buttonBox,
-.body .cocktailMain .buttonBox {
+  .body .barrelMain .button,
+.body .bottleMain .button,
+.body .cocktailMain .button {
     margin: 2rem 0 1rem;
-  }
-  .body .barrelMain .buttonBox a,
-.body .bottleMain .buttonBox a,
-.body .cocktailMain .buttonBox a {
     padding: 0.7rem 1.7rem;
   }
   .body footer {
