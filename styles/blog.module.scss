@@ -1,480 +1,195 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin title {
+  @include center;
+  flex-direction: column;
+  width: 100%;
+  height: 100px;
+
+  h1,
+  h4 {
+    color: white;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@mixin after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  content: "";
+}
+
 .body {
   width: 100%;
-  height: 100%;
-  // border: 5px solid red;
-  display: grid;
-  grid-template:
-    // "  head head" 80px
-    // "  main archive " 1fr
-    // / 1fr 200px;
-  "  head head head head" 80px
-  " left main archive right" 1fr
-  / 60px 1fr 200px 60px;
+  min-height: 100vh;
+  padding-top: 130px;
+  padding-top: 230px;
+  background-image: url("/image/blog-link.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-  .header {
-    grid-area: head;
-    // border: 5px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(187, 187, 187);
+  &::after {
+    @include after;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  .left {
-    border: 1px dashed black;
-    grid-area: left;
-  }
-
-  .right {
-    border: 1px dashed black;
-    grid-area: right;
-  }
-
-  // 🟥🟥🟥🟥🟥🟥メイン🟥🟥🟥🟥🟥🟥
-
-  .main {
-    // border: 5px dashed magenta;
-    grid-area: main;
-    // border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
-    // margin-left: 60px;
-
-    .mainTitle {
-      // border: 5px dashed red;
-      display: flex;
-
-      > h1 {
-        // border: 1px solid black;
-        font-size: 25px;
-        margin: 0 0 2rem;
-      }
-    }
-
-    .newsBox {
-      border: 3px solid black;
-      // border: 5px solid red;
-      display: grid;
-      width: 100%;
-      //🔥heightの指定は敢えて設定していない🔥
-      margin-bottom: 2rem;
-      grid-template:
-        "article image" 300px
-        / 65% 35%;
-
-      .news {
-        // border: 5px solid blue;
-        grid-area: article;
-        padding: 1.5rem;
-        overflow: scroll;
-
-        .time {
-          color: red;
-          // color: gray;
-        }
-
-        .sentence {
-          font-size: 15px;
-          line-height: 1.8;
-        }
-      }
-
-      .imageBox {
-        // border: 5px solid green;
-        grid-area: image;
-        display: flex;
-
-        .image {
-          object-fit: cover;
-        }
-      }
-    }
-
-    .button {
-      // border: 1px solid red;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      a {
-        padding: 1rem 2rem;
-        margin: 0 1rem;
-        border: 1px solid black;
-        &:hover {
-          color: white;
-          background-color: gray;
-        }
-      }
-    }
-  }
-
-  // 🟦🟦🟦🟦🟦アーカイブ🟦🟦🟦🟦🟦
-
-  .archive {
-    // border: 5px solid red;
-    grid-area: archive;
-    padding-top: 2rem;
-    // margin-right: 60px;
-
-    .archiveTitle {
-      // border: 5px solid blue;
-
-      > h1 {
-        // border: 1px solid black;
-        font-size: 25px;
-        text-align: center;
-        margin: 0 0 2rem;
-      }
-    }
-
-    .ul {
-      // border: 5px solid green;
-      display: flex;
-      flex-direction: column;
-      height: 300px;
-      width: 100%;
-      padding: 1rem;
-      margin: 0;
-      list-style: none;
-      overflow: scroll;
-
-      .li {
-        // border: 3px solid orange;
-        display: flex;
-        text-align: center;
-        // margin-bottom: 2rem;
-        margin-bottom: 1.5rem;
-
-        .a {
-          // border: 3px solid orange;
-          width: 100%;
-          font-size: 15px;
-          padding: 0.5rem;
-          border-bottom: 3px solid black;
-          display: inline-block;
-        }
-      }
-    }
-  }
-}
-
-// ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️レスポンシブ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
-
-//🔴
-
-@media screen and (max-width: 1100px) {
-  .body {
+  .pageTitle {
     width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template:
-      "head" 80px
-      "archive" 250px
-      "main" 1fr
-      / 1fr;
+    height: 100px;
+    position: absolute;
+    top: 130px;
+    @include center;
 
-    .right,
-    .left {
-      display: none;
+    &::after {
+      @include after;
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
-    // .left {
-    //   display: none;
-    //   border: 5px dashed black;
-    //   grid-area: left;
-    // }
-
-    // .right {
-    //   display: none;
-    //   border: 5px dashed black;
-    //   grid-area: right;
-    // }
-
-    .main {
-      padding: 1rem 2rem;
-      align-items: center;
-
-      .mainTitle {
-        // border: 5px dashed red;
-        width: 90%;
-        display: flex;
-
-        > h1 {
-          // border: 1px solid black;
-          font-size: 20px;
-          margin: 0 0 1rem;
-        }
-      }
-
-      .newsBox {
-        width: 90%;
-        // width: 100%;
-      }
+    .title {
+      @include title;
+      z-index: 10;
     }
+  }
 
-    .archive {
-      // border: 5px solid red;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  main {
+    width: 100%;
+    height: calc(100vh - 330px);
+    overflow: scroll;
+
+    article {
+      width: calc(100% - 300px);
+      min-height: calc(100vh - 380px);
+      padding: 1rem 2rem 2rem;
+      @include center;
       flex-direction: column;
-      padding: 1rem 2rem;
 
-      .archiveTitle {
-        width: 90%;
-        display: flex;
-        > h1 {
-          font-size: 20px;
-          text-align: start;
-          margin: 0 0 1rem;
-        }
-      }
-
-      .ul {
-        border: 3px solid black;
-        // border: 5px solid blue;
-        width: 90%;
-        display: flex;
-        // justify-content: center;
-        flex-direction: row;
-        height: 100px;
-        padding: 0rem;
-        padding: 0.5rem;
-        overflow: scroll;
-        flex-wrap: wrap;
-
-        .li {
-          margin: 0.5rem;
-          width: calc(25% - 1rem);
-          // border: 3px solid green;
-          // padding: .5rem;
-
-          .a {
-            border: none;
-            border-bottom: 3px solid black;
-            // border: 3px solid red;
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-
-            // .borderButtom {
-            //   border: 1px solid black;
-            //   width: 90%;
-            // }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .body {
-    .archive {
-      .ul {
-        .li {
-          .a {
-            font-size: 13px;
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 850px) {
-  .body {
-    .archive {
-      .ul {
-        .li {
-          width: calc(50% - 1rem);
-          .a {
-            font-size: 15px;
-          }
-        }
-      }
-    }
-  }
-}
-
-// 🟡
-@media screen and (max-width: 768px) {
-  .body {
-    .main {
-      align-items: center;
-
-      .newsBox {
-        border: 3px solid black;
-        // background-color:red;
-        // border: 5px solid red;
-        display: grid;
-        width: 90%;
-        // width: 85%;
-        // 🔥初期状態同様でheightは未設定🔥
+      .articleItem {
+        background-color: white;
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
         margin-bottom: 2rem;
+        @include center;
+
+        h1 {
+          margin: 0;
+        }
+      }
+
+      .article {
+        background-color: white;
+        width: 95%;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        display: grid;
         grid-template:
-          "article" 250px
-          "image" 250px
-          / 1fr;
+          "sentence image" 250px
+          / 1fr 350px;
 
-        .news {
-          // border: 5px solid blue;
-          .sentence {
-            // border: 5px solid orange;
-            font-size: 14px;
-          }
-        }
+        .sentenceBox {
+          grid-area: sentence;
+          padding: 1rem;
+          overflow: scroll;
 
-        .imageBox {
-          // border: 5px solid green;
-          // padding: 0rem;
-          // padding: .5rem;
-
-          .image {
-            object-fit: cover;
-            // object-fit: contain;
-          }
-        }
-      }
-    }
-
-    .archive {
-      .ul {
-        width: 90%;
-        // width: 85%;
-        // padding: 1rem 3rem;
-        padding: 0.5rem;
-
-        .li {
-          width: calc(50% - 1rem);
-          .a {
-            font-size: 15px;
-            // width: 170px;
-            // font-size: 12px;
-          }
-        }
-      }
-    }
-  }
-}
-
-// 💎💎💎💎💎💎600px
-
-@media screen and (max-width: 600px) {
-  .body {
-    .main {
-      .newsBox {
-        .news {
           h1 {
-            font-size: 20px;
+            margin: 0;
+            font-size: 1.5rem;
+          }
+
+          .ArticleTitle,
+          .publishedAt {
+            margin-bottom: 1rem;
           }
 
           .sentence {
-            font-size: 14px;
+            p {
+              margin: 0;
+            }
           }
         }
-
-        // .imageBox {
-        //   // padding: 1rem;
-        // }
+        .imageBox {
+          grid-area: image;
+          position: relative;
+        }
       }
     }
 
-    .archive {
-      .ul {
-        width: 90%;
-        padding: 0.5rem;
+    footer {
+      background-color: silver;
+      width: 100%;
+      height: 50px;
+      @include center;
 
-        .li {
-          width: calc(100% - 1rem);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          // border: 3px solid skyblue;
-          .a {
-            font-size: 15px;
-            width: 60%;
-            // border: 3px solid blue;
-          }
-        }
+      p {
+        margin: 0;
       }
     }
   }
-}
 
-// 💗💗💗💗💗💗💗480px
-
-@media screen and (max-width: 480px) {
-  .body {
+  section {
     width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template:
-      "head " 80px
-      "archive " 200px
-      " main " 1fr
-      / 1fr;
+    min-height: calc(100vh - 230px);
+    position: relative;
+    z-index: 10;
 
-    .right,
-    .left {
-      display: none;
+    .title {
+      @include title;
+      width: calc(100% - 300px);
     }
 
-    .main {
-      // border: 5px solid red;
-      padding: 1rem 2rem;
-      .mainTitle {
-        width: 100%;
-        > h1 {
-          font-size: 20px;
-          margin: 0 0 1rem;
-        }
+    nav {
+      width: 300px;
+      height: calc(100vh - 280px);
+      position: absolute;
+      top: 0px;
+      right: 0px;
+
+      .title {
+        @include title;
       }
 
-      .newsBox {
-        // border: 5px solid red;
+      ul {
         width: 100%;
+        height: calc(100vh - 420px);
+        margin: 0;
+        padding: 1rem 0 0;
+        @include center;
+        flex-direction: column;
+        justify-content: flex-start;
+        list-style: none;
+        overflow: scroll;
 
-        .news {
-          // background-color: pink;
-          padding: 0.5rem;
-        }
-        .imageBox {
-          padding: 0;
-        }
-      }
-    }
+        li {
+          width: 200px;
+          margin-bottom: 1rem;
+          @include center;
 
-    .archive {
-      padding: 1rem 2rem;
-      .archiveTitle {
-        width: 100%;
-        > h1 {
-          font-size: 20px;
-          margin: 0 0 1rem;
-        }
-      }
+          a {
+            border-bottom: 1px solid white;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            @include center;
 
-      .ul {
-        // border: 5px solid blue;
-        width: 100%;
-        .li {
-          width: 100%;
-          font-size: 15px;
-          .a {
-            width: 60%;
-            // background-color: skyblue;
-            font-size: 14px;
-
-            .borderButtom {
-              border: 1px solid black;
-              width: 60%;
+            &:hover {
+              color: black;
+              background-color: white;
+              transition: 300ms;
+              border-radius: 10px;
             }
           }
         }
@@ -482,44 +197,3 @@
     }
   }
 }
-
-//🔥 エラー原因を調査しているので一時できに非表示🔥
-
-// @media screen and (max-width: 600px) {
-//   .body {
-//     .main {
-//       .newsBox {
-//         .news {
-//           > h1 {
-//             font-size: 20px;
-//           }
-//         }
-//       }
-//     }
-
-//     .archive {
-//       .ul {
-//         border: 1px solid black;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         // justify-content: start;
-//         height: 100px;
-//         padding: 1rem;
-//         overflow: scroll;
-//         flex-wrap: nowrap;
-
-//         .li {
-//           margin-bottom: 0;
-
-//           .a {
-//             width: 170px;
-//             margin: 0 0.5rem 0.5rem;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// 🌟🌟🌟🌟1440px以上の場合のレスポンシブデザイン 🌟🌟🌟🌟

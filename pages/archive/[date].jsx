@@ -1,13 +1,13 @@
 import styles from "../../styles/archive.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { client00 } from "../../libs/client";
+import { clientBlog } from "../../libs/client";
 import { groupBy } from "../../libs/util";
 import HeaderAnother from "../../components/Header/headerAnother";
 
 //（1）パスを生成
 export const getStaticPaths = async () => {
-  const data = await client00.get({ endpoint: "beer-blog" });
+  const data = await clientBlog.get({ endpoint: "beer-blog" });
   const monthlyIndex = groupBy(data.contents, "publishedAt");
   const paths = Object.keys(monthlyIndex).map((index) => `/archive/${index}`);
   return { paths, fallback: false };
@@ -28,7 +28,7 @@ export const getStaticProps = async (context) => {
   const filters = `publishedAt[greater_than]${startOfMonth.toISOString()}[and]publishedAt[less_than]${endOfMonth.toISOString()}`;
 
   //（3）ニュース
-  const data = await client00.get({
+  const data = await clientBlog.get({
     endpoint: "beer-blog",
     queries: {
       filters: filters,
@@ -37,7 +37,7 @@ export const getStaticProps = async (context) => {
 
   //（4）月別アーカイブ
 
-  const archiveData = await client00.get({
+  const archiveData = await clientBlog.get({
     endpoint: "beer-blog",
     // queries: { fields: "publishedAt", limit: 3000 },
   });

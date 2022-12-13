@@ -35,7 +35,7 @@ export default function LinkSection() {
             />
           </Link>
           <div className={styles.sentence}>
-            <Link href="/menu/all-menu">
+            <Link href="/blog">
               <h1>Blog</h1>
             </Link>
           </div>

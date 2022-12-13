@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { client00 } from "../libs/client";
+import { clientBlog } from "../libs/client";
 import { groupBy } from "../libs/util";
 import styles from "../styles/blog.module.scss";
 import HeaderAnother from "../components/Header/headerAnother";
 
 export const getStaticProps = async () => {
   //ニュース記事の取得
-  const data = await client00.get({
+  const data = await clientBlog.get({
     endpoint: "beer-blog",
   });
 
@@ -24,68 +24,68 @@ export const getStaticProps = async () => {
 
 export default function News({ news, monthlyIndex }) {
   return (
-    <div className={styles.body}>
+    <>
       <HeaderAnother />
-      <div className={styles.header}>
-        <h1>Blog</h1>
-      </div>
-
-      <div className={styles.left}></div>
-      <main className={styles.main}>
-        <div className={styles.mainTitle}>
-          <h1>最新のブログ</h1>
-        </div>
-        {news.map((news) => (
-          <div className={styles.newsBox} key={news.id}>
-            <article className={styles.news}>
-              <h1>{news.title}</h1>
-              <p className={styles.time}>{news.publishedAt}</p>
-              <div
-                className={styles.sentence}
-                dangerouslySetInnerHTML={{ __html: `${news.body}` }}
-              />
-            </article>
-            <div className={styles.imageBox}>
-              <Image
-                className={styles.image}
-                src={news.image.url}
-                width="800px"
-                height="300px"
-                alt="記事画像"
-              />
-            </div>
+      <div className={styles.body}>
+        <div className={styles.pageTitle}>
+          <div className={styles.title}>
+            <h4>ブログ</h4>
+            <h1>Blog</h1>
           </div>
-        ))}
-        <div className={styles.button}>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href="/blog">
-            <a>Top</a>
-          </Link>
         </div>
-      </main>
+        <section>
+          <div className={styles.title}>
+            <h4>最新のブログ</h4>
+            <h1>Latest Blog</h1>
+          </div>
 
-      <div className={styles.archive}>
-        <div className={styles.archiveTitle}>
-          <h1>月別アーカイブ</h1>
-        </div>
-
-        <ul className={styles.ul}>
-          {Object.keys(monthlyIndex).map((index) => (
-            <li key={index} className={styles.li}>
-              <Link href={`archive/${index}`} className={styles.link}>
-                <a className={styles.a}>
-                  {index.split("_")[0] + "年" + index.split("_")[1] + "月"}（
-                  {monthlyIndex[index].length + "件"}）
-                  {/* <div className={styles.borderButtom}></div> */}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+          <main>
+            <article>
+              {news.map((news) => (
+                <div key={news.id} className={styles.article}>
+                  <div className={styles.sentenceBox}>
+                    <h1 className={styles.ArticleTitle}>{news.title}</h1>
+                    <div className={styles.publishedAt}>{news.publishedAt}</div>
+                    <div
+                      className={styles.sentence}
+                      dangerouslySetInnerHTML={{ __html: `${news.body}` }}
+                    />
+                  </div>
+                  <div className={styles.imageBox}>
+                    <Image
+                      src={news.image.url}
+                      layout="fill"
+                      objectFit="cover"
+                      alt="image"
+                    />
+                  </div>
+                </div>
+              ))}
+            </article>
+            <footer>
+              <p>No Beer No Life Tokyo 2022</p>
+            </footer>
+          </main>
+          <nav>
+            <div className={styles.title}>
+              <h4>アーカイブ</h4>
+              <h1>Archive</h1>
+            </div>
+            <ul>
+              {Object.keys(monthlyIndex).map((index) => (
+                <li key={index}>
+                  <Link href={`archive/${index}`}>
+                    <a>
+                      {index.split("_")[0] + "年" + index.split("_")[1] + "月"}
+                      （{monthlyIndex[index].length + "件"}）
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </section>
       </div>
-      <div className={styles.right}></div>
-    </div>
+    </>
   );
 }

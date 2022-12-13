@@ -85,7 +85,7 @@ export default function Home() {
       <Contact />
 
       <footer>
-        <p>No Beer No Life Tokyo</p>
+        <p>No Beer No Life Tokyo 2022</p>
       </footer>
       
     </div>

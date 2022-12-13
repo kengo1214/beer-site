@@ -7,7 +7,7 @@ export const clientMenu = createClient({
 });
 
 //ブログ（Blog）
-export const client00 = createClient({
+export const clientBlog = createClient({
   serviceDomain: "beer-blog",
   apiKey: process.env.API_KEY_BLOG,
 });

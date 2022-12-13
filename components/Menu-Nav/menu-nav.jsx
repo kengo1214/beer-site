@@ -7,7 +7,7 @@ export default function MenuNav() {
       <main>
         <div className={styles.title}>
           <h4>全てのメニュー</h4>
-          <h1>All-Menu</h1>
+          <h1>All Menu</h1>
         </div>
         <nav>
           <ul>
