@@ -107,11 +107,12 @@
           }
 
           .articleItem {
-            // border: 2px solid aqua;
+            // border: 3px solid aqua;
             // border: 5px solid red;
             background-color: white;
             width: 90%;
-            min-height: 200px; //🌐🌐🌐
+            // min-height: 200px; //🌐🌐🌐
+            min-height: 250px; //🌐🌐🌐
             padding: 1.5rem;
             margin-bottom: 2rem;
             border-radius: 10px;
@@ -121,8 +122,9 @@
             .sentenceBox {
               // border: 5px solid blue;
               width: calc(100% - 350px);
-              height: 200px; //🌐🌐🌐
-              overflow: scroll;
+              // height: 200px; //🌐🌐🌐
+              height: 250px; //🌐🌐🌐
+              // overflow: scroll; //🔥🔥🔥
               padding-right: 1rem;
               @include center;
               justify-content: flex-start;
@@ -139,6 +141,7 @@
               }
 
               .sentence {
+                overflow: scroll; //🔥🔥🔥
                 p {
                   margin: 0;
                   line-height: 1.8;
@@ -149,7 +152,8 @@
             .imageBox {
               // border: 5px solid greenyellow;
               width: 350px;
-              height: 200px; //🌐🌐🌐
+              // height: 200px; //🌐🌐🌐
+              height: 250px; //🌐🌐🌐
 
               .image {
                 width: 100%;
@@ -266,7 +270,7 @@
                 width: calc(100% - 320px); //🔵🔵🔵
 
                 .articleTitle {
-                  font-size: 1.4rem; //🔵🔵🔵
+                  font-size: 1.3rem; //🔵🔵🔵
                 }
                 .publishedAt {
                   font-size: 0.9rem; //🔵🔵🔵
@@ -357,6 +361,19 @@
 
               .sentenceBox {
                 width: calc(100% - 300px);
+
+                .articleTitle {
+                  font-size: 1.2rem;
+                }
+                .publishedAt {
+                  font-size: 0.9rem;
+                }
+
+                .sentence {
+                  p {
+                    font-size: 0.9rem;
+                  }
+                }
               }
 
               .imageBox {
@@ -396,6 +413,9 @@
         // border: 3px solid greenyellow;
         width: calc(100% - 130px); //🔴🔴🔴
         height: 50px; //🔴🔴🔴
+        height: 100px; //🔴🔴🔴
+        height: 80px; //🔴🔴🔴
+
         margin: 0;
         @include center;
         flex-wrap: wrap;
@@ -430,12 +450,14 @@
           .articleBox {
             .articleItem {
               // border: 3px solid red;
-              min-height: 180px;
+              // min-height: 180px;
+              min-height: 230px; //🟡🟡🟡
               padding: 1.5rem;
 
               .sentenceBox {
                 width: calc(100% - 250px);
-                height: 180px;
+                // height: 180px;
+                height: 230px; //🟡🟡🟡
 
                 .articleTitle {
                   font-size: 1.2rem;
@@ -453,7 +475,8 @@
 
               .imageBox {
                 width: 250px;
-                height: 180px;
+                // height: 180px;
+                height: 230px; //🟡🟡🟡
               }
             }
           }
@@ -548,19 +571,21 @@
   .body {
     main {
       // border: 3px solid red;
-      margin-top: 50px;
+      // border: 3px solid blue;
+      // margin-top: 50px;
+      margin-top: 80px; //🟠🟠🟠
       height: calc(100vh - 260px);
 
       .mainSection {
-        // border: 3px solid blue;
-        height: calc(100vh - 260px);
+        // border: 3px solid greenyellow;
+        // height: calc(100vh - 260px);
+        height: calc(100vh - 290px);
 
         .sectionTitle {
-          padding: 0 1.5rem; //🟠🟠🟠
+          padding: 0 1.5rem;
           .title {
             h1 {
-              width: 130px; //🔴🔴🔴💧💧💧
-              width: 110px; //🔴🔴🔴💧💧💧
+              width: 110px;
               font-size: 1.3rem;
             }
           }
@@ -568,18 +593,18 @@
 
         .articleSection {
           // border: 3px solid greenyellow;
-          height: calc(100vh - 346px);
+          // height: calc(100vh - 346px);
+          height: calc(100vh - 376px); //🟠🟠🟠
 
           .articleBox {
             // border: 3px solid magenta;
-            min-height: calc(100vh - 396px);
-
-            padding: 0 1.5rem; //🔴🔴🔴
+            // min-height: calc(100vh - 396px);
+            min-height: calc(100vh - 426px); //🟠🟠🟠
+            padding: 0 1.5rem;
             align-items: center;
 
             .articleItem {
-              // width: 95%;
-              width: 100%; //🔴🔴🔴
+              width: 100%;
               padding: 1rem;
 
               .sentenceBox {
@@ -603,13 +628,14 @@
     }
 
     .navSection {
+      // border: 3px solid red;
       top: 180px;
-      height: 80px;
-      padding: 0 1.5rem; //🟠🟠🟠
+      // height: 80px;
+      height: 110px; //🟠🟠🟠
+      padding: 0 1.5rem;
 
       .navSectionTitle {
-        width: 130px; //🔴🔴🔴💧💧💧
-        width: 110px; //🔴🔴🔴💧💧💧
+        width: 110px;
         .title {
           h1 {
             font-size: 1.3em;
@@ -618,9 +644,10 @@
       }
 
       ul {
-        height: 40px;
-        width: calc(100% - 130px); //🔴🔴🔴
-        width: calc(100% - 110px); //🔴🔴🔴
+        width: calc(100% - 110px);
+        // height: 40px;
+        height: 70px; //🟠🟠🟠
+
         li {
           a {
             width: 100%;

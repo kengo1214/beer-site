@@ -97,7 +97,7 @@
 .body main .mainSection .articleSection .articleBox .articleItem {
   background-color: white;
   width: 90%;
-  min-height: 200px;
+  min-height: 250px;
   padding: 1.5rem;
   margin-bottom: 2rem;
   border-radius: 10px;
@@ -109,8 +109,7 @@
 }
 .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox {
   width: calc(100% - 350px);
-  height: 200px;
-  overflow: scroll;
+  height: 250px;
   padding-right: 1rem;
   display: flex;
   justify-content: center;
@@ -128,13 +127,16 @@
 .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .publishedAt {
   margin-bottom: 1rem;
 }
+.body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .sentence {
+  overflow: scroll;
+}
 .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .sentence p {
   margin: 0;
   line-height: 1.8;
 }
 .body main .mainSection .articleSection .articleBox .articleItem .imageBox {
   width: 350px;
-  height: 200px;
+  height: 250px;
 }
 .body main .mainSection .articleSection .articleBox .articleItem .imageBox .image {
   width: 100%;
@@ -238,7 +240,7 @@
     width: calc(100% - 320px);
   }
   .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .articleTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .publishedAt {
     font-size: 0.9rem;
@@ -299,6 +301,15 @@
   .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox {
     width: calc(100% - 300px);
   }
+  .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .articleTitle {
+    font-size: 1.2rem;
+  }
+  .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .publishedAt {
+    font-size: 0.9rem;
+  }
+  .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .sentence p {
+    font-size: 0.9rem;
+  }
   .body main .mainSection .articleSection .articleBox .articleItem .imageBox {
     width: 300px;
   }
@@ -323,6 +334,8 @@
   .body .navSection ul {
     width: calc(100% - 130px);
     height: 50px;
+    height: 100px;
+    height: 80px;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -345,12 +358,12 @@
 }
 @media screen and (max-width: 768px) {
   .body main .mainSection .articleSection .articleBox .articleItem {
-    min-height: 180px;
+    min-height: 230px;
     padding: 1.5rem;
   }
   .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox {
     width: calc(100% - 250px);
-    height: 180px;
+    height: 230px;
   }
   .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .articleTitle {
     font-size: 1.2rem;
@@ -363,7 +376,7 @@
   }
   .body main .mainSection .articleSection .articleBox .articleItem .imageBox {
     width: 250px;
-    height: 180px;
+    height: 230px;
   }
   .body .navSection ul li {
     width: calc(50% - 1rem);
@@ -414,25 +427,24 @@
 }
 @media screen and (max-width: 480px) {
   .body main {
-    margin-top: 50px;
+    margin-top: 80px;
     height: calc(100vh - 260px);
   }
   .body main .mainSection {
-    height: calc(100vh - 260px);
+    height: calc(100vh - 290px);
   }
   .body main .mainSection .sectionTitle {
     padding: 0 1.5rem;
   }
   .body main .mainSection .sectionTitle .title h1 {
-    width: 130px;
     width: 110px;
     font-size: 1.3rem;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 346px);
+    height: calc(100vh - 376px);
   }
   .body main .mainSection .articleSection .articleBox {
-    min-height: calc(100vh - 396px);
+    min-height: calc(100vh - 426px);
     padding: 0 1.5rem;
     align-items: center;
   }
@@ -451,20 +463,18 @@
   }
   .body .navSection {
     top: 180px;
-    height: 80px;
+    height: 110px;
     padding: 0 1.5rem;
   }
   .body .navSection .navSectionTitle {
-    width: 130px;
     width: 110px;
   }
   .body .navSection .navSectionTitle .title h1 {
     font-size: 1.3em;
   }
   .body .navSection ul {
-    height: 40px;
-    width: calc(100% - 130px);
     width: calc(100% - 110px);
+    height: 70px;
   }
   .body .navSection ul li a {
     width: 100%;
