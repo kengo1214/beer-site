@@ -357,6 +357,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .body main .mainSection .articleSection .articleBox {
+    min-height: calc(100vh - 476px);
+  }
   .body main .mainSection .articleSection .articleBox .articleItem {
     min-height: 230px;
     padding: 1.5rem;
@@ -377,6 +380,10 @@
   .body main .mainSection .articleSection .articleBox .articleItem .imageBox {
     width: 250px;
     height: 230px;
+  }
+  .body main .mainSection .articleSection footer {
+    height: 40px;
+    font-size: 0.9rem;
   }
   .body .navSection ul li {
     width: calc(50% - 1rem);
@@ -400,7 +407,6 @@
     max-height: 220px;
     padding-right: 0;
     margin-bottom: 1rem;
-    margin-bottom: 0.5rem;
   }
   .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .articleTitle {
     font-size: 1.2rem;
@@ -413,6 +419,7 @@
   }
   .body main .mainSection .articleSection .articleBox .articleItem .imageBox {
     width: 100%;
+    width: 85%;
     height: 220px;
   }
 }
@@ -444,7 +451,7 @@
     height: calc(100vh - 376px);
   }
   .body main .mainSection .articleSection .articleBox {
-    min-height: calc(100vh - 426px);
+    min-height: calc(100vh - 416px);
     padding: 0 1.5rem;
     align-items: center;
   }
@@ -460,6 +467,12 @@
   }
   .body main .mainSection .articleSection .articleBox .articleItem .sentenceBox .sentence p {
     font-size: 0.75rem;
+  }
+  .body main .mainSection .articleSection .articleBox .articleItem .imageBox {
+    width: 100%;
+    width: 85%;
+    height: 220px;
+    height: 180px;
   }
   .body .navSection {
     top: 180px;
@@ -487,7 +500,7 @@
     font-size: 1.15rem;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 346px);
+    height: calc(100vh - 376px);
   }
   .body main .mainSection .articleSection .articleBox {
     padding: 0 1.5rem;
