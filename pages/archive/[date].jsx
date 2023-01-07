@@ -4,6 +4,9 @@ import Image from "next/image";
 import { clientBlog } from "../../libs/client";
 import { groupBy } from "../../libs/util";
 import HeaderAnother from "../../components/Header/headerAnother";
+import BlogNav from "../../components/BlogNav/BlogNav";
+import { BsChevronDoubleLeft } from "react-icons/bs";
+import { BsChevronDoubleUp } from "react-icons/bs";
 
 //（1）パスを生成
 export const getStaticPaths = async () => {
@@ -36,7 +39,6 @@ export const getStaticProps = async (context) => {
   });
 
   //（4）月別アーカイブ
-
   const archiveData = await clientBlog.get({
     endpoint: "beer-blog",
     // queries: { fields: "publishedAt", limit: 3000 },
@@ -54,68 +56,98 @@ export const getStaticProps = async (context) => {
 
 export default function BlogId({ title, news, monthlyIndex }) {
   return (
-    <div className={styles.body}>
+    <>
       <HeaderAnother />
-      <div className={styles.header}>
-        <h1>Blog</h1>
-      </div>
 
-      <div className={styles.left}></div>
-      <main className={styles.main}>
-        <div className={styles.mainTitle}>
-          <h1>{title}</h1>
-        </div>
-        {news.map((news) => (
-          <div className={styles.newsBox} key={news.id}>
-            <article className={styles.news}>
-              <h1>{news.title}</h1>
-              <p className={styles.time}>{news.publishedAt}</p>
-              <div
-                className={styles.sentence}
-                dangerouslySetInnerHTML={{ __html: `${news.body}` }}
-              />
-            </article>
-            <div className={styles.imageBox}>
-              <Image
-                className={styles.image}
-                src={news.image.url}
-                width="800px"
-                height="300px"
-                alt="記事画像"
-              />
+      <div className={styles.body}>
+        <BlogNav />
+        <main>
+          <section className={styles.mainSection}>
+            <div className={styles.sectionTitle}>
+              <div className={styles.title}>
+                
+                <h1>{title}</h1>
+              </div>
+            </div>
+
+            <div className={styles.articleSection}>
+              <article className={styles.articleBox} id="blog">
+                {news.map((news) => (
+                  <article className={styles.articleItem} key={news.id}>
+                    <div className={styles.sentenceBox}>
+                      <h1 className={styles.articleTitle}>{news.title}</h1>
+                      <div className={styles.publishedAt}>
+                        {news.publishedAt}
+                      </div>
+                      <div
+                        className={styles.sentence}
+                        dangerouslySetInnerHTML={{ __html: `${news.body}` }}
+                      />
+                    </div>
+
+                    <div className={styles.imageBox}>
+                      <div className={styles.image}>
+                        <Image
+                          src={news.image.url}
+                          layout="fill"
+                          objectFit="cover"
+                          alt="image"
+                        />
+                      </div>
+                    </div>
+                  </article>
+                ))}
+
+                <div className={styles.buttonBox}>
+                  <Link href="/">
+                    <div className={styles.button}>
+                      <a>Home</a>
+                      <BsChevronDoubleLeft className={styles.icon} />
+                    </div>
+                  </Link>
+                  <Link href="#blog">
+                    <div className={styles.button}>
+                      <a>Top</a>
+                      <BsChevronDoubleUp className={styles.icon} />
+                    </div>
+                  </Link>
+                </div>
+              </article>
+              <footer>No Beer No Life Tokyo 2022</footer>
+            </div>
+          </section>
+        </main>
+
+        {/* 💡💡💡💡💡💡💡💡💡💡💡💡💡 */}
+        <section className={styles.navSection}>
+          <div className={styles.navSectionTitle}>
+            <div className={styles.title}>
+              <h1>Archive</h1>
             </div>
           </div>
-        ))}
-        <div className={styles.button}>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href="/news">
-            <a>Top</a>
-          </Link>
-        </div>
-      </main>
-
-      <div className={styles.archive}>
-        <div className={styles.archiveTitle}>
-          <h1>月別アーカイブ</h1>
-        </div>
-
-        <ul className={styles.ul}>
-          {Object.keys(monthlyIndex).map((index) => (
-            <li key={index} className={styles.li}>
-              <Link href={`/archive/${index}`} className={styles.link}>
-                <a className={styles.a}>
-                  {index.split("_")[0] + "年" + index.split("_")[1] + "月"}（
-                  {monthlyIndex[index].length + "件"}）
-                  {/* <div className={styles.borderButtom}></div> */}
-                </a>
-              </Link>
+          <ul>
+            {Object.keys(monthlyIndex).map((index) => (
+              <li key={index}>
+                <Link href={`${index}`}>
+                  <a>
+                    {index.split("_")[0] + "年" + index.split("_")[1] + "月"}（
+                    {monthlyIndex[index].length + "件"}）
+                  </a>
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a>HOGE1</a>
             </li>
-          ))}
-        </ul>
+            <li>
+              <a>HOGE2</a>
+            </li>
+            <li>
+              <a>HOGE3</a>
+            </li>
+          </ul>
+        </section>
       </div>
-      <div className={styles.right}></div>
-    </div>
+    </>
   );
 }

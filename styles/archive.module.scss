@@ -1,256 +1,453 @@
-.body {
-  width: 100%;
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+@mixin after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   height: 100%;
-  // border: 5px solid red;
-  display: grid;
-  grid-template:
-    "  head head head head" 80px
-    " left main archive right" 1fr
-    / 60px 1fr 200px 60px;
+  content: "";
+}
 
-  .header {
-    grid-area: head;
-    // border: 5px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(187, 187, 187);
+//🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+.body {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  padding-top: 130px;
+  border-top: none;
+  background-image: url("/image/blog-link.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::after {
+    @include after;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  .left {
-    border: 1px dashed black;
-    grid-area: left;
-  }
+  header {
+    width: 100%;
+    height: 100px;
+    @include center;
+    position: fixed;
+    z-index: 10;
 
-  .right {
-    border: 1px dashed black;
-    grid-area: right;
-  }
-
-  // 🟥🟥🟥🟥🟥🟥メイン🟥🟥🟥🟥🟥🟥
-
-  .main {
-    // border: 5px dashed magenta;
-    grid-area: main;
-    // border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
-
-    .mainTitle {
-      // border: 5px dashed red;
-      display: flex;
-
-      > h1 {
-        // border: 1px solid black;
-        font-size: 25px;
-        margin: 0 0 2rem;
-      }
+    &::after {
+      @include after;
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
-    .newsBox {
-      border: 3px solid black;
-      // border: 5px solid red;
-      display: grid;
-      width: 100%;
-      //🔥heightの指定は敢えて設定していない🔥
-      margin-bottom: 2rem;
-      grid-template:
-        "article image" 300px
-        / 65% 35%;
+    .pageTitle {
+      z-index: 10;
+      h1 {
+        margin: 0;
+        color: white;
+      }
+    }
+  }
 
-      .news {
-        // border: 5px solid blue;
-        grid-area: article;
-        padding: 1.5rem;
+  // 💎💎💎💎💎💎💎💎💎💎💎💎💎
+
+  main {
+    // border: 3px solid red;
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    height: calc(100vh - 230px);
+    @include center;
+
+    .mainSection {
+      // border: 3px solid blue;
+      width: 100%;
+      height: calc(100vh - 230px);
+      position: fixed;
+
+      .sectionTitle {
+        width: calc(100% - 300px);
+        height: 100px;
+        color: white;
+        @include center;
+
+        .title {
+          h1 {
+            margin: 0;
+            font-size: 1.8rem;
+          }
+        }
+      }
+
+      .articleSection {
+        // border: 3px solid greenyellow;
+        width: 100%;
+        height: calc(100vh - 330px);
         overflow: scroll;
 
-        .time {
-          color: red;
-          // color: gray;
+        .articleBox {
+          // border: 3px solid magenta;
+          width: calc(100% - 300px);
+          min-height: calc(100vh - 380px); //🌐🌐🌐
+          padding: 0 2rem 3rem;
+          @include center;
+          justify-content: flex-start;
+          flex-direction: column;
+
+          h1 {
+            margin: 0;
+          }
+
+          .articleItem {
+            // border: 5px solid red;
+            background-color: white;
+            width: 90%;
+            min-height: 250px; //🌐🌐🌐
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            box-sizing: content-box;
+            @include center;
+
+            .sentenceBox {
+              // border: 5px solid blue;
+              width: calc(100% - 350px);
+              height: 250px; //🌐🌐🌐
+              padding-right: 1rem;
+              @include center;
+              justify-content: flex-start;
+              align-items: flex-start;
+              flex-direction: column;
+
+              .articleTitle {
+                margin: 0;
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+              }
+              .publishedAt {
+                margin-bottom: 1rem;
+              }
+
+              .sentence {
+                overflow: scroll;
+                p {
+                  margin: 0;
+                  line-height: 1.8;
+                }
+              }
+            }
+
+            .imageBox {
+              // border: 5px solid greenyellow;
+              width: 350px;
+              // height: 200px; //🌐🌐🌐
+              height: 250px; //🌐🌐🌐
+
+              .image {
+                width: 100%;
+                height: 100%;
+                position: relative;
+              }
+            }
+          }
+
+          .buttonBox {
+            @include center;
+
+            .button:nth-child(1) {
+              margin-right: 1.5rem;
+            }
+
+            .button {
+              border: 1px solid white;
+              color: white;
+              padding: 1rem 1.3rem;
+              border-radius: 5px;
+              font-weight: bold;
+              @include center;
+
+              .icon {
+                margin-left: 0.8rem;
+                color: white;
+              }
+
+              &:hover {
+                background-color: white;
+                color: black;
+                transition: 300ms;
+
+                .icon {
+                  color: black;
+                }
+              }
+            }
+          }
         }
 
-        .sentence {
-          font-size: 15px;
-          line-height: 1.8;
-        }
-      }
-
-      .imageBox {
-        // border: 5px solid green;
-        grid-area: image;
-        display: flex;
-
-        .image {
-          object-fit: cover;
-        }
-      }
-    }
-
-    .button {
-      // border: 1px solid red;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      a {
-        padding: 1rem 2rem;
-        margin: 0 1rem;
-        border: 1px solid black;
-        &:hover {
+        footer {
+          @include center;
+          background-color: rgb(178, 178, 178);
           color: white;
-          background-color: gray;
+          width: 100%;
+          height: 50px;
         }
       }
     }
   }
 
-  // 🟦🟦🟦🟦🟦アーカイブ🟦🟦🟦🟦🟦
+  .navSection {
+    // border: 3px solid red;
+    z-index: 20;
+    width: 300px;
+    height: calc(100vh - 280px);
+    position: fixed;
+    top: 230px;
+    right: 0;
+    @include center;
+    flex-direction: column;
+    justify-content: flex-start;
 
-  .archive {
-    // border: 5px solid red;
-    grid-area: archive;
-    padding-top: 2rem;
+    .navSectionTitle {
+      // border: 3px solid blue;
+      color: white;
+      width: 100%;
+      height: 100px;
+      @include center;
 
-    .archiveTitle {
-      // border: 5px solid blue;
-
-      > h1 {
-        // border: 1px solid black;
-        font-size: 25px;
-        text-align: center;
-        margin: 0 0 2rem;
+      .title {
+        h1 {
+          margin: 0;
+          font-size: 1.8em;
+        }
       }
     }
 
-    .ul {
-      // border: 5px solid green;
-      display: flex;
-      flex-direction: column;
-      height: 300px;
+    ul {
+      // border: 3px solid green;
       width: 100%;
-      padding: 1rem;
+      // 424 = 130 + 100 + 100 + 50 + (32 + 32)
+      height: calc(100vh - 444px);
+      padding: 0;
+      margin: 2rem 0;
       margin: 0;
       list-style: none;
       overflow: scroll;
 
-      .li {
-        // border: 3px solid orange;
-        display: flex;
-        text-align: center;
-        // margin-bottom: 2rem;
-        margin-bottom: 1.5rem;
-
-        .a {
-          // border: 3px solid orange;
-          width: 100%;
-          font-size: 15px;
-          padding: 0.5rem;
-          border-bottom: 3px solid black;
-          display: inline-block;
-        }
-      }
-    }
-  }
-}
-
-// ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️レスポンシブ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
-
-//🔴
-
-@media screen and (max-width: 1100px) {
-  .body {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template:
-      "head" 80px
-      "archive" 250px
-      "main" 1fr
-      / 1fr;
-
-    .right,
-    .left {
-      display: none;
-    }
-
-    .main {
-      padding: 1rem 2rem;
-      align-items: center;
-
-      .mainTitle {
-        // border: 5px dashed red;
-        width: 90%;
-        display: flex;
-
-        > h1 {
-          // border: 1px solid black;
-          font-size: 20px;
-          margin: 0 0 1rem;
-        }
-      }
-
-      .newsBox {
-        width: 90%;
-        // width: 100%;
-      }
-    }
-
-    .archive {
-      // border: 5px solid red;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center;
+      justify-content: flex-start;
       flex-direction: column;
-      padding: 1rem 2rem;
 
-      .archiveTitle {
-        width: 90%;
-        display: flex;
-        > h1 {
-          font-size: 20px;
-          text-align: start;
-          margin: 0 0 1rem;
+      li {
+        margin-bottom: 2rem;
+        @include center;
+
+        a {
+          background-color: darkorange;
+          color: white;
+          width: 200px;
+          padding: 1rem;
+
+          @include center;
+          border-radius: 10px;
+          font-weight: bold;
+
+          &:hover {
+            background-color: orange;
+            border-radius: 10px;
+            transition: 300ms;
+          }
         }
       }
+    }
+  }
+}
 
-      .ul {
-        border: 3px solid black;
-        // border: 5px solid blue;
-        width: 90%;
-        display: flex;
-        // justify-content: center;
-        flex-direction: row;
-        height: 100px;
-        padding: 0rem;
-        padding: 0.5rem;
-        overflow: scroll;
-        flex-wrap: wrap;
+// 🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵🔵
 
-        .li {
-          margin: 0.5rem;
-          width: calc(25% - 1rem);
-          // border: 3px solid green;
-          // padding: .5rem;
+@media screen and (max-width: 1240px) {
+  .body {
+    main {
+      .mainSection {
+        .sectionTitle {
+          width: calc(100% - 250px);
+        }
 
-          .a {
-            border: none;
-            border-bottom: 3px solid black;
+        .articleSection {
+          width: 100%;
+          height: calc(100vh - 330px);
+
+          .articleBox {
+            width: calc(100% - 250px);
+
+            .articleItem {
+              width: 100%;
+
+              .sentenceBox {
+                width: calc(100% - 320px);
+
+                .articleTitle {
+                  font-size: 1.3rem;
+                }
+                .publishedAt {
+                  font-size: 0.9rem;
+                }
+
+                .sentence {
+                  p {
+                    font-size: 0.9rem;
+                  }
+                }
+              }
+
+              .imageBox {
+                width: 320px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .navSection {
+      width: 250px;
+
+      ul {
+        li {
+          a {
+            width: 180px;
+            padding: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+@media screen and (max-width: 1024px) {
+  .body {
+    header {
+      height: 50px;
+    }
+
+    main {
+      height: calc(100vh - 350px);
+      margin-top: 120px;
+      align-items: flex-start;
+
+      .mainSection {
+        width: 100%;
+        height: calc(100vh - 350px);
+        padding: 1rem 0 0;
+
+        .sectionTitle {
+          width: 100%;
+          height: 30px;
+          padding: 0 2rem;
+          margin: 0 0 2.5rem;
+          justify-content: flex-start;
+
+          .title {
             // border: 3px solid red;
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            h1 {
+              // width: 130px;
+              margin: 0;
+              font-size: 1.5rem;
+            }
+          }
+        }
 
-            // .borderButtom {
-            //   border: 1px solid black;
-            //   width: 90%;
-            // }
+        .articleSection {
+          height: calc(100vh - 436px);
+
+          .articleBox {
+            // border: 3px solid red;
+            width: 100%;
+            min-height: calc(100vh - 486px);
+            // padding: 0 2rem 2rem;
+            padding: 0 2rem 3rem;
+
+            .articleItem {
+              width: 100%;
+              min-height: 200px;
+              padding: 1.5rem;
+
+              .sentenceBox {
+                width: calc(100% - 300px);
+
+                .articleTitle {
+                  font-size: 1.2rem;
+                }
+                .publishedAt {
+                  font-size: 0.9rem;
+                }
+
+                .sentence {
+                  p {
+                    font-size: 0.9rem;
+                  }
+                }
+              }
+
+              .imageBox {
+                width: 300px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .navSection {
+      // border: 3px solid red;
+      width: 100%;
+      height: 120px;
+      top: 230px;
+      left: 0;
+      padding: 1rem 2rem;
+      flex-direction: row;
+      justify-content: space-between; //🔥🔥🔥
+
+      .navSectionTitle {
+        // border: 3px solid blue;
+        width: auto; //🔥🔥🔥
+        height: 30px;
+        margin: 0;
+        justify-content: flex-start;
+
+        .title {
+          h1 {
+            margin: 0;
+            font-size: 1.5em;
+          }
+        }
+      }
+
+      ul {
+        // border: 3px solid greenyellow;
+        width: calc(100% - 130px);
+        height: 80px;
+        margin: 0;
+        @include center;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        li {
+          margin-bottom: 0;
+          flex-direction: column;
+          width: calc(33% - 1rem);
+          padding: 0 0.5rem 1rem;
+
+          a {
+            // border: 3px solid greenyellow;
+            width: 100%;
+            height: 50px;
+            font-size: 0.85rem;
           }
         }
       }
@@ -258,125 +455,110 @@
   }
 }
 
-@media screen and (max-width: 950px) {
-  .body {
-    .archive {
-      .ul {
-        .li {
-          .a {
-            font-size: 13px;
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 850px) {
-  .body {
-    .archive {
-      .ul {
-        .li {
-          width: calc(50% - 1rem);
-          .a {
-            font-size: 15px;
-          }
-        }
-      }
-    }
-  }
-}
+// 🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡
 
-// 🟡
+// Navの項目が2列に変更
 @media screen and (max-width: 768px) {
   .body {
-    .main {
-      align-items: center;
+    main {
+      .mainSection {
+        .articleSection {
+          .articleBox {
+            min-height: calc(100vh - 476px);
+            .articleItem {
+              // border: 3px solid red;
+              min-height: 230px;
+              padding: 1.5rem;
 
-      .newsBox {
-        border: 3px solid black;
-        // border: 5px solid red;
-        display: grid;
-        width: 90%;
-        // width: 85%;
-        // 🔥初期状態同様でheightは未設定🔥
-        margin-bottom: 2rem;
-        grid-template:
-          "article" 250px
-          "image" 250px
-          / 1fr;
+              .sentenceBox {
+                width: calc(100% - 250px);
+                height: 230px;
 
-        .news {
-          // border: 5px solid blue;
-          .sentence {
-            // border: 5px solid orange;
-            font-size: 14px;
+                .articleTitle {
+                  font-size: 1.2rem;
+                }
+                .publishedAt {
+                  font-size: 0.85rem;
+                }
+
+                .sentence {
+                  p {
+                    font-size: 0.8rem;
+                  }
+                }
+              }
+
+              .imageBox {
+                width: 250px;
+                height: 230px;
+              }
+            }
+          }
+          footer {
+            height: 40px;
+            font-size: 0.8rem;
           }
         }
-
-        // .imageBox {
-        //   // border: 5px solid green;
-        //   // padding: 1rem;
-        // }
       }
     }
 
-    .archive {
-      .ul {
-        width: 90%;
-        // width: 85%;
-        // padding: 1rem 3rem;
-        padding: 0.5rem;
-
-        .li {
+    .navSection {
+      ul {
+        li {
           width: calc(50% - 1rem);
-          .a {
-            font-size: 15px;
-            // width: 170px;
-            // font-size: 12px;
-          }
         }
       }
     }
   }
 }
 
-// 💎💎💎💎💎💎600px
+//🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣🟣
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .body {
-    .main {
-      .newsBox {
-        .news {
-          h1 {
-            font-size: 20px;
-          }
+    main {
+      .mainSection {
+        .articleSection {
+          .articleBox {
+            .articleItem {
+              min-height: auto;
+              width: 100%;
+              padding: 1.5rem;
+              flex-direction: column;
 
-          .sentence {
-            font-size: 14px;
-          }
-        }
+              .sentenceBox {
+                width: 100%;
+                height: auto;
+                min-height: 120px;
+                max-height: 220px;
+                padding-right: 0;
+                margin-bottom: 1rem;
 
-        // .imageBox {
-        //   padding: 1rem;
-        // }
-      }
-    }
+                .articleTitle {
+                  font-size: 1.2rem;
+                }
+                .publishedAt {
+                  font-size: 0.85rem;
+                }
 
-    .archive {
-      .ul {
-        width: 90%;
-        padding: 0.5rem;
+                .sentence {
+                  p {
+                    font-size: 0.8rem;
+                  }
+                }
+              }
 
-        .li {
-          width: calc(100% - 1rem);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          // border: 3px solid skyblue;
-          .a {
-            font-size: 15px;
-            width: 60%;
-            // border: 3px solid blue;
+              .imageBox {
+                width: 85%;
+                height: 220px;
+              }
+            }
+
+            .buttonBox {
+              .button {
+                padding: 0.7rem 1rem;
+              }
+            }
           }
         }
       }
@@ -384,74 +566,172 @@
   }
 }
 
-// 💗💗💗💗💗💗💗480px
+// @media screen and (max-width: 550px) {
+@media screen and (max-width: 570px) {
+  .body {
+    .navSection {
+      ul {
+        li {
+          width: calc(100% - 1rem);
+
+          a {
+            width: 80%;
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠🟠
 
 @media screen and (max-width: 480px) {
   .body {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template:
-      "head " 80px
-      "archive " 200px
-      " main " 1fr
-      / 1fr;
+    main {
+      margin-top: 80px;
+      height: calc(100vh - 260px);
 
-    .right,
-    .left {
-      display: none;
-    }
+      .mainSection {
+        height: calc(100vh - 290px);
 
-    .main {
-      // border: 5px solid red;
-      padding: 1rem 2rem;
-      .mainTitle {
-        width: 100%;
-        > h1 {
-          font-size: 20px;
-          margin: 0 0 1rem;
-        }
-      }
-
-      .newsBox {
-        // border: 5px solid red;
-        width: 100%;
-
-        .news {
-          // background-color: pink;
-          padding: 0.5rem;
-        }
-        .imageBox {
-          padding: 0;
-        }
-      }
-    }
-
-    .archive {
-      padding: 1rem 2rem;
-      .archiveTitle {
-        width: 100%;
-        > h1 {
-          font-size: 20px;
-          margin: 0 0 1rem;
-        }
-      }
-
-      .ul {
-        // border: 5px solid blue;
-        width: 100%;
-        .li {
-          width: 100%;
-          font-size: 15px;
-          .a {
-            width: 60%;
-            // background-color: skyblue;
-            font-size: 14px;
-
-            .borderButtom {
-              border: 1px solid black;
-              width: 60%;
+        .sectionTitle {
+          padding: 0 1.5rem;
+          .title {
+            h1 {
+              font-size: 1.3rem;
             }
+          }
+        }
+
+        .articleSection {
+          height: calc(100vh - 376px);
+
+          .articleBox {
+            min-height: calc(100vh - 416px);
+            padding: 0 1.5rem 3rem;
+            align-items: center;
+
+            .articleItem {
+              width: 100%;
+              padding: 1rem;
+
+              .sentenceBox {
+                .articleTitle {
+                  font-size: 1.1rem;
+                }
+                .publishedAt {
+                  font-size: 0.8rem;
+                }
+
+                .sentence {
+                  p {
+                    font-size: 0.75rem;
+                  }
+                }
+              }
+
+              .imageBox {
+                width: 85%;
+                height: 180px;
+              }
+            }
+
+            .buttonBox {
+              .button {
+                font-size: 0.85rem;
+                padding: 0.6rem 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .navSection {
+      top: 180px;
+      height: 110px;
+      padding: 0 1.5rem;
+
+      .navSectionTitle {
+        width: 110px;
+        .title {
+          h1 {
+            font-size: 1.3em;
+          }
+        }
+      }
+
+      ul {
+        width: calc(100% - 110px);
+        height: 70px;
+
+        li {
+          a {
+            width: 100%;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢🟢
+
+@media screen and (max-width: 390px) {
+  .body {
+    main {
+      .mainSection {
+        .sectionTitle {
+          .title {
+            h1 {
+              font-size: 1.15rem;
+            }
+          }
+        }
+
+        .articleSection {
+          height: calc(100vh - 376px);
+
+          .articleBox {
+            .articleItem {
+              width: 100%;
+
+              .sentenceBox {
+                .articleTitle {
+                  font-size: 1rem;
+                }
+                .publishedAt {
+                  font-size: 0.75rem;
+                }
+
+                .sentence {
+                  p {
+                    font-size: 0.7rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .navSection {
+      .navSectionTitle {
+        .title {
+          h1 {
+            font-size: 1.15em;
+          }
+        }
+      }
+
+      ul {
+        width: calc(100% - 105px);
+        li {
+          a {
+            font-size: 0.7rem;
           }
         }
       }
