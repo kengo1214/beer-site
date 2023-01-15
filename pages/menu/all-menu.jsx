@@ -6,6 +6,21 @@ import { clientMenu } from "../../libs/client";
 import HederAnother from "../../components/Header/headerAnother";
 import MenuNav from "../../components/Menu-Nav/menu-nav";
 
+//SSG(getStaticProps)
+export async function getStaticProps() {
+  const data01 = await clientMenu.get({ endpoint: "barrel-beer" });
+  const data02 = await clientMenu.get({ endpoint: "bottle-beer" });
+  const data03 = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
+
+  return {
+    props: {
+      barrelbeer: data01.contents,
+      bottlebeer: data02.contents,
+      cocktailhardliquor: data03.contents,
+    },
+  };
+}
+
 export default function AllMenu({
   barrelbeer,
   bottlebeer,
@@ -160,19 +175,4 @@ export default function AllMenu({
       </footer>
     </div>
   );
-}
-
-//SSG(getStaticProps)
-export async function getStaticProps() {
-  const data01 = await clientMenu.get({ endpoint: "barrel-beer" });
-  const data02 = await clientMenu.get({ endpoint: "bottle-beer" });
-  const data03 = await clientMenu.get({ endpoint: "cocktail-and-hard-liquor" });
-
-  return {
-    props: {
-      barrelbeer: data01.contents,
-      bottlebeer: data02.contents,
-      cocktailhardliquor: data03.contents,
-    },
-  };
 }

@@ -7,6 +7,7 @@ import HeaderAnother from "../components/Header/headerAnother";
 import BlogNav from "../components/BlogNav/BlogNav";
 
 import { BsChevronDoubleLeft } from "react-icons/bs";
+import { BsChevronDoubleRight } from "react-icons/bs";
 
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
@@ -34,12 +35,30 @@ export default function Blog({ news, monthlyIndex }) {
       <HeaderAnother />
       <div className={styles.body}>
         <BlogNav />
+
         <main>
           <section className={styles.mainSection}>
             <div className={styles.sectionTitle}>
               <div className={styles.title}>
                 <h1>Latest Blog</h1>
               </div>
+
+              {/* 💊💊💊💊💊💊💊💊💊 */}
+              <div className={styles.scrollButtonHidden}>
+                <Link href="#top">
+                  <BsFillArrowUpCircleFill
+                    className={styles.scrollTop}
+                    size={25}
+                  />
+                </Link>
+                <Link href="#down">
+                  <BsFillArrowDownCircleFill
+                    className={styles.scrollDown}
+                    size={25}
+                  />
+                </Link>
+              </div>
+              {/* 💊💊💊💊💊💊💊💊💊 */}
             </div>
 
             <div className={styles.articleSection}>
@@ -48,14 +67,39 @@ export default function Blog({ news, monthlyIndex }) {
                   {news.map((news) => (
                     <article className={styles.articleItem} key={news.id}>
                       <div className={styles.sentenceBox}>
-                        <h1 className={styles.articleTitle}>{news.title}</h1>
-                        <div className={styles.publishedAt}>
-                          {news.publishedAt}
+                        <div className={styles.items}>
+                          <h1 className={styles.articleTitle}>{news.title}</h1>
+                          <div className={styles.publishedAt}>
+                            {news.publishedAt}
+                          </div>
                         </div>
-                        <div
-                          className={styles.sentence}
-                          dangerouslySetInnerHTML={{ __html: `${news.body}` }}
-                        />
+
+                        <div className={styles.moreButtonBox}>
+                          <div className={styles.publishedAtHidden}>
+                            {news.publishedAt}
+                          </div>
+
+                          <Link href="">
+                            <div className={styles.moreButton}>
+                              <a>More</a>
+                              <BsChevronDoubleRight
+                                className={styles.icon}
+                                size={20}
+                              />
+                            </div>
+                          </Link>
+
+                          <Link href="">
+                            <div className={styles.moreButtonHidden}>
+                              <a>More</a>
+                              <BsChevronDoubleRight
+                                className={styles.icon}
+                                size={15}
+                              />
+                            </div>
+                          </Link>
+                          
+                        </div>
                       </div>
 
                       <div className={styles.imageBox}>
@@ -71,9 +115,9 @@ export default function Blog({ news, monthlyIndex }) {
                     </article>
                   ))}
 
-                  <div className={styles.buttonBox}>
+                  <div className={styles.homeButtonBox}>
                     <Link href="/">
-                      <div className={styles.button}>
+                      <div className={styles.homeButton}>
                         <a>Home</a>
                         <BsChevronDoubleLeft
                           className={styles.icon}
@@ -83,7 +127,7 @@ export default function Blog({ news, monthlyIndex }) {
                     </Link>
                   </div>
                 </div>
-                {/* 💊💊💊💊💊💊💊💊💊💊 */}
+
                 <div className={styles.scrollSection}>
                   <div className={styles.scrollBox}>
                     <Link href="#top">
@@ -100,27 +144,6 @@ export default function Blog({ news, monthlyIndex }) {
                     </Link>
                   </div>
                 </div>
-                {/* 💊💊💊💊💊💊💊💊💊💊 */}
-
-                {/* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */}
-
-                <div className={styles.scrollSectionSecond}>
-                  <div className={styles.scrollBox}>
-                    <Link href="#top">
-                      <BsFillArrowUpCircleFill
-                        className={styles.scrollTop}
-                        size={32}
-                      />
-                    </Link>
-                    <Link href="#down">
-                      <BsFillArrowDownCircleFill
-                        className={styles.scrollDown}
-                        size={32}
-                      />
-                    </Link>
-                  </div>
-                </div>
-                {/* ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ */}
               </article>
               <footer id="down">No Beer No Life Tokyo 2022</footer>
             </div>

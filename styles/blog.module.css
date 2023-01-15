@@ -36,15 +36,18 @@
   position: fixed;
 }
 .body main .mainSection .sectionTitle {
-  width: calc(100% - 250px);
+  width: calc(100% - 270px);
   height: 100px;
+  padding: 0 2rem;
   color: white;
   display: flex;
+  justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
 }
 .body main .mainSection .sectionTitle .title {
-  width: calc(100% - 6rem);
-  margin-left: 1.5rem;
+  width: calc(100% - 5rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +55,19 @@
 }
 .body main .mainSection .sectionTitle .title h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
+}
+.body main .mainSection .sectionTitle .scrollButtonHidden {
+  display: none;
+}
+.body main .mainSection .sectionTitle .scrollButtonHidden .scrollTop {
+  margin-right: 0.8rem;
+}
+.body main .mainSection .sectionTitle .scrollButtonHidden .scrollTop:hover,
+.body main .mainSection .sectionTitle .scrollButtonHidden .scrollDown:hover {
+  transition: 300ms;
+  color: orangered;
+  cursor: pointer;
 }
 .body main .mainSection .articleSection {
   width: 100%;
@@ -60,22 +75,27 @@
   overflow: scroll;
 }
 .body main .mainSection .articleSection .outLine {
-  width: calc(100% - 250px);
+  width: calc(100% - 270px);
   min-height: calc(100vh - 380px);
   display: flex;
+  justify-content: flex-start;
 }
 .body main .mainSection .articleSection .outLine h1 {
   margin: 0;
 }
 .body main .mainSection .articleSection .outLine .articleBox {
-  width: calc(100% - 3rem);
-  padding: 0 0 3rem 1.5rem;
+  width: calc(100% - 5rem);
+  padding: 0 1.5rem 2rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .body main .mainSection .articleSection .outLine .articleBox .articleItem {
   background-color: white;
   width: 100%;
-  min-height: 250px;
-  padding: 1.5rem;
   margin-bottom: 3rem;
   border-radius: 10px;
   box-sizing: content-box;
@@ -83,52 +103,111 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  padding: 1.5rem;
 }
 .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox {
-  width: calc(100% - 350px);
-  height: 250px;
-  padding-right: 1rem;
+  width: calc(100% - 330px);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items {
+  width: 100%;
+  min-height: 110px;
+  padding: 1rem 1rem 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .articleTitle {
+  font-size: 1.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .articleTitle {
-  margin: 0;
   margin-bottom: 1rem;
-  font-size: 1.3rem;
 }
-.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .publishedAt {
-  margin-bottom: 1rem;
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .publishedAt {
+  height: 50%;
   font-size: 1rem;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
 }
-.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .sentence {
-  overflow: scroll;
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox {
+  width: 100%;
+  min-height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
-.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .sentence p {
-  margin: 0;
-  line-height: 1.8;
-  font-size: 0.9rem;
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .publishedAtHidden {
+  display: none;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 1rem 1.3rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButton .icon {
+  margin-left: 0.8rem;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButton:hover {
+  transition: 300ms;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButtonHidden {
+  border: 1px solid black;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: none;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButtonHidden a {
+  font-size: 0.8rem;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButtonHidden .icon {
+  margin-left: 0.2rem;
+}
+.body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButtonHidden:hover {
+  transition: 300ms;
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox {
-  width: 350px;
-  height: 250px;
+  width: 330px;
+  height: 220px;
 }
 .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox .image {
   width: 100%;
   height: 100%;
   position: relative;
 }
-.body main .mainSection .articleSection .outLine .articleBox .buttonBox {
+.body main .mainSection .articleSection .outLine .articleBox .homeButtonBox {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
 }
-.body main .mainSection .articleSection .outLine .articleBox .buttonBox .button {
+.body main .mainSection .articleSection .outLine .articleBox .homeButtonBox .homeButton {
   border: 1px solid white;
   color: white;
   padding: 1rem 1.3rem;
@@ -139,21 +218,21 @@
   align-items: center;
   box-sizing: border-box;
 }
-.body main .mainSection .articleSection .outLine .articleBox .buttonBox .button .icon {
+.body main .mainSection .articleSection .outLine .articleBox .homeButtonBox .homeButton .icon {
   margin-left: 0.8rem;
   color: white;
 }
-.body main .mainSection .articleSection .outLine .articleBox .buttonBox .button:hover {
+.body main .mainSection .articleSection .outLine .articleBox .homeButtonBox .homeButton:hover {
   background-color: white;
   color: black;
   transition: 300ms;
+  cursor: pointer;
 }
-.body main .mainSection .articleSection .outLine .articleBox .buttonBox .button:hover .icon {
+.body main .mainSection .articleSection .outLine .articleBox .homeButtonBox .homeButton:hover .icon {
   color: black;
 }
 .body main .mainSection .articleSection .outLine .scrollSection {
-  width: 3rem;
-  margin-left: 1.5rem;
+  width: 5rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -179,38 +258,6 @@
   transition: 300ms;
   color: orangered;
 }
-.body main .mainSection .articleSection .outLine .scrollSectionSecond {
-  width: 3rem;
-  margin-left: 1.5rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  align-items: flex-start;
-  width: 2rem;
-  position: fixed;
-  right: 0.5rem;
-  display: none;
-}
-.body main .mainSection .articleSection .outLine .scrollSectionSecond .scrollBox {
-  position: fixed;
-  bottom: calc(50px + 1rem);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  flex-direction: column;
-}
-.body main .mainSection .articleSection .outLine .scrollSectionSecond .scrollBox .scrollTop {
-  margin-bottom: 0.8rem;
-}
-.body main .mainSection .articleSection .outLine .scrollSectionSecond .scrollBox .scrollTop:hover,
-.body main .mainSection .articleSection .outLine .scrollSectionSecond .scrollBox .scrollDown:hover {
-  transition: 300ms;
-  color: orangered;
-}
 .body main .mainSection .articleSection footer {
   display: flex;
   justify-content: center;
@@ -224,7 +271,7 @@
 }
 .body .navSection {
   z-index: 20;
-  width: 250px;
+  width: 270px;
   height: calc(100vh - 280px);
   position: fixed;
   top: 230px;
@@ -233,13 +280,14 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  flex-direction: column;
   justify-content: flex-start;
+  flex-direction: column;
 }
 .body .navSection .navSectionTitle {
   color: white;
   width: 100%;
   height: 100px;
+  padding: 0 2.5rem 0 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,12 +295,12 @@
 }
 .body .navSection .navSectionTitle .title h1 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 2rem;
 }
 .body .navSection ul {
   width: 100%;
   height: calc(100vh - 444px);
-  padding: 0 1.5rem;
+  padding: 0 2.5rem 0 1.5rem;
   margin: 0;
   list-style: none;
   overflow: scroll;
@@ -275,13 +323,14 @@
   background-color: darkorange;
   color: white;
   width: 100%;
-  padding: 0.8rem;
+  padding: 1.2rem 0.8rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  border-radius: 10px;
-  font-weight: bold;
 }
 .body .navSection ul li a:hover {
   background-color: orange;
@@ -289,261 +338,366 @@
   transition: 300ms;
 }
 
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 1280px) {
+  .body {
+    border-top: none;
+  }
   .body main .mainSection .sectionTitle {
-    width: calc(100% - 230px);
+    width: calc(100% - 250px);
+  }
+  .body main .mainSection .sectionTitle .title {
+    width: calc(100% - 3rem);
   }
   .body main .mainSection .articleSection .outLine {
-    width: calc(100% - 230px);
+    width: calc(100% - 250px);
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .articleTitle {
-    font-size: 1.2rem;
+  .body main .mainSection .articleSection .outLine .articleBox {
+    width: calc(100% - 3rem);
+    padding: 0 1rem 2rem 2rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .publishedAt {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox {
+    width: calc(100% - 270px);
+    min-height: 180px;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items {
+    min-height: 95px;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .articleTitle {
+    font-size: 1.3rem;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .publishedAt {
     font-size: 0.9rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .sentence p {
-    font-size: 0.85rem;
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox {
+    min-height: 85px;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButton {
+    padding: 0.7rem 1rem;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox {
+    width: 270px;
+    height: 180px;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .homeButtonBox .homeButton {
+    padding: 0.7rem 1rem;
+  }
+  .body main .mainSection .articleSection .outLine .scrollSection {
+    width: 3rem;
   }
   .body .navSection {
-    width: 230px;
+    width: 250px;
+  }
+  .body .navSection .navSectionTitle {
+    padding: 0 2rem 0 1rem;
+  }
+  .body .navSection ul {
+    padding: 0 2rem 0 1rem;
+  }
+  .body .navSection ul li a {
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 1024px) {
   .body main {
-    height: calc(100vh - 350px);
-    margin-top: 120px;
+    height: calc(100vh - 380px);
+    margin-top: 150px;
     align-items: flex-start;
   }
   .body main .mainSection {
-    height: calc(100vh - 350px);
+    height: calc(100vh - 380px);
   }
   .body main .mainSection .sectionTitle {
     width: 100%;
+    height: auto;
+    padding: 1.5rem 2rem 1.5rem;
   }
   .body main .mainSection .sectionTitle .title {
     width: 100%;
-    margin: 0 2rem;
     justify-content: flex-start;
   }
   .body main .mainSection .sectionTitle .title h1 {
     font-size: 1.5rem;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 450px);
+    height: calc(100vh - 456px);
   }
   .body main .mainSection .articleSection .outLine {
     width: 100%;
-    min-height: auto;
+    min-height: calc(100vh - 506px);
+    padding-right: 2rem;
   }
   .body main .mainSection .articleSection .outLine .articleBox {
-    width: 100%;
-    min-height: calc(100vh - 500px);
-    padding: 0 2rem 3rem;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    padding: 1.5rem 1rem 2rem 2rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem {
-    width: 100%;
-    width: calc(100% - 2rem);
-    min-height: 200px;
-    padding: 1.5rem;
-  }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox {
-    width: calc(100% - 300px);
-  }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .articleTitle {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .articleTitle {
     font-size: 1.2rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .publishedAt {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .publishedAt {
     font-size: 0.9rem;
-  }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .sentence p {
-    font-size: 0.9rem;
-  }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox {
-    width: 300px;
-    height: 250px;
-  }
-  .body main .mainSection .articleSection .outLine .articleBox .buttonBox {
-    width: 100%;
-    margin-bottom: 0rem;
-  }
-  .body main .mainSection .articleSection .outLine .scrollSection {
-    display: none;
-  }
-  .body main .mainSection .articleSection .outLine .scrollSectionSecond {
-    display: block;
-    right: 0.5rem;
-    right: 1rem;
   }
   .body .navSection {
     width: 100%;
-    height: 120px;
+    height: 150px;
+    position: fixed;
     top: 230px;
     left: 0;
-    padding: 1rem 2rem;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .body .navSection .navSectionTitle {
-    width: auto;
-    height: auto;
-    margin: 0;
-    justify-content: flex-start;
-  }
-  .body .navSection .navSectionTitle .title h1 {
-    margin: 0;
-    font-size: 1.5em;
-  }
-  .body .navSection ul {
-    height: 80px;
-    margin: 0;
+    padding: 2rem 2rem 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    flex-wrap: wrap;
+    justify-content: normal;
+    align-items: center;
     flex-direction: row;
+  }
+  .body .navSection .navSectionTitle {
+    width: auto;
+    height: 100%;
     padding: 0;
   }
+  .body .navSection .navSectionTitle .title h1 {
+    font-size: 1.5em;
+  }
+  .body .navSection ul {
+    height: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   .body .navSection ul li {
-    margin-bottom: 0;
-    flex-direction: column;
-    width: calc(33% - 1rem);
-    padding: 0 0.5rem 1rem;
+    width: calc(33% - 2.5rem);
+    margin: 0 0 1rem 2.5rem;
   }
   .body .navSection ul li a {
+    font-size: 0.9rem;
     width: 100%;
-    height: 50px;
-    font-size: 0.85rem;
   }
 }
 @media screen and (max-width: 800px) {
   .body main {
-    height: calc(100vh - 330px);
+    height: calc(100vh - 340px);
+    margin-top: 130px;
   }
   .body main .mainSection {
-    height: calc(100vh - 330px);
+    height: calc(100vh - 340px);
+  }
+  .body main .mainSection .sectionTitle .title {
+    width: auto;
+  }
+  .body main .mainSection .sectionTitle .scrollButtonHidden {
+    display: block;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 430px);
+    height: calc(100vh - 416px);
+  }
+  .body main .mainSection .articleSection .outLine {
+    min-height: calc(100vh - 466px);
+    padding-right: 0;
   }
   .body main .mainSection .articleSection .outLine .articleBox {
-    min-height: calc(100vh - 480px);
+    width: 100%;
+    padding: 1.5rem 2rem 2rem 2rem;
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem {
-    min-height: auto;
-    padding: 1.5rem;
+    width: 90%;
     flex-direction: column;
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox {
     width: 100%;
-    height: auto;
-    max-height: 250px;
-    padding-right: 0rem;
+    min-height: auto;
     margin-bottom: 1rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .articleTitle {
-    font-size: 1.2rem;
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items {
+    align-items: center;
+    justify-content: center;
+    padding: 0rem;
+    min-height: auto;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .publishedAt {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .articleTitle {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .publishedAt {
+    display: none;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox {
+    min-height: auto;
+    padding: 1rem 0;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButton {
+    padding: 0.6rem 0.8rem;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButton a {
     font-size: 0.9rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .sentence p {
-    font-size: 0.9rem;
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .publishedAtHidden {
+    display: block;
+    margin-right: 1.3rem;
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox {
-    width: 405px;
-    height: 270px;
+    width: 390px;
+    height: 260px;
+  }
+  .body main .mainSection .articleSection .outLine .scrollSection {
+    display: none;
   }
   .body .navSection {
+    height: 130px;
     top: 210px;
+    padding: 2rem 2rem 1rem;
   }
   .body .navSection ul li {
-    width: calc(50% - 1rem);
+    width: calc(50% - 2.5rem);
+    margin: 0 0 1rem 2.5rem;
+  }
+  .body .navSection ul li a {
+    font-size: 0.9rem;
+    width: 100%;
   }
 }
-@media screen and (max-width: 600px) {
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .articleTitle {
-    font-size: 1.1rem;
+@media screen and (max-width: 570px) {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem {
+    width: 100%;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .publishedAt {
-    font-size: 0.9rem;
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .articleTitle {
+    font-size: 1.2rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .sentence p {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .publishedAtHidden {
     font-size: 0.9rem;
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox {
-    width: 330px;
+    width: 320px;
     height: 220px;
   }
   .body .navSection ul li {
-    width: 100%;
-    padding: 0 0 1rem;
+    width: calc(50% - 1rem);
+    margin: 0 0 1rem 1rem;
   }
   .body .navSection ul li a {
-    width: 70%;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .body .navSection {
+    padding: 1.5rem 2rem 1rem;
+  }
+  .body .navSection ul li {
+    width: calc(100% - 0rem);
+    margin: 0 0 1rem 2rem;
+  }
+  .body .navSection ul li a {
+    font-size: 0.95rem;
+    width: 80%;
   }
 }
 @media screen and (max-width: 480px) {
   .body main {
-    margin-top: 70px;
-    height: calc(100vh - 280px);
+    height: calc(100vh - 310px);
+    margin-top: 100px;
   }
   .body main .mainSection {
-    height: calc(100vh - 280px);
+    height: calc(100vh - 310px);
   }
   .body main .mainSection .sectionTitle {
-    height: 80px;
+    padding: 1rem 2rem 1rem;
   }
   .body main .mainSection .sectionTitle .title h1 {
     font-size: 1.3rem;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 360px);
+    height: calc(100vh - 370px);
   }
-  .body main .mainSection .articleSection .outLine .articleBox {
-    min-height: calc(100vh - 410px);
+  .body main .mainSection .articleSection .outLine {
+    min-height: calc(100vh - 420px);
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem {
-    padding: 1.5rem 1rem;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .articleTitle {
-    font-size: 1.1rem;
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items {
+    align-items: flex-start;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .publishedAt {
-    font-size: 0.9rem;
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .articleTitle {
+    font-size: 1rem;
   }
-  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .sentence p {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .publishedAtHidden {
     font-size: 0.8rem;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButton {
+    display: none;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .moreButtonHidden {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox {
-    width: 270px;
-    height: 180px;
+    width: 300px;
+    height: 200px;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .homeButtonBox .homeButton {
+    padding: 0.7rem 1rem;
   }
   .body .navSection {
-    height: 100px;
+    padding: 1.5rem 2rem 1rem;
     top: 180px;
+    height: 130px;
   }
   .body .navSection .navSectionTitle .title h1 {
-    font-size: 1.3em;
-  }
-  .body .navSection ul {
-    height: 70px;
+    font-size: 1.3rem;
   }
   .body .navSection ul li {
-    padding: 0 0 1rem;
+    width: calc(100% - 0rem);
+    margin: 0 0 1rem 2rem;
   }
   .body .navSection ul li a {
-    height: 40px;
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 430px) {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox {
+    width: 255px;
+    height: 170px;
+  }
+  .body .navSection ul li {
+    width: calc(100% - 0rem);
+    margin: 0 0 1rem 1rem;
+  }
+  .body .navSection ul li a {
+    font-size: 0.95rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 372px) {
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox {
+    flex-direction: column;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .moreButtonBox .publishedAtHidden {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .body main .mainSection .articleSection .outLine .articleBox .articleItem .imageBox {
+    width: 210px;
+    height: 140px;
+  }
+  .body .navSection ul li {
+    width: calc(100% - 0rem);
+    margin: 0 0 1rem 1rem;
+  }
+  .body .navSection ul li a {
+    font-size: 0.85rem;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=blog.module.css.map */
