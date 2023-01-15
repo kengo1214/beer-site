@@ -511,7 +511,6 @@
   .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox {
     width: 100%;
     min-height: auto;
-    margin-bottom: 1rem;
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items {
     align-items: center;
