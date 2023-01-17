@@ -1,5 +1,6 @@
 .body {
   width: 100%;
+  height: 80px;
   height: 100px;
   position: relative;
   z-index: 10;
@@ -27,36 +28,35 @@
 .body .title h4 {
   margin: 0;
   color: white;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .body .title h1 {
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   margin: 0;
   color: white;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .body {
-    height: 100px;
     height: 80px;
   }
   .body .title h4 {
     font-size: 0.8rem;
   }
   .body .title h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 @media screen and (max-width: 480px) {
   .body {
-    height: 80px;
-    top: -30px;
+    height: 70px;
+    top: -20px;
   }
   .body .title h4 {
     font-size: 0.7em;
   }
   .body .title h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 /*# sourceMappingURL=BlogNav.module.css.map */

@@ -40,6 +40,7 @@ export default function Blog({ news, monthlyIndex }) {
           <section className={styles.mainSection}>
             <div className={styles.sectionTitle}>
               <div className={styles.title}>
+                <h4>最新のブログ</h4>
                 <h1>Latest Blog</h1>
               </div>
 
@@ -98,7 +99,6 @@ export default function Blog({ news, monthlyIndex }) {
                               />
                             </div>
                           </Link>
-                          
                         </div>
                       </div>
 
@@ -145,7 +145,9 @@ export default function Blog({ news, monthlyIndex }) {
                   </div>
                 </div>
               </article>
-              <footer id="down">No Beer No Life Tokyo 2022</footer>
+              <footer id="down">
+                <p>No Beer No Life Tokyo 2022</p>
+              </footer>
             </div>
           </section>
         </main>
@@ -154,6 +156,7 @@ export default function Blog({ news, monthlyIndex }) {
         <section className={styles.navSection}>
           <div className={styles.navSectionTitle}>
             <div className={styles.title}>
+              <h4>アーカイブ</h4>
               <h1>Archive</h1>
             </div>
           </div>

@@ -1,46 +1,63 @@
 .body {
   background-color: black;
   width: 100%;
-  height: 130px;
+  height: 100px;
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   z-index: 10;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-duration: 300ms;
-}
-.body .section {
-  height: 130px;
-  background-color: black;
-  max-width: 1240px;
-  margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 0 3rem;
+}
+.body .title {
   color: white;
 }
-.body .section h1 {
-  font-size: 40px;
-  margin: 0 0 0 1rem;
-  cursor: pointer;
+.body .title h1 {
+  font-size: 2rem;
 }
-.body .section .nav {
-  display: none;
-}
-.body .section .nav li {
+.body nav ul {
   list-style: none;
+  display: flex;
 }
-.body .section .nav li .orangeButton {
+.body nav ul li:nth-child(4) {
+  margin-right: 0;
   background-color: orangered;
 }
-.body .section .button {
-  display: block;
-  z-index: 10;
+.body nav ul li {
   margin-right: 1rem;
+  border-radius: 10px;
 }
-.body .section .menuOpen {
+.body nav ul li .item {
+  border: 1px solid black;
+  padding: 0.8rem;
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+}
+.body nav ul li .item:hover {
+  background-color: orange;
+  transition: 300ms;
+}
+.body .hamburgerButton {
+  z-index: 10;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+.body .menuOpen {
   background-color: black;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -49,35 +66,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100vh;
   text-align: center;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-duration: 300ms;
 }
-.body .section .menuOpen ul {
+.body .menuOpen ul {
   padding: 0;
   list-style: none;
 }
-.body .section .menuOpen ul li {
+.body .menuOpen ul li {
   padding: 1rem;
-  font-size: 32px;
+  list-style: none;
+  color: white;
 }
-.body .section .menuOpen ul a {
+.body .menuOpen ul li h1 {
+  border: 3px solid black;
+  font-size: 2rem;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  display: flex;
-  border: 3px solid black;
   transition: 300ms;
 }
-.body .section .menuOpen ul a:hover {
+.body .menuOpen ul li h1:hover {
   border-bottom: 3px solid white;
 }
-.body .section .menuClose {
+.body .menuClose {
   background-color: black;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: -100%;
@@ -86,105 +104,71 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100vh;
   text-align: center;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-duration: 300ms;
 }
-.body .section .menuClose ul {
+.body .menuClose ul {
   padding: 0;
   list-style: none;
 }
-.body .section .menuClose ul li {
+.body .menuClose ul li {
   padding: 1rem;
-  font-size: 32px;
+  list-style: none;
 }
-.body .section .menuClose ul a {
-  font-weight: bold;
+.body .menuClose ul li h1 {
+  border: 3px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
   padding: 1rem;
-  display: flex;
-  border: 3px solid black;
 }
-.body .section .menuClose ul a:hover {
+.body .menuClose ul li h1:hover {
   border-bottom: 3px solid white;
 }
 
-@media screen and (min-width: 900px) {
-  .body .section .nav {
-    display: flex;
-    padding: 0;
-  }
-  .body .section .nav li {
-    padding: 1rem 0.5rem;
-    font-size: 20px;
-  }
-  .body .section .nav li a {
-    font-weight: bold;
-    padding: 1rem;
-    display: flex;
-    border-radius: 10px;
-    transition: 300ms;
-  }
-  .body .section .nav li a:hover {
-    background-color: orange;
-    color: white;
-  }
-  .body .section .button {
-    display: none;
-  }
-  .body .section .menuOpen {
-    display: none;
-  }
-  .body .section .menuClose {
-    display: none;
+@media screen and (max-width: 1024px) {
+  .body .title h1 {
+    font-size: 1.8rem;
   }
 }
-@media screen and (max-width: 768px) {
-  .body .section h1 {
-    font-size: 35px;
+@media screen and (max-width: 800px) {
+  .body {
+    padding: 0 2rem;
+  }
+  .body nav {
+    display: none;
+  }
+  .body .hamburgerButton {
+    display: block;
   }
 }
 @media screen and (max-width: 480px) {
   .body {
     height: 100px;
-    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    transition-duration: 0ms;
+    height: 80px;
+    padding: 0 1.5rem;
   }
-  .body .section {
-    height: 100px;
-  }
-  .body .section h1 {
-    font-size: 28px;
-    margin: 0;
-  }
-  .body .section .button {
-    margin-right: 0;
+  .body .title h1 {
+    font-size: 1.6rem;
   }
 }
 @media screen and (max-width: 390px) {
   .body {
-    height: 100px;
+    padding: 0 1rem;
   }
-  .body .section {
-    height: 100px;
-  }
-  .body .section h1 {
-    font-size: 25px;
+  .body .title h1 {
+    font-size: 1.2rem;
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
   .body {
-    height: 100px;
+    padding: 0 1rem;
   }
-  .body .section {
-    height: 100px;
-  }
-  .body .section h1 {
-    font-size: 25px;
+  .body .title h1 {
+    font-size: 1.1rem;
   }
 }
 /*# sourceMappingURL=hederAnother.module.css.map */

@@ -21,7 +21,8 @@
   position: fixed;
   width: 100%;
   height: 100vh;
-  padding-top: 130px;
+  // padding-top: 130px;
+  padding-top: 100px; //🔥🔥🔥
   border-top: none;
   background-image: url("/image/blog-link.jpg");
   background-image: url("/image//all-menu/cocktail.jpg");
@@ -39,32 +40,40 @@
     position: relative;
     z-index: 20;
     width: 100%;
-    height: calc(100vh - 230px);
+    height: calc(100vh - 200px); //🔥🔥🔥
     @include center;
 
     .mainSection {
       // border: 3px solid blue;
       width: 100%;
-      height: calc(100vh - 230px);
+      height: calc(100vh - 200px); //🔥🔥🔥
       position: fixed;
 
       .sectionTitle {
         // border: 3px solid red;
         width: calc(100% - 270px);
-        height: 100px;
-        padding: 0 2rem;
+        height: 80px;
+        height: 100px; //🔥🔥🔥
+        padding-left: 2.5rem;
         color: white;
         @include center;
-        justify-content: space-between;
+        justify-content: flex-start;
+        // justify-content: space-between;
 
         .title {
           // border: 3px solid blue;
-          width: calc(100% - 5rem);
+          width: calc(100% - 6.5rem);
           @include center;
+          flex-direction: column;
+
+          h4 {
+            margin: 0;
+            font-size: 0.8rem;
+          }
 
           h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 1.6rem; //🔥🔥🔥
           }
         }
 
@@ -89,13 +98,14 @@
       .articleSection {
         // border: 3px solid greenyellow;
         width: 100%;
-        height: calc(100vh - 330px);
+        height: calc(100vh - 300px); //🔥🔥🔥
         overflow: scroll;
 
         .outLine {
           // border: 3px solid magenta;
           width: calc(100% - 270px);
-          min-height: calc(100vh - 380px);
+          min-height: calc(100vh - 340px); //🔥🔥🔥
+
           display: flex;
           justify-content: flex-start;
 
@@ -111,14 +121,11 @@
             flex-direction: column;
             justify-content: flex-end;
 
-            //🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈
-
             .articleItem {
               // border: 3px solid red;
               background-color: white;
               width: 100%;
-              // margin-bottom: 2rem;
-              margin-bottom: 3rem; //💊💊💊
+              margin-bottom: 3rem;
               border-radius: 10px;
               box-sizing: content-box;
               @include center;
@@ -136,9 +143,11 @@
                   width: 100%;
                   min-height: 110px;
                   padding: 1rem 1rem 1rem 0rem;
-                  display: flex;
-                  flex-direction: column;
+
+                  @include center;
                   justify-content: space-between;
+                  align-items: flex-start;
+                  flex-direction: column;
 
                   .articleTitle {
                     // border: 3px solid orange;
@@ -187,7 +196,6 @@
                     }
                   }
 
-                  //💊💊💊💊💊💊💊💊💊
                   .moreButtonHidden {
                     border: 1px solid black;
                     padding: 0.5rem 0.7rem;
@@ -197,12 +205,10 @@
                     display: none;
 
                     a {
-                      // font-size: 0.9rem;
                       font-size: 0.8rem;
                     }
 
                     .icon {
-                      // margin-left: 0.8rem;
                       margin-left: 0.2rem;
                     }
 
@@ -297,7 +303,13 @@
           // background-color: pink;
           color: white;
           width: 100%;
-          height: 50px;
+          // height: 50px;
+          height: 40px; //🔥🔥🔥
+
+          p {
+            margin: 0;
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -307,9 +319,10 @@
     // border: 3px solid red;
     z-index: 20;
     width: 270px;
-    height: calc(100vh - 280px);
+    height: calc(100vh - 240px); //🔥🔥🔥
+
     position: fixed;
-    top: 230px;
+    top: 200px; //🔥🔥🔥
     right: 0;
 
     @include center;
@@ -320,14 +333,22 @@
       // border: 3px solid blue;
       color: white;
       width: 100%;
-      height: 100px;
+      height: 100px; //🔥🔥🔥
       padding: 0 2.5rem 0 1.5rem;
       @include center;
 
       .title {
+        @include center;
+        flex-direction: column;
+
+        h4 {
+          margin: 0;
+          font-size: 0.8rem;
+        }
+
         h1 {
           margin: 0;
-          font-size: 2rem;
+          font-size: 1.6rem; //🔥🔥🔥
         }
       }
     }
@@ -335,7 +356,7 @@
     ul {
       // border: 3px solid orange;
       width: 100%;
-      height: calc(100vh - 444px);
+      height: calc(100vh - 400px);
       padding: 0 2.5rem 0 1.5rem;
       margin: 0;
       list-style: none;
@@ -354,7 +375,7 @@
           background-color: darkorange;
           color: white;
           width: 100%;
-          padding: 1.2rem 0.8rem; //🔥🔥🔥
+          padding: 1.2rem 0.8rem;
           border-radius: 10px;
           font-weight: bold;
           font-size: 1.1rem;
@@ -380,9 +401,13 @@
     main {
       .mainSection {
         .sectionTitle {
+          // border: 3px solid red;
           width: calc(100% - 250px);
+          padding-left: 2rem;
+
           .title {
-            width: calc(100% - 3rem);
+            // border: 3px solid blue;
+            width: calc(100% - 4rem);
           }
         }
 
@@ -477,14 +502,13 @@
 
     main {
       // border: 3px solid red;
-
-      height: calc(100vh - 380px);
-      margin-top: 150px;
+      height: calc(100vh - 310px); //🟠🟠🟠
+      margin-top: 130px; //🟠🟠🟠
       align-items: flex-start;
 
       .mainSection {
         // border: 3px solid blue;
-        height: calc(100vh - 380px);
+        height: calc(100vh - 310px); //🟠🟠🟠
 
         .sectionTitle {
           // border: 3px solid red;
@@ -494,29 +518,31 @@
 
           .title {
             // border: 3px solid blue;
-            width: 100%;
-            justify-content: flex-start;
+            width: auto;
+
+            h4 {
+              font-size: 0.7rem;
+            }
 
             h1 {
-              font-size: 1.5rem;
+              font-size: 1.4rem;
             }
           }
         }
 
         .articleSection {
           // border: 3px solid greenyellow;
-
-          height: calc(100vh - 456px); //🟠🟠🟠
+          height: calc(100vh - 402px); //🟠🟠🟠
 
           .outLine {
             // border: 3px solid magenta;
             width: 100%;
-            min-height: calc(100vh - 506px); //🟠🟠🟠
+            min-height: calc(100vh - 442px); //🟠🟠🟠
             padding-right: 2rem;
 
             .articleBox {
               // border: 3px solid aqua;
-              padding: 1.5rem 1rem 2rem 2rem;
+              padding: 0 1rem 2rem 2rem; //🟠🟠🟠
 
               .articleItem {
                 // border: 3px solid red;
@@ -543,11 +569,11 @@
     .navSection {
       // border: 3px solid red;
       width: 100%;
-      height: 150px;
+      height: 130px; //🟠🟠🟠
       position: fixed;
-      top: 230px;
+      top: 180px;
       left: 0;
-      padding: 2rem 2rem 1.5rem;
+      padding: 2rem 2rem 1.5rem; //🟠🟠🟠
       @include center;
       justify-content: normal;
       align-items: center;
@@ -560,8 +586,12 @@
         padding: 0;
 
         .title {
+          h4 {
+            font-size: 0.7rem;
+          }
+
           h1 {
-            font-size: 1.5em;
+            font-size: 1.4em;
           }
         }
       }
@@ -578,12 +608,13 @@
 
         li {
           // border: 3px solid magenta;
-          width: calc(33% - 2rem); //🟠🟠🟠
-          margin: 0 0 1rem 2rem; //🟠🟠🟠
+          width: calc(33% - 2rem);
+          margin: 0 0 1rem 2rem;
 
           a {
-            font-size: 1rem; //🟠🟠🟠
-            width: 100%; //🟠🟠🟠
+            font-size: 1rem;
+            width: 100%;
+            padding: 0.8rem 0rem; //🟠🟠🟠
           }
         }
       }
@@ -599,15 +630,17 @@
 
     main {
       // border: 3px solid red;
-      height: calc(100vh - 340px);
+      height: calc(100vh - 310px);
+      // margin-top: 120px;
       margin-top: 130px;
 
       .mainSection {
         // border: 3px solid blue;
-        height: calc(100vh - 340px);
+        height: calc(100vh - 310px);
 
         .sectionTitle {
           // border: 3px solid red;
+          justify-content: space-between; //🟣🟣🟣
 
           .title {
             // border: 3px solid blue;
@@ -621,11 +654,11 @@
 
         .articleSection {
           // border: 3px solid greenyellow;
-          height: calc(100vh - 416px);
+          height: calc(100vh - 402px);
 
           .outLine {
             // border: 3px solid magenta;
-            min-height: calc(100vh - 466px);
+            min-height: calc(100vh - 442px);
             padding-right: 0;
 
             .articleBox {
@@ -642,7 +675,6 @@
                   // border: 5px solid red;
                   width: 100%;
                   min-height: auto;
-                  // margin-bottom: 1rem;
 
                   .items {
                     // border: 5px solid blue;
@@ -700,21 +732,18 @@
 
     .navSection {
       // border: 3px solid red;
-      height: 130px; //🟣🟣🟣
-      top: 210px;
-      padding: 2rem 2rem 1.5rem;
-
+      top: 180px;
       ul {
         // border: 3px solid orange;
         li {
           // border: 3px solid magenta;
-          width: calc(50% - 2.5rem); //🟣🟣🟣
-          margin: 0 0 1rem 2.5rem; //🟣🟣🟣
+          width: calc(50% - 2.5rem);
+          margin: 0 0 1rem 2.5rem;
 
           a {
-            font-size: 1rem; //🟣🟣🟣
-            width: 100%; //🟣🟣🟣
-            padding: 0.8rem 0.4rem; //🟣🟣🟣;;
+            font-size: 1rem;
+            width: 100%;
+            padding: 0.8rem 0rem;
           }
         }
       }
@@ -798,7 +827,7 @@
   .body {
     .navSection {
       // border: 3px solid red;
-      padding: 1.5rem 2rem 1rem;
+      padding: 2rem 2rem 1.5rem;
 
       ul {
         // border: 3px solid orange;
@@ -824,12 +853,13 @@
 
     main {
       // border: 3px solid red;
-      height: calc(100vh - 290px); //💎💎💎
-      margin-top: 80px; //💎💎💎
+      height: calc(100vh - 260px); //💎💎💎
+      // margin-top: 110px;
+      margin-top: 90px; //💎💎💎
 
       .mainSection {
         // border: 3px solid blue;
-        height: calc(100vh - 290px); //💎💎💎
+        height: calc(100vh - 260px); //💎💎💎
 
         .sectionTitle {
           // border: 3px solid red;
@@ -837,19 +867,26 @@
 
           .title {
             // border: 3px solid blue;
+
+            h4 {
+              // font-size: 0.7rem;
+              font-size: 0.6rem;
+            }
+
             h1 {
-              font-size: 1.3rem; //💎💎💎
+              // font-size: 1.3rem; //💎💎💎
+              font-size: 1.2rem; //💎💎💎
             }
           }
         }
 
         .articleSection {
           // border: 3px solid greenyellow;
-          height: calc(100vh - 350px); //💎💎💎
+          height: calc(100vh - 330px); //💎💎💎
 
           .outLine {
             // border: 3px solid magenta;
-            min-height: calc(100vh - 400px); //💎💎💎
+            min-height: calc(100vh - 360px); //💎💎💎
 
             .articleBox {
               // border: 3px solid aqua;
@@ -882,6 +919,7 @@
                     .moreButton {
                       display: none;
                     }
+
                     //💊💊💊💊💊💊💊💊💊
                     .moreButtonHidden {
                       display: block;
@@ -904,6 +942,16 @@
               }
             }
           }
+
+          footer {
+            // height: 40px;
+            height: 30px;
+
+            p {
+              // font-size: 1rem;
+              font-size: 0.8rem;
+            }
+          }
         }
       }
     }
@@ -911,13 +959,17 @@
     .navSection {
       // border: 3px solid red;
       padding: 1.5rem 2rem 1rem; //💎💎💎
-      top: 180px; //💎💎💎
+      top: 150px; //💎💎💎
       height: 110px; //💎💎💎
 
       .navSectionTitle {
         .title {
+          h4 {
+            font-size: 0.6rem; //💎💎💎
+          }
+
           h1 {
-            font-size: 1.3rem; //💎💎💎
+            font-size: 1.2rem; //💎💎💎
           }
         }
       }
@@ -976,8 +1028,6 @@
 
 //💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖
 
-// @media screen and (max-width: 367px) {
-// @media screen and (max-width: 372px) {
 @media screen and (max-width: 370px) {
   .body {
     main {

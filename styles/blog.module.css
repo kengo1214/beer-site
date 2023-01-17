@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   height: 100vh;
-  padding-top: 130px;
+  padding-top: 100px;
   border-top: none;
   background-image: url("/image/blog-link.jpg");
   background-image: url("/image//all-menu/cocktail.jpg");
@@ -24,7 +24,7 @@
   position: relative;
   z-index: 20;
   width: 100%;
-  height: calc(100vh - 230px);
+  height: calc(100vh - 200px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,30 +32,36 @@
 }
 .body main .mainSection {
   width: 100%;
-  height: calc(100vh - 230px);
+  height: calc(100vh - 200px);
   position: fixed;
 }
 .body main .mainSection .sectionTitle {
   width: calc(100% - 270px);
+  height: 80px;
   height: 100px;
-  padding: 0 2rem;
+  padding-left: 2.5rem;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .body main .mainSection .sectionTitle .title {
-  width: calc(100% - 5rem);
+  width: calc(100% - 6.5rem);
   display: flex;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  flex-direction: column;
+}
+.body main .mainSection .sectionTitle .title h4 {
+  margin: 0;
+  font-size: 0.8rem;
 }
 .body main .mainSection .sectionTitle .title h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 .body main .mainSection .sectionTitle .scrollButtonHidden {
   display: none;
@@ -71,12 +77,12 @@
 }
 .body main .mainSection .articleSection {
   width: 100%;
-  height: calc(100vh - 330px);
+  height: calc(100vh - 300px);
   overflow: scroll;
 }
 .body main .mainSection .articleSection .outLine {
   width: calc(100% - 270px);
-  min-height: calc(100vh - 380px);
+  min-height: calc(100vh - 340px);
   display: flex;
   justify-content: flex-start;
 }
@@ -116,8 +122,12 @@
   min-height: 110px;
   padding: 1rem 1rem 1rem 0rem;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .articleTitle {
   font-size: 1.4rem;
@@ -267,14 +277,18 @@
   background-color: rgb(178, 178, 178);
   color: white;
   width: 100%;
-  height: 50px;
+  height: 40px;
+}
+.body main .mainSection .articleSection footer p {
+  margin: 0;
+  font-size: 1rem;
 }
 .body .navSection {
   z-index: 20;
   width: 270px;
-  height: calc(100vh - 280px);
+  height: calc(100vh - 240px);
   position: fixed;
-  top: 230px;
+  top: 200px;
   right: 0;
   display: flex;
   justify-content: center;
@@ -293,13 +307,24 @@
   align-items: center;
   box-sizing: border-box;
 }
+.body .navSection .navSectionTitle .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+.body .navSection .navSectionTitle .title h4 {
+  margin: 0;
+  font-size: 0.8rem;
+}
 .body .navSection .navSectionTitle .title h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 .body .navSection ul {
   width: 100%;
-  height: calc(100vh - 444px);
+  height: calc(100vh - 400px);
   padding: 0 2.5rem 0 1.5rem;
   margin: 0;
   list-style: none;
@@ -344,9 +369,10 @@
   }
   .body main .mainSection .sectionTitle {
     width: calc(100% - 250px);
+    padding-left: 2rem;
   }
   .body main .mainSection .sectionTitle .title {
-    width: calc(100% - 3rem);
+    width: calc(100% - 4rem);
   }
   .body main .mainSection .articleSection .outLine {
     width: calc(100% - 250px);
@@ -399,12 +425,12 @@
 }
 @media screen and (max-width: 1024px) {
   .body main {
-    height: calc(100vh - 380px);
-    margin-top: 150px;
+    height: calc(100vh - 310px);
+    margin-top: 130px;
     align-items: flex-start;
   }
   .body main .mainSection {
-    height: calc(100vh - 380px);
+    height: calc(100vh - 310px);
   }
   .body main .mainSection .sectionTitle {
     width: 100%;
@@ -412,22 +438,24 @@
     padding: 1.5rem 2rem 1.5rem;
   }
   .body main .mainSection .sectionTitle .title {
-    width: 100%;
-    justify-content: flex-start;
+    width: auto;
+  }
+  .body main .mainSection .sectionTitle .title h4 {
+    font-size: 0.7rem;
   }
   .body main .mainSection .sectionTitle .title h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 456px);
+    height: calc(100vh - 402px);
   }
   .body main .mainSection .articleSection .outLine {
     width: 100%;
-    min-height: calc(100vh - 506px);
+    min-height: calc(100vh - 442px);
     padding-right: 2rem;
   }
   .body main .mainSection .articleSection .outLine .articleBox {
-    padding: 1.5rem 1rem 2rem 2rem;
+    padding: 0 1rem 2rem 2rem;
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem .sentenceBox .items .articleTitle {
     font-size: 1.2rem;
@@ -437,9 +465,9 @@
   }
   .body .navSection {
     width: 100%;
-    height: 150px;
+    height: 130px;
     position: fixed;
-    top: 230px;
+    top: 180px;
     left: 0;
     padding: 2rem 2rem 1.5rem;
     display: flex;
@@ -455,8 +483,11 @@
     height: 100%;
     padding: 0;
   }
+  .body .navSection .navSectionTitle .title h4 {
+    font-size: 0.7rem;
+  }
   .body .navSection .navSectionTitle .title h1 {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
   .body .navSection ul {
     height: 100%;
@@ -477,15 +508,19 @@
   .body .navSection ul li a {
     font-size: 1rem;
     width: 100%;
+    padding: 0.8rem 0rem;
   }
 }
 @media screen and (max-width: 800px) {
   .body main {
-    height: calc(100vh - 340px);
+    height: calc(100vh - 310px);
     margin-top: 130px;
   }
   .body main .mainSection {
-    height: calc(100vh - 340px);
+    height: calc(100vh - 310px);
+  }
+  .body main .mainSection .sectionTitle {
+    justify-content: space-between;
   }
   .body main .mainSection .sectionTitle .title {
     width: auto;
@@ -494,10 +529,10 @@
     display: block;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 416px);
+    height: calc(100vh - 402px);
   }
   .body main .mainSection .articleSection .outLine {
-    min-height: calc(100vh - 466px);
+    min-height: calc(100vh - 442px);
     padding-right: 0;
   }
   .body main .mainSection .articleSection .outLine .articleBox {
@@ -547,9 +582,7 @@
     display: none;
   }
   .body .navSection {
-    height: 130px;
-    top: 210px;
-    padding: 2rem 2rem 1.5rem;
+    top: 180px;
   }
   .body .navSection ul li {
     width: calc(50% - 2.5rem);
@@ -558,7 +591,7 @@
   .body .navSection ul li a {
     font-size: 1rem;
     width: 100%;
-    padding: 0.8rem 0.4rem;
+    padding: 0.8rem 0rem;
   }
 }
 @media screen and (max-width: 570px) {
@@ -586,7 +619,7 @@
 }
 @media screen and (max-width: 500px) {
   .body .navSection {
-    padding: 1.5rem 2rem 1rem;
+    padding: 2rem 2rem 1.5rem;
   }
   .body .navSection ul li {
     width: calc(100% - 2rem);
@@ -599,23 +632,26 @@
 }
 @media screen and (max-width: 480px) {
   .body main {
-    height: calc(100vh - 290px);
-    margin-top: 80px;
+    height: calc(100vh - 260px);
+    margin-top: 90px;
   }
   .body main .mainSection {
-    height: calc(100vh - 290px);
+    height: calc(100vh - 260px);
   }
   .body main .mainSection .sectionTitle {
     padding: 1rem 2rem 1rem;
   }
+  .body main .mainSection .sectionTitle .title h4 {
+    font-size: 0.6rem;
+  }
   .body main .mainSection .sectionTitle .title h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 350px);
+    height: calc(100vh - 330px);
   }
   .body main .mainSection .articleSection .outLine {
-    min-height: calc(100vh - 400px);
+    min-height: calc(100vh - 360px);
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem {
     width: 100%;
@@ -648,13 +684,22 @@
   .body main .mainSection .articleSection .outLine .articleBox .homeButtonBox .homeButton {
     padding: 0.7rem 1rem;
   }
+  .body main .mainSection .articleSection footer {
+    height: 30px;
+  }
+  .body main .mainSection .articleSection footer p {
+    font-size: 0.8rem;
+  }
   .body .navSection {
     padding: 1.5rem 2rem 1rem;
-    top: 180px;
+    top: 150px;
     height: 110px;
   }
+  .body .navSection .navSectionTitle .title h4 {
+    font-size: 0.6rem;
+  }
   .body .navSection .navSectionTitle .title h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .body .navSection ul li {
     width: calc(100% - 2rem);
