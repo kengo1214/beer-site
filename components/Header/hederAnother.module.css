@@ -175,7 +175,7 @@
     padding: 0 1rem;
   }
   .body .title h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 320px) {
@@ -183,7 +183,7 @@
     padding: 0 1rem;
   }
   .body .title h1 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 }
 /*# sourceMappingURL=hederAnother.module.css.map */
