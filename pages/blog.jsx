@@ -65,7 +65,7 @@ export default function Blog({ news, monthlyIndex }) {
             <div className={styles.articleSection}>
               <article className={styles.outLine} id="top">
                 <div className={styles.articleBox}>
-                  {news.map((news) => (
+                  {/* {news.map((news) => (
                     <article className={styles.articleItem} key={news.id}>
                       <div className={styles.sentenceBox}>
                         <div className={styles.items}>
@@ -113,7 +113,7 @@ export default function Blog({ news, monthlyIndex }) {
                         </div>
                       </div>
                     </article>
-                  ))}
+                  ))} */}
 
                   <div className={styles.homeButtonBox}>
                     <Link href="/">
