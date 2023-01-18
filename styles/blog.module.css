@@ -632,11 +632,11 @@
 }
 @media screen and (max-width: 480px) {
   .body main {
-    height: calc(100vh - 250px);
-    margin-top: 90px;
+    height: calc(100vh - 240px);
+    margin-top: 80px;
   }
   .body main .mainSection {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 240px);
   }
   .body main .mainSection .sectionTitle {
     padding: 1rem 2rem 1rem;
@@ -648,11 +648,10 @@
     font-size: 1.1rem;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 320px);
+    height: calc(100vh - 310px);
   }
   .body main .mainSection .articleSection .outLine {
-    border: 3px solid magenta;
-    min-height: calc(100vh - 350px);
+    min-height: calc(100vh - 340px);
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem {
     width: 100%;
@@ -694,7 +693,7 @@
   .body .navSection {
     padding: 1rem 2rem 1rem;
     top: 140px;
-    height: 110px;
+    height: 100px;
   }
   .body .navSection .navSectionTitle .title h4 {
     font-size: 0.6rem;

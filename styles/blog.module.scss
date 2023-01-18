@@ -854,13 +854,14 @@
 
     main {
       // border: 3px solid red;
-      height: calc(100vh - 250px); //💎💎💎
+      height: calc(100vh - 240px); //💎💎💎
       // margin-top: 110px;
-      margin-top: 90px; //💎💎💎
+      // margin-top: 90px; //💎💎💎
+      margin-top: 80px; //💎💎💎
 
       .mainSection {
         // border: 3px solid blue;
-        height: calc(100vh - 250px); //💎💎💎
+        height: calc(100vh - 240px); //💎💎💎
 
         .sectionTitle {
           // border: 3px solid red;
@@ -884,11 +885,11 @@
 
         .articleSection {
           // border: 3px solid greenyellow;
-          height: calc(100vh - 320px); //💎💎💎
+          height: calc(100vh - 310px); //💎💎💎
 
           .outLine {
             // border: 3px solid magenta;
-            min-height: calc(100vh - 350px); //💎💎💎
+            min-height: calc(100vh - 340px); //💎💎💎
 
             .articleBox {
               // border: 3px solid aqua;
@@ -965,7 +966,8 @@
       padding: 1rem 2rem 1rem; //💎💎💎
       // top: 150px; //💎💎💎
       top: 140px; //💎💎💎
-      height: 110px; //💎💎💎
+      // height: 110px;
+      height: 100px; //💎💎💎
 
       .navSectionTitle {
         .title {
