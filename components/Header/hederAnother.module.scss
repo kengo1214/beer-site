@@ -25,6 +25,7 @@
 
     h1 {
       font-size: 2rem;
+      margin: 0;
     }
   }
 
@@ -70,7 +71,15 @@
     color: white;
     @include center;
     display: none;
-    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .hamburgerButtonMobile {
+    display: none;
+    z-index: 10;
+    color: white;
+    @include center;
+    display: none;
     cursor: pointer;
   }
 
@@ -178,14 +187,20 @@
 
 @media screen and (max-width: 480px) {
   .body {
-    height: 100px;
     height: 80px; //🔥
     padding: 0 1.5rem;
     .title {
       h1 {
-        // font-size: 1.2rem;
         font-size: 1.6rem;
       }
+    }
+
+    .hamburgerButton {
+      display: none;
+    }
+
+    .hamburgerButtonMobile {
+      display: block;
     }
   }
 }

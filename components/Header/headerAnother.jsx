@@ -49,6 +49,10 @@ export default function Nav() {
       <div className={styles.hamburgerButton} onClick={handleNav}>
         {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
       </div>
+
+      <div className={styles.hamburgerButtonMobile} onClick={handleNav}>
+        {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+      </div>
       {/* 🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔 */}
 
       <div className={nav ? styles.menuOpen : styles.menuClose}>

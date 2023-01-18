@@ -19,6 +19,7 @@
 }
 .body .title h1 {
   font-size: 2rem;
+  margin: 0;
 }
 .body nav ul {
   list-style: none;
@@ -51,7 +52,16 @@
   justify-content: center;
   align-items: center;
   display: none;
-  padding: 1rem;
+  cursor: pointer;
+}
+.body .hamburgerButtonMobile {
+  display: none;
+  z-index: 10;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
   cursor: pointer;
 }
 .body .menuOpen {
@@ -147,12 +157,17 @@
 }
 @media screen and (max-width: 480px) {
   .body {
-    height: 100px;
     height: 80px;
     padding: 0 1.5rem;
   }
   .body .title h1 {
     font-size: 1.6rem;
+  }
+  .body .hamburgerButton {
+    display: none;
+  }
+  .body .hamburgerButtonMobile {
+    display: block;
   }
 }
 @media screen and (max-width: 390px) {

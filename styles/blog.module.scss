@@ -664,7 +664,8 @@
             .articleBox {
               // border: 3px solid aqua;
               width: 100%;
-              padding: 1.5rem 2rem 2rem 2rem;
+              // padding: 1.5rem 2rem 2rem 2rem;
+              padding: 0rem 2rem 2rem 2rem; //🟣🟣🟣
 
               .articleItem {
                 // border: 3px solid red;
@@ -853,13 +854,13 @@
 
     main {
       // border: 3px solid red;
-      height: calc(100vh - 260px); //💎💎💎
+      height: calc(100vh - 250px); //💎💎💎
       // margin-top: 110px;
       margin-top: 90px; //💎💎💎
 
       .mainSection {
         // border: 3px solid blue;
-        height: calc(100vh - 260px); //💎💎💎
+        height: calc(100vh - 250px); //💎💎💎
 
         .sectionTitle {
           // border: 3px solid red;
@@ -874,22 +875,24 @@
             }
 
             h1 {
-              // font-size: 1.3rem; //💎💎💎
-              font-size: 1.2rem; //💎💎💎
+              // font-size: 1.3rem;
+              // font-size: 1.2rem;
+              font-size: 1.1rem; //💎💎💎
             }
           }
         }
 
         .articleSection {
           // border: 3px solid greenyellow;
-          height: calc(100vh - 330px); //💎💎💎
+          height: calc(100vh - 320px); //💎💎💎
 
           .outLine {
             // border: 3px solid magenta;
-            min-height: calc(100vh - 360px); //💎💎💎
+            min-height: calc(100vh - 350px); //💎💎💎
 
             .articleBox {
               // border: 3px solid aqua;
+
               .articleItem {
                 // border: 3px solid red;
                 width: 100%;
@@ -958,8 +961,10 @@
 
     .navSection {
       // border: 3px solid red;
-      padding: 1.5rem 2rem 1rem; //💎💎💎
-      top: 150px; //💎💎💎
+      // padding: 1.5rem 2rem 1rem;
+      padding: 1rem 2rem 1rem; //💎💎💎
+      // top: 150px; //💎💎💎
+      top: 140px; //💎💎💎
       height: 110px; //💎💎💎
 
       .navSectionTitle {
@@ -969,7 +974,8 @@
           }
 
           h1 {
-            font-size: 1.2rem; //💎💎💎
+            // font-size: 1.2rem;
+            font-size: 1.1rem; //💎💎💎
           }
         }
       }
@@ -981,8 +987,11 @@
           margin: 0 0 1rem 2rem; //💎💎💎
 
           a {
-            font-size: 0.95rem; //💎💎💎
-            width: 80%; //💎💎💎
+            // font-size: 0.95rem;
+            font-size: 0.8rem;
+            // padding: 0.8rem;
+            padding: 0.6rem; //
+            width: 80%;
           }
         }
       }
@@ -1017,7 +1026,8 @@
           margin: 0 0 1rem 2rem; //⭐️⭐️⭐️
 
           a {
-            font-size: 0.9rem; //⭐️⭐️⭐️
+            font-size: 0.8rem; //⭐️⭐️⭐️
+            padding: 0.6rem;
             width: 80%; //⭐️⭐️⭐️
           }
         }
@@ -1065,7 +1075,9 @@
           margin: 0 0 1rem 1rem; //💖💖💖
 
           a {
-            font-size: 0.85rem; //💖💖💖
+            // font-size: 0.85rem;
+            font-size: 0.8rem; //💖💖💖
+            padding: 0.6rem; //💖💖💖
             width: 90%; //💖💖💖
           }
         }

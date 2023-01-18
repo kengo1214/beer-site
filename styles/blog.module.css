@@ -537,7 +537,7 @@
   }
   .body main .mainSection .articleSection .outLine .articleBox {
     width: 100%;
-    padding: 1.5rem 2rem 2rem 2rem;
+    padding: 0rem 2rem 2rem 2rem;
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem {
     width: 90%;
@@ -632,11 +632,11 @@
 }
 @media screen and (max-width: 480px) {
   .body main {
-    height: calc(100vh - 260px);
+    height: calc(100vh - 250px);
     margin-top: 90px;
   }
   .body main .mainSection {
-    height: calc(100vh - 260px);
+    height: calc(100vh - 250px);
   }
   .body main .mainSection .sectionTitle {
     padding: 1rem 2rem 1rem;
@@ -645,13 +645,14 @@
     font-size: 0.6rem;
   }
   .body main .mainSection .sectionTitle .title h1 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .body main .mainSection .articleSection {
-    height: calc(100vh - 330px);
+    height: calc(100vh - 320px);
   }
   .body main .mainSection .articleSection .outLine {
-    min-height: calc(100vh - 360px);
+    border: 3px solid magenta;
+    min-height: calc(100vh - 350px);
   }
   .body main .mainSection .articleSection .outLine .articleBox .articleItem {
     width: 100%;
@@ -691,22 +692,23 @@
     font-size: 0.8rem;
   }
   .body .navSection {
-    padding: 1.5rem 2rem 1rem;
-    top: 150px;
+    padding: 1rem 2rem 1rem;
+    top: 140px;
     height: 110px;
   }
   .body .navSection .navSectionTitle .title h4 {
     font-size: 0.6rem;
   }
   .body .navSection .navSectionTitle .title h1 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .body .navSection ul li {
     width: calc(100% - 2rem);
     margin: 0 0 1rem 2rem;
   }
   .body .navSection ul li a {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    padding: 0.6rem;
     width: 80%;
   }
 }
@@ -720,7 +722,8 @@
     margin: 0 0 1rem 2rem;
   }
   .body .navSection ul li a {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    padding: 0.6rem;
     width: 80%;
   }
 }
@@ -741,7 +744,8 @@
     margin: 0 0 1rem 1rem;
   }
   .body .navSection ul li a {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    padding: 0.6rem;
     width: 90%;
   }
 }
