@@ -40,7 +40,8 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="/blog" className={styles.link}>
+            <Link href="/blog/latest-blog" className={styles.link}>
+              {/* <Link href="/blog" className={styles.link}> */}
               <a>Blog</a>
             </Link>
           </li>
@@ -84,7 +85,7 @@ export default function Nav() {
               </Link>
             </li>
             <li onClick={handleNav}>
-              <Link href="/blog">
+              <Link href="/blog/latest-blog">
                 <a>Blog</a>
               </Link>
             </li>

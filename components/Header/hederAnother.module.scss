@@ -164,7 +164,6 @@
   .body {
     .title {
       h1 {
-        // font-size: 1.5rem;
         font-size: 1.8rem;
       }
     }
@@ -187,7 +186,7 @@
 
 @media screen and (max-width: 480px) {
   .body {
-    height: 80px; //🔥
+    height: 80px;
     padding: 0 1.5rem;
     .title {
       h1 {

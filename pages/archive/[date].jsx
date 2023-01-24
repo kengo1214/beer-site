@@ -5,8 +5,13 @@ import { clientBlog } from "../../libs/client";
 import { groupBy } from "../../libs/util";
 import HeaderAnother from "../../components/Header/headerAnother";
 import BlogNav from "../../components/BlogNav/BlogNav";
+
 import { BsChevronDoubleLeft } from "react-icons/bs";
-import { BsChevronDoubleUp } from "react-icons/bs";
+import { BsChevronDoubleRight } from "react-icons/bs";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import { BsFillArrowDownCircleFill } from "react-icons/bs";
+
+import dayjs from "dayjs";
 
 //（1）パスを生成
 export const getStaticPaths = async () => {
@@ -21,6 +26,9 @@ export const getStaticProps = async (context) => {
   const date = context.params.date;
   const year = date.split("_")[0];
   const month = date.split("_")[1];
+
+  // const english = dayjs(month).format("MMMM YYYY"); //🔥🔥🔥
+  // console.log(english); //🔥🔥🔥
 
   // microCMSのfiltersクエリは >= を表現できないので開始時刻は1ミリ秒引いておく
   const startOfMonthTmp = new Date(year, month - 1, 1);
@@ -41,79 +49,141 @@ export const getStaticProps = async (context) => {
   //（4）月別アーカイブ
   const archiveData = await clientBlog.get({
     endpoint: "beer-blog",
-    // queries: { fields: "publishedAt", limit: 3000 },
   });
+
   const monthlyIndex = groupBy(archiveData.contents);
+
+  const titleEnglish = dayjs(month).format("MMMM"); //🔥🔥🔥
 
   return {
     props: {
-      title: `${year}年${month}月の記事一覧`,
-      news: data.contents,
+      title: `${year}年${month}月`,
+      titleEnglish: ` ${titleEnglish} ${year}`,
+      blog: data.contents,
       monthlyIndex: monthlyIndex,
     },
   };
 };
 
-export default function BlogId({ title, news, monthlyIndex }) {
+export default function BlogId({ title, titleEnglish, blog, monthlyIndex }) {
   return (
     <>
       <HeaderAnother />
-
       <div className={styles.body}>
         <BlogNav />
+
         <main>
           <section className={styles.mainSection}>
             <div className={styles.sectionTitle}>
               <div className={styles.title}>
-                
-                <h1>{title}</h1>
+                <h4>{title}</h4>
+                <h1>{titleEnglish}</h1>
               </div>
+
+              {/* 💊💊💊💊💊💊💊💊💊 */}
+              <div className={styles.scrollButtonHidden}>
+                <Link href="#top">
+                  <BsFillArrowUpCircleFill
+                    className={styles.scrollTop}
+                    size={25}
+                  />
+                </Link>
+                <Link href="#down">
+                  <BsFillArrowDownCircleFill
+                    className={styles.scrollDown}
+                    size={25}
+                  />
+                </Link>
+              </div>
+              {/* 💊💊💊💊💊💊💊💊💊 */}
             </div>
 
             <div className={styles.articleSection}>
-              <article className={styles.articleBox} id="blog">
-                {news.map((news) => (
-                  <article className={styles.articleItem} key={news.id}>
-                    <div className={styles.sentenceBox}>
-                      <h1 className={styles.articleTitle}>{news.title}</h1>
-                      <div className={styles.publishedAt}>
-                        {news.publishedAt}
-                      </div>
-                      <div
-                        className={styles.sentence}
-                        dangerouslySetInnerHTML={{ __html: `${news.body}` }}
-                      />
-                    </div>
+              <article className={styles.outLine} id="top">
+                <div className={styles.articleBox}>
+                  {blog.map((blog) => (
+                    <article className={styles.articleItem} key={blog.id}>
+                      <div className={styles.sentenceBox}>
+                        <div className={styles.items}>
+                          <h1 className={styles.articleTitle}>{blog.title}</h1>
+                          <div className={styles.publishedAt}>
+                            {blog.publishedAt}
+                          </div>
+                        </div>
 
-                    <div className={styles.imageBox}>
-                      <div className={styles.image}>
-                        <Image
-                          src={news.image.url}
-                          layout="fill"
-                          objectFit="cover"
-                          alt="image"
+                        <div className={styles.moreButtonBox}>
+                          <div className={styles.publishedAtHidden}>
+                            {blog.publishedAt}
+                          </div>
+
+                          <Link href={`/blog/${blog.id}`}>
+                            <div className={styles.moreButton}>
+                              <a>More</a>
+                              <BsChevronDoubleRight
+                                className={styles.icon}
+                                size={20}
+                              />
+                            </div>
+                          </Link>
+
+                          <Link href={`/blog/${blog.id}`}>
+                            <div className={styles.moreButtonHidden}>
+                              <a>More</a>
+                              <BsChevronDoubleRight
+                                className={styles.icon}
+                                size={15}
+                              />
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+
+                      <div className={styles.imageBox}>
+                        <div className={styles.image}>
+                          <Image
+                            src={blog.image.url}
+                            layout="fill"
+                            objectFit="cover"
+                            alt="image"
+                          />
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+
+                  <div className={styles.homeButtonBox}>
+                    <Link href="/">
+                      <div className={styles.homeButton}>
+                        <a>Home</a>
+                        <BsChevronDoubleLeft
+                          className={styles.icon}
+                          size={20}
                         />
                       </div>
-                    </div>
-                  </article>
-                ))}
+                    </Link>
+                  </div>
+                </div>
 
-                <div className={styles.buttonBox}>
-                  <Link href="/">
-                    <div className={styles.button}>
-                      <a>Home</a>
-                      <BsChevronDoubleLeft className={styles.icon} />
-                    </div>
-                  </Link>
-                  <Link href="#blog">
-                    <div className={styles.button}>
-                      <a>Top</a>
-                      <BsChevronDoubleUp className={styles.icon} />
-                    </div>
-                  </Link>
+                <div className={styles.scrollSection}>
+                  <div className={styles.scrollBox}>
+                    <Link href="#top">
+                      <BsFillArrowUpCircleFill
+                        className={styles.scrollTop}
+                        size={36}
+                      />
+                    </Link>
+                    <Link href="#down">
+                      <BsFillArrowDownCircleFill
+                        className={styles.scrollDown}
+                        size={36}
+                      />
+                    </Link>
+                  </div>
                 </div>
               </article>
-              <footer>No Beer No Life Tokyo 2022</footer>
+              <footer id="down">
+                <p>No Beer No Life Tokyo 2022</p>
+              </footer>
             </div>
           </section>
         </main>
@@ -122,6 +192,7 @@ export default function BlogId({ title, news, monthlyIndex }) {
         <section className={styles.navSection}>
           <div className={styles.navSectionTitle}>
             <div className={styles.title}>
+              <h4>アーカイブ</h4>
               <h1>Archive</h1>
             </div>
           </div>
@@ -129,6 +200,7 @@ export default function BlogId({ title, news, monthlyIndex }) {
             {Object.keys(monthlyIndex).map((index) => (
               <li key={index}>
                 <Link href={`${index}`}>
+                  {/* <Link href={`archive/${index}`}> */}
                   <a>
                     {index.split("_")[0] + "年" + index.split("_")[1] + "月"}（
                     {monthlyIndex[index].length + "件"}）

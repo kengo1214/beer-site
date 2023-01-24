@@ -32,7 +32,7 @@ export default function Nav() {
           </li>
 
           <li>
-            <Link href="/blog">
+            <Link href="/blog/latest-blog">
               <div className={styles.item}>Blog</div>
             </Link>
           </li>
@@ -68,7 +68,7 @@ export default function Nav() {
             </Link>
           </li>
           <li onClick={handleNav}>
-            <Link href="/blog">
+            <Link href="/blog/latest-blog">
               <h1>Blog</h1>
             </Link>
           </li>

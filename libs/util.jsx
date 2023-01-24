@@ -11,7 +11,7 @@ export const formatDate = (date) => {
   const formattedDate = dayjs.utc(date).tz("Asia/Tokyo").format("YYYY_MM");
 
   return formattedDate;
-};
+};                  
 
 // 記事をグルーピングする処理（グループ化）
 // 上記で作成したformatDateも登場する

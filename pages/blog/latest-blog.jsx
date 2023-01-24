@@ -1,10 +1,12 @@
-import Image from "next/image";
+import { clientBlog } from "../../libs/client";
+import { groupBy } from "../../libs/util";
+import styles from "../../styles/latest-blog.module.scss";
 import Link from "next/link";
-import { clientBlog } from "../libs/client";
-import { groupBy } from "../libs/util";
-import styles from "../styles/blog.module.scss";
-import HeaderAnother from "../components/Header/headerAnother";
-import BlogNav from "../components/BlogNav/BlogNav";
+import Image from "next/image";
+import HeaderAnother from "../../components/Header/headerAnother";
+import BlogNav from "../../components/BlogNav/BlogNav";
+
+import dayjs from "dayjs";
 
 import { BsChevronDoubleLeft } from "react-icons/bs";
 import { BsChevronDoubleRight } from "react-icons/bs";
@@ -13,23 +15,28 @@ import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
 
 export const getStaticProps = async () => {
-  //ニュース記事の取得
-  const data = await clientBlog.get({
-    endpoint: "beer-blog",
-  });
+  const data = await clientBlog.get({ endpoint: "beer-blog" });
 
-  //月別アーカイブ
+  const timeBefore = data.contents.publishedAt;
+  // console.log(timeBefore); //🔥🔥🔥
+
+  const timeAfter = dayjs.utc(timeBefore).tz("Asia/Tokyo").format("YYYY-MM-DD");
+
+  // console.log(timeAfter);
+
+  // const timeAfter = dayjs(timeBefore).format()
+
   const monthlyIndex = groupBy(data.contents);
 
   return {
     props: {
-      news: data.contents,
+      blog: data.contents,
       monthlyIndex: monthlyIndex,
     },
   };
 };
 
-export default function Blog({ news, monthlyIndex }) {
+export default function LatestBlog({ blog, monthlyIndex }) {
   return (
     <>
       <HeaderAnother />
@@ -65,22 +72,22 @@ export default function Blog({ news, monthlyIndex }) {
             <div className={styles.articleSection}>
               <article className={styles.outLine} id="top">
                 <div className={styles.articleBox}>
-                  {news.map((news) => (
-                    <article className={styles.articleItem} key={news.id}>
+                  {blog.map((blog) => (
+                    <article className={styles.articleItem} key={blog.id}>
                       <div className={styles.sentenceBox}>
                         <div className={styles.items}>
-                          <h1 className={styles.articleTitle}>{news.title}</h1>
+                          <h1 className={styles.articleTitle}>{blog.title}</h1>
                           <div className={styles.publishedAt}>
-                            {news.publishedAt}
+                            {blog.publishedAt}
                           </div>
                         </div>
 
                         <div className={styles.moreButtonBox}>
                           <div className={styles.publishedAtHidden}>
-                            {news.publishedAt}
+                            {blog.publishedAt}
                           </div>
 
-                          <Link href="">
+                          <Link href={`/blog/${blog.id}`}>
                             <div className={styles.moreButton}>
                               <a>More</a>
                               <BsChevronDoubleRight
@@ -90,7 +97,7 @@ export default function Blog({ news, monthlyIndex }) {
                             </div>
                           </Link>
 
-                          <Link href="">
+                          <Link href={`/blog/${blog.id}`}>
                             <div className={styles.moreButtonHidden}>
                               <a>More</a>
                               <BsChevronDoubleRight
@@ -105,7 +112,7 @@ export default function Blog({ news, monthlyIndex }) {
                       <div className={styles.imageBox}>
                         <div className={styles.image}>
                           <Image
-                            src={news.image.url}
+                            src={blog.image.url}
                             layout="fill"
                             objectFit="cover"
                             alt="image"
@@ -163,7 +170,7 @@ export default function Blog({ news, monthlyIndex }) {
           <ul>
             {Object.keys(monthlyIndex).map((index) => (
               <li key={index}>
-                <Link href={`archive/${index}`}>
+                <Link href={`/archive/${index}`}>
                   <a>
                     {index.split("_")[0] + "年" + index.split("_")[1] + "月"}（
                     {monthlyIndex[index].length + "件"}）

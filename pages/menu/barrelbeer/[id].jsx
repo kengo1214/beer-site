@@ -36,6 +36,8 @@ export async function getStaticProps(context) {
 export default function MoreInformation({ barrelbeer }) {
   const router = useRouter();
 
+  // console.log(barrelbeer); //🔥🔥🔥
+
   return (
     <div className={styles.body}>
       <HeaderAnother />
